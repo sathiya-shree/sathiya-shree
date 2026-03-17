@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <title>Sathiya Shree — Full-Stack Developer</title>
+
+  <!-- ── Fonts ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,700;0,900;1,400;1,700&family=Special+Elite&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet"/>
+
+  <!-- ── Three.js (3D backgrounds) ── -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+
+  <!-- ── Styles ── -->
+  <link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+
+<!-- ══ LOADER ══ -->
+<div id="loader">
+  <div class="ld-name" id="ld-name"></div>
+  <div class="ld-bar-bg"><div class="ld-bar"></div></div>
+  <div class="ld-pct" id="ld-pct">0%</div>
+</div>
+
+<!-- ══ PAGE TRANSITION CURTAIN ══ -->
+<div id="curtain"></div>
+
+<!-- ══ CUSTOM CURSORS ══ -->
+<div id="cur-dot"></div>
+<div id="cur-ring"></div>
+<div id="cur-rot">
+  <svg viewBox="0 0 90 90" width="90" height="90">
+    <defs><path id="cp" d="M45,45 m-32,0 a32,32 0 1,1 64,0 a32,32 0 1,1 -64,0"/></defs>
+    <text fill="var(--gold)" font-family="'DM Mono',monospace" font-size="9.5" letter-spacing="3.5">
+      <textPath href="#cp">VIEW PROJECT · VIEW PROJECT · VIEW PROJECT ·</textPath>
+    </text>
+  </svg>
+</div>
+<div id="cur-cross"></div>
+<div id="cur-label">OPEN ↗</div>
+
+<!-- ══ UTILITY CHROME ══ -->
+<div id="prog"></div>
+<div class="noise"></div>
+<div id="toast"></div>
+
+<!-- Sticky resume button -->
+<button id="sr" onclick="showToast('📄 Resume download starting…')">
+  <svg width="11" height="11" viewBox="0 0 11 11" fill="none">
+    <path d="M5.5 1v7M1 8l4.5 2.5L10 8" stroke="currentColor" stroke-width="1.3" stroke-linecap="round"/>
+  </svg>
+  Resume
+</button>
+
+<!-- Back to top -->
+<button id="btt" onclick="document.querySelector('.page.act').scrollTop=0">
+  <svg width="14" height="14" viewBox="0 0 14 14" fill="none">
+    <path d="M7 12V2M2 7l5-5 5 5" stroke="var(--bg)" stroke-width="1.5" stroke-linecap="round"/>
+  </svg>
+</button>
+
+<!-- ══ NAVIGATION ══ -->
+<nav id="nav">
+  <button class="nav-logo" onclick="goTo('home')">Sathiya Shree</button>
+  <ul class="nav-links" id="nav-links">
+    <li><a href="#" onclick="goTo('home');return false"     id="nl-home"     class="act">Home</a></li>
+    <li><a href="#" onclick="goTo('projects');return false" id="nl-projects">Projects</a></li>
+    <li><a href="#" onclick="goTo('skills');return false"   id="nl-skills">Skills</a></li>
+    <li><a href="#" onclick="goTo('certs');return false"    id="nl-certs">Certifications</a></li>
+    <li><a href="#" onclick="scrollToContact();return false" id="nl-contact">Contact</a></li>
+  </ul>
+  <div class="nav-right">
+    <span class="nav-pg" id="nav-pg"><b>01</b> / 04</span>
+    <button class="nav-cta" onclick="scrollToContact()"><span>Hire Me</span></button>
+  </div>
+  <button id="hamburger"><span></span><span></span><span></span></button>
+</nav>
+
+
+<!-- ════════════════════════════════════════════
+     PAGE: HOME
+════════════════════════════════════════════ -->
+<div class="page act" id="p-home" style="position:fixed;inset:0;overflow-y:auto;overflow-x:hidden">
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="bg3d" id="hero-bg3d"></div>
+    <div class="hero-ov"></div>
+    <div class="hero-con">
+      <div class="hero-tag">Full-Stack Developer · Coimbatore, IN · 2025</div>
+      <h1 class="hero-name">
+        <span class="hero-nl"><span class="hero-ni">Sathiya</span></span>
+        <span class="hero-nl"><span class="hero-ni">Shree</span></span>
+      </h1>
+      <p class="hero-tagline">Building systems that are technically precise<br/>and a pleasure to experience.</p>
+      <div class="hero-acts">
+        <button class="btn" onclick="goTo('projects')"><span>View Projects</span></button>
+        <button class="btn-ghost" onclick="goTo('skills')">Explore Skills →</button>
+      </div>
+    </div>
+    <!-- Photo reveal -->
+    <div class="hero-photo-wrap" id="hero-photo-wrap">
+      <div class="photo-ring"></div>
+      <div class="photo-frame">
+        <div class="photo-actual"></div>
+        <div class="photo-overlay">
+          <div class="p-init">SS</div>
+          <div class="p-hint">Hover to reveal</div>
+        </div>
+      </div>
+      <div class="photo-tag">
+        <span class="photo-tag-name">Sathiya Shree</span>
+        <span class="photo-tag-status"><span class="ldot-s"></span>Available</span>
+      </div>
+      <div class="photo-glow"></div>
+    </div>
+    <div class="hero-scroll"><div class="scroll-ln"></div><span class="scroll-tx">Scroll</span></div>
+  </section>
+
+  <!-- Marquee -->
+  <div class="mqw"><div class="mqt" id="mqt"></div></div>
+
+  <!-- Tech Orbit -->
+  <div class="orbit-section fu">
+    <div class="orbit-label">Tech I Work With</div>
+    <div class="orbit-wrap">
+      <div class="orbit-ring or1"></div>
+      <div class="orbit-ring or2"></div>
+      <div class="orbit-ring or3"></div>
+      <div class="orbit-core"><span class="orbit-init">SS</span></div>
+      <div class="orbit-chip" style="top:3%;left:50%;transform:translateX(-50%);animation-delay:0s">Python</div>
+      <div class="orbit-chip" style="top:18%;right:-2%;animation-delay:.6s">React.js</div>
+      <div class="orbit-chip" style="top:50%;right:-8%;transform:translateY(-50%);animation-delay:1.2s">MySQL</div>
+      <div class="orbit-chip" style="bottom:18%;right:-2%;animation-delay:1.8s">Flutter</div>
+      <div class="orbit-chip" style="bottom:3%;left:50%;transform:translateX(-50%);animation-delay:2.4s">Firebase</div>
+      <div class="orbit-chip" style="bottom:18%;left:-2%;animation-delay:3s">Flask</div>
+      <div class="orbit-chip" style="top:50%;left:-12%;transform:translateY(-50%);animation-delay:3.6s">Gemini AI</div>
+      <div class="orbit-chip" style="top:18%;left:-2%;animation-delay:4.2s">JavaScript</div>
+    </div>
+  </div>
+
+  <!-- Tiles (built by JS) -->
+  <div class="tiles" id="tiles"></div>
+
+  <!-- About -->
+  <div class="ab-sec">
+    <div class="ab-banner fu">
+      <div class="bg3d" id="about-bg3d"></div>
+      <div style="position:absolute;inset:0;background:linear-gradient(to bottom,rgba(10,10,10,.2),rgba(10,10,10,.75));z-index:1"></div>
+      <div class="ab-btag">about me · 2025</div>
+    </div>
+    <div class="ab-inner">
+      <div>
+        <div class="eyebrow fu">About Me</div>
+        <h2 class="page-title fu" data-glitch="I build things that matter." style="transition-delay:.07s">
+          I build things that<br/><em>matter.</em>
+        </h2>
+        <p class="ab-body fu" style="transition-delay:.13s">
+          I specialise in <strong>bridging backend logic with intuitive frontend design</strong> — creating systems that are technically sound and a pleasure to use.
+        </p>
+        <p class="ab-body fu" style="transition-delay:.19s">
+          My approach is rooted in precision and craft. Every component is deliberate — from database schema to pixel-perfect interfaces.
+        </p>
+        <div class="fu" style="transition-delay:.25s;margin-top:2.5rem;display:flex;gap:1rem;flex-wrap:wrap">
+          <button class="btn" onclick="goTo('projects')"><span>See Projects</span></button>
+          <button class="btn" onclick="showToast('📄 Resume download starting…')" style="border:none"><span>Resume ↓</span></button>
+        </div>
+      </div>
+      <div>
+        <div class="ab-facts fl" style="transition-delay:.1s">
+          <div class="ab-row"><span class="abk">Name</span><span class="abv">Sathiya Shree S</span></div>
+          <div class="ab-row"><span class="abk">Based in</span><span class="abv">Coimbatore, Tamil Nadu</span></div>
+          <div class="ab-row"><span class="abk">Degree</span><span class="abv">M.Sc Information Technology</span></div>
+          <div class="ab-row"><span class="abk">Focus</span><span class="abv">Full-Stack Development</span></div>
+          <div class="ab-row"><span class="abk">Status</span><span class="abv live-v"><span class="ldot"></span>Open to Work</span></div>
+          <div class="ab-row"><span class="abk">Languages</span><span class="abv">English · Tamil</span></div>
+          <div class="ab-row" style="border-bottom:none"><span class="abk">Stack</span><span class="abv">Python · React · MySQL</span></div>
+        </div>
+        <blockquote class="ab-q fl" style="transition-delay:.18s">
+          "Code is craft. Every line should earn its place."
+        </blockquote>
+      </div>
+    </div>
+  </div>
+
+  <!-- Research -->
+  <section style="background:var(--bg3)">
+    <div class="sec-pad">
+      <div class="eyebrow fu">Academic Work</div>
+      <h2 class="page-title fu" data-glitch="Research & Publications." style="transition-delay:.06s">
+        Research &amp;<br/><em>Publications.</em>
+      </h2>
+      <div class="res-card fu" style="transition-delay:.1s">
+        <div class="res-n">01</div>
+        <div>
+          <div class="res-tag">Conference Paper · International</div>
+          <div class="res-title">Explainable AI in Healthcare</div>
+          <div class="res-venue">INTI International University, Malaysia · 2025</div>
+          <div class="res-desc">Presented research on Explainable AI (XAI) in Healthcare — improving transparency and interpretability in clinical AI decision systems using LIME and SHAP-based approaches, bridging the gap between complex ML models and clinical trust.</div>
+          <div class="res-bdg">International Conference · Peer Reviewed · 2025</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience (built by JS) -->
+  <section style="background:var(--bg2)">
+    <div class="sec-pad">
+      <div class="eyebrow fu">Professional</div>
+      <h2 class="page-title fu" data-glitch="Experience & Milestones." style="transition-delay:.06s">
+        Experience &amp;<br/><em>Milestones.</em>
+      </h2>
+      <div class="exp-grid" id="exp-grid"></div>
+    </div>
+  </section>
+
+  <!-- Stats -->
+  <div class="stats-row">
+    <div class="stat-blk fsc"><span class="stat-n" data-count="5" data-suf="+">5+</span><span class="stat-l">Certifications</span></div>
+    <div class="stat-blk fsc" style="transition-delay:.1s"><span class="stat-n" data-count="4" data-suf="+">4+</span><span class="stat-l">Projects Built</span></div>
+    <div class="stat-blk fsc" style="transition-delay:.2s"><span class="stat-n" data-count="1" data-suf="">1</span><span class="stat-l">Research Paper</span></div>
+    <div class="stat-blk fsc" style="transition-delay:.3s"><span class="stat-n" data-count="3" data-suf="+">3+</span><span class="stat-l">Tech Stacks</span></div>
+  </div>
+
+  <!-- Contact (links built by JS) -->
+  <div class="ct-sec" id="contact-anchor">
+    <div class="bg3d" id="contact-bg3d"></div>
+    <div style="position:absolute;inset:0;background:linear-gradient(to right,rgba(10,10,10,.96) 35%,rgba(10,10,10,.6));z-index:1"></div>
+    <div class="ct-inner">
+      <div>
+        <div class="eyebrow fu">Let's Work Together</div>
+        <h2 class="ct-head fu" style="transition-delay:.06s">Get in<br/><em>touch.</em></h2>
+        <p class="fu" style="font-size:1rem;line-height:1.85;color:var(--cream2);font-weight:300;margin-bottom:3rem;max-width:380px;transition-delay:.12s">
+          Open to full-time roles, freelance and collaboration. I respond within a day.
+        </p>
+        <div class="ct-lnks fu" style="transition-delay:.18s" id="ct-links"></div>
+      </div>
+      <div class="fl" style="transition-delay:.1s">
+        <div class="eyebrow" style="margin-bottom:1.5rem">Send a message</div>
+        <form class="ct-form" onsubmit="showToast('✓ Message sent — I\'ll be in touch!');return false">
+          <div class="fr">
+            <div class="ff"><label class="flbl">First Name</label><input class="finp" type="text" placeholder="Your first name"/></div>
+            <div class="ff"><label class="flbl">Last Name</label><input class="finp" type="text" placeholder="Your last name"/></div>
+          </div>
+          <div class="ff"><label class="flbl">Email</label><input class="finp" type="email" placeholder="your@email.com"/></div>
+          <div class="ff"><label class="flbl">Phone</label><input class="finp" type="tel" placeholder="+91 XXXXX XXXXX"/></div>
+          <div class="ff"><label class="flbl">Message</label><textarea class="finp" placeholder="Tell me about your project…"></textarea></div>
+          <button class="fsub" type="submit"><span>Send Message →</span></button>
+        </form>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="full-ft">
+    <div class="ft-in">
+      <div class="ft-top">
+        <div>
+          <div class="ft-brand">Sathiya Shree</div>
+          <p class="ft-sub">Full-Stack Developer · Coimbatore, IN<br/>Python · React · MySQL · Flutter</p>
+          <a class="ft-email" href="mailto:sathiyashree03@gmail.com" onclick="copyEmail(event)">sathiyashree03@gmail.com</a>
+          <div style="font-family:var(--mono);font-size:.44rem;letter-spacing:.14em;color:var(--muted);margin-top:.35rem">Click to copy</div>
+        </div>
+        <div>
+          <div class="ft-nh">Pages</div>
+          <ul class="ft-nav">
+            <li><a href="#" onclick="goTo('home');return false">Home</a></li>
+            <li><a href="#" onclick="goTo('projects');return false">Projects</a></li>
+            <li><a href="#" onclick="goTo('skills');return false">Skills</a></li>
+            <li><a href="#" onclick="goTo('certs');return false">Certifications</a></li>
+            <li><a href="#" onclick="scrollToContact();return false">Contact</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="ft-sh">Connect</div>
+          <div class="ft-soc">
+            <a class="soca" href="https://github.com/sathiya-shree" target="_blank"><span class="soci">&lt;&gt;</span>GitHub</a>
+            <a class="soca" href="https://linkedin.com/in/sathiya-shree-s" target="_blank"><span class="soci">in</span>LinkedIn</a>
+            <a class="soca" href="mailto:sathiyashree03@gmail.com" onclick="copyEmail(event)"><span class="soci">✉</span>Email</a>
+          </div>
+          <div style="margin-top:2rem">
+            <button class="btn" onclick="showToast('📄 Resume download starting…')" style="border:none"><span>↓ Download Resume</span></button>
+          </div>
+        </div>
+      </div>
+      <div class="ft-bot">
+        <span class="ft-copy">© 2025 Sathiya Shree — All rights reserved</span>
+        <div class="ft-status"><span class="ldot"></span>Available for opportunities</div>
+      </div>
+    </div>
+  </footer>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     PAGE: PROJECTS
+════════════════════════════════════════════ -->
+<div class="page" id="p-projects" style="position:fixed;inset:0;overflow-y:auto;overflow-x:hidden;display:none">
+  <div class="ph">
+    <div class="bg3d" id="proj-bg3d"></div>
+    <div class="ph-ov"></div>
+    <div class="ph-con">
+      <div class="ph-ey">Selected Work</div>
+      <h1 class="ph-h">Featured<br/><em>Projects.</em></h1>
+    </div>
+  </div>
+  <div class="sec-pad">
+    <div class="proj-list" id="proj-list"></div>
+  </div>
+  <div class="mft">
+    <span class="mft-brand">Sathiya Shree</span>
+    <ul class="mft-links">
+      <li><a href="#" onclick="goTo('home');return false">Home</a></li>
+      <li><a href="#" onclick="goTo('skills');return false">Skills</a></li>
+      <li><a href="#" onclick="goTo('certs');return false">Certifications</a></li>
+    </ul>
+    <span class="mft-copy">© 2025 Sathiya Shree</span>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     PAGE: SKILLS
+════════════════════════════════════════════ -->
+<div class="page" id="p-skills" style="position:fixed;inset:0;overflow-y:auto;overflow-x:hidden;display:none">
+  <div class="ph">
+    <div class="bg3d" id="skills-bg3d"></div>
+    <div class="ph-ov"></div>
+    <div class="ph-con">
+      <div class="ph-ey">Capabilities</div>
+      <h1 class="ph-h">Skills &amp;<br/><em>Technologies.</em></h1>
+    </div>
+  </div>
+  <div class="sec-pad">
+    <div class="stabs">
+      <button class="stab act" data-tab="prof">Proficiency</button>
+      <button class="stab" data-tab="lang">Languages</button>
+      <button class="stab" data-tab="fw">Frameworks</button>
+      <button class="stab" data-tab="tools">Tools</button>
+      <button class="stab" data-tab="soft">Soft Skills</button>
+    </div>
+    <div class="sk-pan act" id="panel-prof"></div>
+    <div class="sk-pan" id="panel-lang"><div class="pill-wrap" id="pills-lang"></div></div>
+    <div class="sk-pan" id="panel-fw"><div class="pill-wrap" id="pills-fw"></div></div>
+    <div class="sk-pan" id="panel-tools"><div class="pill-wrap" id="pills-tools"></div></div>
+    <div class="sk-pan" id="panel-soft"><div class="soft-grid" id="soft-grid"></div></div>
+  </div>
+  <div class="mft">
+    <span class="mft-brand">Sathiya Shree</span>
+    <ul class="mft-links">
+      <li><a href="#" onclick="goTo('home');return false">Home</a></li>
+      <li><a href="#" onclick="goTo('projects');return false">Projects</a></li>
+      <li><a href="#" onclick="goTo('certs');return false">Certifications</a></li>
+    </ul>
+    <span class="mft-copy">© 2025 Sathiya Shree</span>
+  </div>
+</div>
+
+
+<!-- ════════════════════════════════════════════
+     PAGE: CERTIFICATIONS
+════════════════════════════════════════════ -->
+<div class="page" id="p-certs" style="position:fixed;inset:0;overflow-y:auto;overflow-x:hidden;display:none">
+  <div class="ph">
+    <div class="bg3d" id="certs-bg3d"></div>
+    <div class="ph-ov"></div>
+    <div class="ph-con">
+      <div class="ph-ey">Credentials</div>
+      <h1 class="ph-h">Certifications<br/>&amp; <em>Badges.</em></h1>
+    </div>
+  </div>
+  <div class="sec-pad">
+    <div class="cert-feat" id="cert-feat"></div>
+    <div class="cert-lbl">All Certifications</div>
+    <div class="cert-grid" id="cert-grid"></div>
+    <div class="cert-stats">
+      <div class="cs-b fu"><span class="cs-n" data-ccount="5" data-suf="+">5+</span><span class="cs-l">Total Certifications</span></div>
+      <div class="cs-b fu" style="transition-delay:.1s"><span class="cs-n" data-ccount="3" data-suf="">3</span><span class="cs-l">In 2023–2024</span></div>
+      <div class="cs-b fu" style="transition-delay:.2s"><span class="cs-n" data-ccount="4" data-suf="">4</span><span class="cs-l">Global Platforms</span></div>
+    </div>
+  </div>
+  <div class="mft">
+    <span class="mft-brand">Sathiya Shree</span>
+    <ul class="mft-links">
+      <li><a href="#" onclick="goTo('home');return false">Home</a></li>
+      <li><a href="#" onclick="goTo('projects');return false">Projects</a></li>
+      <li><a href="#" onclick="goTo('skills');return false">Skills</a></li>
+    </ul>
+    <span class="mft-copy">© 2025 Sathiya Shree</span>
+  </div>
+</div>
+
+
+<!-- ══ Scripts (order matters) ══ -->
+<script src="js/data.js"></script>
+<script src="js/three-bg.js"></script>
+<script src="js/canvas-art.js"></script>
+<script src="js/main.js"></script>
+
+</body>
+</html>

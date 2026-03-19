@@ -100,6 +100,8 @@ nav.sc{background:rgba(8,8,7,.92);backdrop-filter:blur(20px);border-bottom:1px s
 .sp-hero-tag::before{content:'';width:24px;height:1px;background:var(--gold)}
 .sp-hero-title{font-family:var(--serif);font-size:clamp(1.8rem,3.2vw,3.8rem);font-weight:700;line-height:1.1;letter-spacing:-.02em}
 .sp-hero-title em{font-style:italic;color:var(--gold)}
+
+/* ── PROJECTS ── */
 .proj-list{display:flex;flex-direction:column;gap:1px;background:var(--border)}
 .prow{background:rgba(8,8,7,.88);position:relative;overflow:hidden;transition:background .3s;cursor:none;backdrop-filter:blur(4px)}
 .prow::before{content:'';position:absolute;left:0;top:0;bottom:0;width:3px;background:var(--gold);transform:scaleY(0);transform-origin:bottom;transition:transform .5s var(--ease)}
@@ -123,11 +125,32 @@ nav.sc{background:rgba(8,8,7,.92);backdrop-filter:blur(20px);border-bottom:1px s
 .pr-expand .earr{display:inline-block;transition:transform .35s var(--bounce)}
 .prow.open .earr{transform:rotate(180deg)}
 .case-body{max-height:0;overflow:hidden;transition:max-height .65s var(--ease2),opacity .45s;opacity:0;border-top:0 solid var(--border)}
-.prow.open .case-body{max-height:700px;opacity:1;border-top:1px solid var(--border)}
+.prow.open .case-body{max-height:900px;opacity:1;border-top:1px solid var(--border)}
+
+/* Case study: image placeholder on left, text on right */
 .case-in{display:grid;grid-template-columns:1fr 1fr;background:rgba(201,144,58,.01)}
-.case-art{min-height:240px;position:relative;overflow:hidden;background:var(--bg3)}
+.case-art{min-height:260px;position:relative;overflow:hidden;background:var(--bg3)}
 .case-art canvas{position:absolute;inset:0;width:100%!important;height:100%!important}
 .case-art-ov{position:absolute;inset:0;background:linear-gradient(to right,transparent 55%,rgba(8,8,7,.65));pointer-events:none;z-index:1}
+
+/* ── PROJECT IMAGE PLACEHOLDER ── */
+.proj-img-placeholder{
+  position:absolute;inset:0;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:1rem;
+  background:linear-gradient(135deg,rgba(201,144,58,.04) 0%,rgba(54,184,154,.03) 100%);
+  border:1px dashed rgba(201,144,58,.22);
+  z-index:2;
+  transition:background .3s;
+}
+.proj-img-placeholder:hover{background:linear-gradient(135deg,rgba(201,144,58,.07) 0%,rgba(54,184,154,.05) 100%)}
+.pip-icon{width:48px;height:48px;border:1px solid rgba(201,144,58,.3);border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:1.3rem;color:rgba(201,144,58,.5)}
+.pip-label{font-family:var(--mono);font-size:.48rem;letter-spacing:.22em;text-transform:uppercase;color:rgba(201,144,58,.45);text-align:center;line-height:1.8}
+.pip-label strong{display:block;font-size:.58rem;color:rgba(201,144,58,.7);margin-bottom:.2rem}
+.pip-sub{font-family:var(--mono);font-size:.42rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);text-align:center}
+/* Hidden canvas still exists for fallback */
+.case-art canvas.hidden{display:none}
+
 .case-txt{padding:2.5rem;display:flex;flex-direction:column;gap:1.6rem}
 .cbt{font-family:var(--mono);font-size:.46rem;letter-spacing:.28em;text-transform:uppercase;color:var(--gold);margin-bottom:.5rem;display:flex;align-items:center;gap:.4rem}
 .cbt::before{content:'';width:14px;height:1px;background:var(--gold)}
@@ -138,6 +161,8 @@ nav.sc{background:rgba(8,8,7,.92);backdrop-filter:blur(20px);border-bottom:1px s
 .cml{display:block;font-family:var(--mono);font-size:.4rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
 .case-cta{display:inline-flex;align-items:center;gap:.4rem;font-family:var(--mono);font-size:.48rem;letter-spacing:.14em;text-transform:uppercase;color:var(--bg);background:var(--gold);padding:.65rem 1.3rem;cursor:none;border:none;align-self:flex-start;transition:background .3s}
 .case-cta:hover{background:var(--gold2)}
+
+/* ── SKILLS ── */
 .stabs{display:flex;border-bottom:1px solid var(--border);margin-bottom:3rem;overflow-x:auto}
 .stab{font-family:var(--mono);font-size:.54rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted);padding:.9rem 1.8rem;cursor:none;background:none;border:none;border-bottom:2px solid transparent;transition:color .3s,border-color .3s;margin-bottom:-1px;white-space:nowrap;flex-shrink:0}
 .stab:hover{color:var(--cream)}.stab.act{color:var(--gold);border-bottom-color:var(--gold)}
@@ -163,6 +188,8 @@ nav.sc{background:rgba(8,8,7,.92);backdrop-filter:blur(20px);border-bottom:1px s
 .scard:hover{border-color:rgba(201,144,58,.25);transform:translateY(-3px)}
 .s-ico{font-size:2.2rem;display:block;margin-bottom:.8rem}
 .s-name{font-family:var(--serif);font-size:1.2rem;color:var(--cream);font-weight:400}
+
+/* ── CERTS ── */
 .cert-feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:2rem}
 .cert-card{background:rgba(15,14,12,.9);border:1px solid var(--border2);position:relative;overflow:hidden;display:block;cursor:none;transition:border-color .4s,transform .35s var(--bounce);backdrop-filter:blur(6px)}
 .cert-card:hover{border-color:rgba(201,144,58,.35);transform:translateY(-3px)}
@@ -179,11 +206,66 @@ nav.sc{background:rgba(8,8,7,.92);backdrop-filter:blur(20px);border-bottom:1px s
 .cert-card:hover .cert-arrow{border-color:var(--gold);color:var(--gold);transform:translate(3px,-3px)}
 .cert-sec-lbl{font-family:var(--mono);font-size:.5rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);margin:3rem 0 1.5rem;padding-bottom:.9rem;border-bottom:1px solid var(--border)}
 .cert-small-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1px;background:var(--border)}
-.ab-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:start;margin-bottom:5rem}
-.ab-body{font-size:1rem;line-height:1.9;color:var(--cream2);margin-bottom:1.2rem;font-weight:300}
+
+/* ── ABOUT — properly structured ── */
+.ab-hero-row{
+  display:grid;
+  grid-template-columns:1fr 340px;
+  gap:4rem;
+  align-items:start;
+  margin-bottom:5rem;
+}
+/* Photo placeholder */
+.ab-photo-wrap{
+  position:relative;
+}
+.ab-photo-placeholder{
+  width:100%;
+  aspect-ratio:3/4;
+  background:linear-gradient(160deg,rgba(201,144,58,.06) 0%,rgba(54,184,154,.04) 100%);
+  border:1px dashed rgba(201,144,58,.28);
+  display:flex;flex-direction:column;align-items:center;justify-content:center;
+  gap:1rem;position:relative;overflow:hidden;
+}
+.ab-photo-placeholder::before{
+  content:'';position:absolute;inset:0;
+  background-image:repeating-linear-gradient(0deg,transparent,transparent 28px,rgba(201,144,58,.03) 28px,rgba(201,144,58,.03) 29px),
+    repeating-linear-gradient(90deg,transparent,transparent 28px,rgba(201,144,58,.03) 28px,rgba(201,144,58,.03) 29px);
+}
+.app-icon{
+  width:64px;height:64px;border:1px solid rgba(201,144,58,.3);border-radius:50%;
+  display:flex;align-items:center;justify-content:center;font-size:1.8rem;
+  background:rgba(201,144,58,.05);position:relative;z-index:1;
+}
+.app-label{
+  font-family:var(--mono);font-size:.48rem;letter-spacing:.22em;text-transform:uppercase;
+  color:rgba(201,144,58,.5);text-align:center;position:relative;z-index:1;line-height:1.9;
+}
+.app-label strong{display:block;font-size:.58rem;color:rgba(201,144,58,.8);margin-bottom:.25rem}
+.ab-photo-corner{
+  position:absolute;width:18px;height:18px;border-color:rgba(201,144,58,.35);border-style:solid;
+}
+.ab-photo-corner.tl{top:10px;left:10px;border-width:1px 0 0 1px}
+.ab-photo-corner.tr{top:10px;right:10px;border-width:1px 1px 0 0}
+.ab-photo-corner.bl{bottom:10px;left:10px;border-width:0 0 1px 1px}
+.ab-photo-corner.br{bottom:10px;right:10px;border-width:0 1px 1px 0}
+.ab-name-tag{
+  display:flex;align-items:center;justify-content:center;gap:.5rem;
+  font-family:var(--mono);font-size:.46rem;letter-spacing:.2em;text-transform:uppercase;
+  color:var(--bg);background:var(--gold);padding:.45rem 1rem;margin-top:1rem;
+}
+/* Text side */
+.ab-text-side{display:flex;flex-direction:column;gap:1.8rem}
+.ab-body{font-size:1rem;line-height:1.9;color:var(--cream2);font-weight:300}
 .ab-body strong{color:var(--cream);font-weight:500}
-.ab-facts{border:1px solid var(--border);background:rgba(8,8,7,.85);backdrop-filter:blur(8px)}
-.ab-row{display:flex;justify-content:space-between;align-items:center;padding:.9rem 1.5rem;border-bottom:1px solid var(--border);transition:background .2s}
+.ab-facts{border:1px solid var(--border);background:rgba(8,8,7,.85);backdrop-filter:blur(8px);margin-top:.5rem}
+.ab-facts-head{
+  font-family:var(--mono);font-size:.46rem;letter-spacing:.28em;text-transform:uppercase;
+  color:var(--gold);padding:.85rem 1.5rem;border-bottom:1px solid var(--border);
+  background:rgba(201,144,58,.025);display:flex;align-items:center;gap:.5rem;
+}
+.ab-facts-head::before{content:'';width:12px;height:1px;background:var(--gold)}
+.ab-row{display:flex;justify-content:space-between;align-items:center;padding:.85rem 1.5rem;border-bottom:1px solid var(--border);transition:background .2s}
 .ab-row:last-child{border-bottom:none}
 .ab-row:hover{background:rgba(201,144,58,.025)}
 .abk{font-family:var(--mono);font-size:.48rem;letter-spacing:.18em;text-transform:uppercase;color:var(--muted)}
@@ -191,7 +273,16 @@ nav.sc{background:rgba(8,8,7,.92);backdrop-filter:blur(20px);border-bottom:1px s
 .live-v{color:#4ade80;display:flex;align-items:center;gap:.4rem}
 .ldot{width:5px;height:5px;border-radius:50%;background:#4ade80;animation:lp 2s infinite;flex-shrink:0}
 @keyframes lp{0%,100%{box-shadow:0 0 0 0 rgba(74,222,128,.5)}50%{box-shadow:0 0 0 5px rgba(74,222,128,0)}}
-.ab-q{margin-top:1.5rem;padding:1.2rem 1.6rem;border-left:2px solid var(--gold);font-family:var(--serif);font-size:1.2rem;font-style:italic;color:rgba(240,237,230,.38);line-height:1.6}
+.ab-q{margin-top:.5rem;padding:1.2rem 1.6rem;border-left:2px solid var(--gold);font-family:var(--serif);font-size:1.2rem;font-style:italic;color:rgba(240,237,230,.38);line-height:1.6}
+.ab-actions{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:.5rem}
+/* Section dividers */
+.ab-section-lbl{
+  font-family:var(--mono);font-size:.5rem;letter-spacing:.3em;text-transform:uppercase;
+  color:var(--muted);margin:4rem 0 2rem;padding-bottom:.9rem;border-bottom:1px solid var(--border);
+  display:flex;align-items:center;gap:.8rem;
+}
+.ab-section-lbl::before{content:'';display:block;width:20px;height:1px;background:var(--muted)}
+/* Research card */
 .sub-ey{font-family:var(--mono);font-size:.5rem;letter-spacing:.3em;text-transform:uppercase;color:var(--muted);display:flex;align-items:center;gap:.6rem;margin-bottom:1.5rem}
 .sub-ey::before{content:'';display:block;width:20px;height:1px;background:var(--muted)}
 .res-card{background:rgba(21,19,16,.88);backdrop-filter:blur(6px);padding:2.8rem;display:grid;grid-template-columns:5rem 1fr;gap:2.5rem;align-items:start;position:relative;overflow:hidden;transition:background .3s;margin-bottom:1.5rem}
@@ -204,6 +295,7 @@ nav.sc{background:rgba(8,8,7,.92);backdrop-filter:blur(20px);border-bottom:1px s
 .res-venue{font-family:var(--mono);font-size:.54rem;letter-spacing:.12em;color:var(--muted);margin-bottom:.9rem}
 .res-desc{font-size:.88rem;line-height:1.82;color:var(--cream2);font-weight:300;max-width:580px;margin-bottom:1rem}
 .res-badge{display:inline-flex;align-items:center;font-family:var(--mono);font-size:.44rem;letter-spacing:.12em;text-transform:uppercase;background:rgba(201,144,58,.06);border:1px solid rgba(201,144,58,.18);color:var(--gold);padding:.22rem .6rem}
+/* Experience */
 .exp-grid{display:grid;grid-template-columns:1fr 1fr;gap:2rem;margin-bottom:5rem}
 .exp-card{border:1px solid var(--border);background:rgba(8,8,7,.85);backdrop-filter:blur(6px);padding:2.4rem;position:relative;overflow:hidden;transition:border-color .35s}
 .exp-card::after{content:'';position:absolute;inset:0;background:linear-gradient(135deg,rgba(201,144,58,.03),transparent 55%);opacity:0;transition:opacity .35s}
@@ -214,11 +306,14 @@ nav.sc{background:rgba(8,8,7,.92);backdrop-filter:blur(20px);border-bottom:1px s
 .exp-period{font-family:var(--mono);font-size:.5rem;color:var(--muted);margin-bottom:1rem}
 .exp-desc{font-size:.88rem;line-height:1.8;color:var(--cream2);font-weight:300}
 .exp-dot{position:absolute;top:2.2rem;right:2.2rem;width:7px;height:7px;border-radius:50%;background:var(--gold);opacity:.3}
+/* Stats */
 .stats-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);margin-bottom:5rem}
 .stat-b{background:rgba(8,8,7,.85);backdrop-filter:blur(4px);padding:3rem 2rem;text-align:center;transition:background .3s}
 .stat-b:hover{background:rgba(201,144,58,.02)}
 .stat-n{display:block;font-family:var(--type);font-size:clamp(3rem,5.5vw,5.5rem);color:var(--gold);line-height:1;margin-bottom:.3rem}
 .stat-l{display:block;font-family:var(--mono);font-size:.48rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted)}
+
+/* ── CONTACT ── */
 .ct-grid{display:grid;grid-template-columns:1.1fr 1fr;gap:5rem;align-items:start}
 .ct-lnks{display:flex;flex-direction:column;gap:1px}
 .ct-lnk{display:flex;align-items:center;gap:1.3rem;padding:1.3rem 1.6rem;border:1px solid var(--border2);background:rgba(8,8,7,.85);backdrop-filter:blur(8px);margin-bottom:1px;position:relative;overflow:hidden;cursor:none;transition:border-color .3s}
@@ -248,6 +343,7 @@ textarea.finp{resize:none;height:100px}
 .sp-copy{font-family:var(--mono);font-size:.46rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
 .fu{opacity:0;transform:translateY(24px);transition:opacity .8s var(--ease2),transform .8s var(--ease2)}
 .fu.in{opacity:1;transform:none}
+
 @media(max-width:900px){
   nav{padding:1.2rem 1.5rem}
   .nav-links{display:none}
@@ -258,7 +354,9 @@ textarea.finp{resize:none;height:100px}
   .sec-title{font-size:clamp(1.4rem,6vw,2.4rem)}
   .sp-hero-title{font-size:clamp(1.4rem,6vw,2.4rem)}
   #subpage-inner{padding:6rem 1.5rem 4rem}
-  .ab-grid,.ct-grid,.exp-grid{grid-template-columns:1fr;gap:2.5rem}
+  .ab-hero-row{grid-template-columns:1fr;gap:2.5rem}
+  .ab-photo-placeholder{aspect-ratio:4/3}
+  .ct-grid{grid-template-columns:1fr;gap:2.5rem}
   .ct-fr{grid-template-columns:1fr}
   .cert-feat-grid{grid-template-columns:1fr}
   .cert-small-grid{grid-template-columns:1fr 1fr}
@@ -269,6 +367,7 @@ textarea.finp{resize:none;height:100px}
   .prow-head{grid-template-columns:auto 1fr;gap:1.2rem}
   .pr-links{flex-direction:row;grid-column:2}
   .res-card{grid-template-columns:3rem 1fr;gap:1.5rem}
+  .exp-grid{grid-template-columns:1fr;gap:2rem}
 }
 </style>
 </head>
@@ -304,6 +403,8 @@ textarea.finp{resize:none;height:100px}
   </div>
   <button id="hamburger"><span></span><span></span><span></span></button>
 </nav>
+
+<!-- HOME SECTIONS -->
 <div class="sec-panel act" id="sp-0">
   <div class="sec-layout">
     <div class="eyebrow">Full-Stack Developer ·</div>
@@ -370,147 +471,92 @@ textarea.finp{resize:none;height:100px}
   </div>
   <div class="sec-bg-lbl">Contact</div>
 </div>
+
 <div id="subpage"><div id="subpage-inner"></div></div>
 <button id="subpage-close" onclick="closeSub()">✕</button>
 
 <script>
 const PROJS=[
 {
-num:'01',
-cat:'AI Application',
+num:'01',cat:'AI Application',
 t:'Serenity – Mental Health Support',
 imp:'Flutter · Firebase · Gemini AI · 4 core features',
 d:'Cross-platform mental wellness app featuring mood tracking, habit tracking, psychological assessments, and AI-assisted journaling via the Gemini API.',
 tags:['Flutter','Dart','Firebase','Gemini API'],
 gh:'https://github.com/sathiya-shree/Serenity-mental-health-app',
 dm:'https://github.com/sathiya-shree/Serenity-mental-health-app/releases/tag/v1.0',
+imgHint:'App screenshot — mood tracker & journal UI',
 study:{
 problem:'Mental health apps lacked personalisation and felt clinical. Users needed a warm companion adapting to emotional patterns.',
 approach:'Flutter + Firebase Realtime Database for instant sync. Gemini API for contextual journaling prompts. Calm, low-contrast UI reduces cognitive load.',
 outcome:'4 modules: mood tracking with trend visualisation, daily habit streaks, GAD-7/PHQ-9 assessments, AI-powered journal entries.',
-metrics:[
-{n:'4',l:'Core Modules'},
-{n:'2',l:'Platforms'},
-{n:'100%',l:'Offline-first'}
-]
+metrics:[{n:'4',l:'Core Modules'},{n:'2',l:'Platforms'},{n:'100%',l:'Offline-first'}]
 }
 },
 {
-num:'02',
-cat:'AI & NLP Tool',
+num:'02',cat:'AI & NLP Tool',
 t:'CareerLens AI – Resume Analyzer',
 imp:'Python · spaCy NLP · Gemini · Skill extraction',
 d:'AI-powered resume analysis using Python, Streamlit, spaCy & Gemini API to extract skills, evaluate quality, and generate actionable improvement recommendations.',
 tags:['Python','Streamlit','spaCy','Gemini API'],
 gh:'https://github.com/sathiya-shree/careerlens-ai',
+imgHint:'Dashboard screenshot — skill extraction & score view',
 study:{
 problem:'Job seekers spend hours reformatting resumes without knowing what recruiters actually look for.',
 approach:'spaCy for named-entity extraction. Gemini API for contextual role-specific suggestions. Streamlit front-end — no installation needed.',
 outcome:'Extracts 15+ skill categories, scores on 5 dimensions, generates a prioritised action list in under 3 seconds.',
-metrics:[
-{n:'15+',l:'Skill Categories'},
-{n:'<3s',l:'Analysis Time'},
-{n:'5',l:'Quality Dims'}
-]
+metrics:[{n:'15+',l:'Skill Categories'},{n:'<3s',l:'Analysis Time'},{n:'5',l:'Quality Dims'}]
 }
 },
 {
-num:'03',
-cat:'Full-Stack Platform',
+num:'03',cat:'Full-Stack Platform',
 t:'PlaceIT – Campus Placement System',
 imp:'3 user roles · Live on Render · Admin analytics',
 d:'Full-stack placement platform for students, recruiters & coordinators with job postings, eligibility filters, real-time tracking and admin analytics.',
 tags:['Python','Flask','PostgreSQL','HTML/CSS/JS'],
 gh:'https://github.com/sathiya-shree/placement-cell',
 dm:'https://placement-cell-6b63.onrender.com/',
+imgHint:'Platform screenshot — student/recruiter dashboard',
 study:{
 problem:'College placement cells relied on Excel sheets and WhatsApp. Students missed deadlines; recruiters had no visibility.',
 approach:'Flask/PostgreSQL, 3 user roles, real-time status tracking, CGPA/branch eligibility filters, coordinator analytics dashboard.',
 outcome:'Live on Render. Entire placement lifecycle from posting to offer letter, with email notifications at each stage.',
-metrics:[
-{n:'3',l:'User Roles'},
-{n:'Live',l:'On Render'},
-{n:'∞',l:'Scalable'}
-]
+metrics:[{n:'3',l:'User Roles'},{n:'Live',l:'On Render'},{n:'∞',l:'Scalable'}]
 }
 },
 {
-num:'04',
-cat:'Web Development',
+num:'04',cat:'Web Development',
 t:'Portfolio Website',
 imp:'Three.js · Scroll sections · Top-view 3D',
 d:'Multi-section portfolio with top-view Three.js animation, distinct 3D scenes per subpage, section transitions, magnetic buttons, and procedural canvas art.',
 tags:['Three.js','CSS','JavaScript','HTML'],
 gh:'https://github.com/sathiya-shree/sathiya-shree',
 dm:'https://sathiya-shree.github.io/sathiya-shree/',
+imgHint:'Portfolio screenshot — home / 3D canvas view',
 study:{
 problem:"Most developer portfolios are template-based and don't show technical depth.",
 approach:'Built from scratch: top-view Three.js, 5 scroll sections, distinct 3D per subpage, procedural canvas art, custom cursor.',
 outcome:'5 scroll sections, 6 distinct 3D scenes, tilt cards, case study panels, subpage overlay system.',
-metrics:[
-{n:'5',l:'Scroll Sections'},
-{n:'6',l:'3D Scenes'},
-{n:'0',l:'Templates'}
-]
+metrics:[{n:'5',l:'Scroll Sections'},{n:'6',l:'3D Scenes'},{n:'0',l:'Templates'}]
 }
 }
-];const PROF=[{n:'Python',g:'Languages'},{n:'JavaScript',g:'Languages'},{n:'HTML/CSS',g:'Languages'},{n:'Dart',g:'Languages'},{n:'SQL',g:'Languages'},{n:'React.js',g:'Frameworks'},{n:'Flutter',g:'Frameworks'},{n:'Flask',g:'Frameworks'},{n:'Streamlit',g:'Frameworks'},{n:'VS Code',g:'Tools'},{n:'GitHub',g:'Tools'},{n:'Git',g:'Tools'}];
+];
+
+const PROF=[{n:'Python',g:'Languages'},{n:'JavaScript',g:'Languages'},{n:'HTML/CSS',g:'Languages'},{n:'Dart',g:'Languages'},{n:'SQL',g:'Languages'},{n:'React.js',g:'Frameworks'},{n:'Flutter',g:'Frameworks'},{n:'Flask',g:'Frameworks'},{n:'Streamlit',g:'Frameworks'},{n:'VS Code',g:'Tools'},{n:'GitHub',g:'Tools'},{n:'Git',g:'Tools'}];
 const LANGS=[{i:'🐍',n:'Python',s:'Primary Language'},{i:'📜',n:'JavaScript',s:'ES6+'},{i:'🎯',n:'Dart',s:'Flutter Apps'},{i:'🗄️',n:'SQL',s:'MySQL · PostgreSQL'},{i:'🌐',n:'HTML/CSS',s:'Web Standards'}];
 const FWS=[{i:'⚛️',n:'React.js',s:'Frontend Library'},{i:'📱',n:'Flutter',s:'Cross-Platform'},{i:'🌶️',n:'Flask',s:'Python Backend'},{i:'📈',n:'Streamlit',s:'Data Apps'},{i:'🔥',n:'Firebase',s:'BaaS'},{i:'🐘',n:'PostgreSQL',s:'Supabase'},{i:'🍃',n:'Jinja2',s:'Templating'},{i:'🤖',n:'Gemini API',s:'Google AI'},{i:'🔬',n:'spaCy',s:'NLP'}];
 const TOOLS=[{i:'💻',n:'VS Code',s:'Primary IDE'},{i:'🐙',n:'GitHub',s:'Version Control'},{i:'☁️',n:'Render',s:'Deployment'},{i:'📦',n:'Git',s:'Source Control'},{i:'🔍',n:'Tesseract OCR',s:'Image Text'},{i:'🗃️',n:'Supabase',s:'Database'}];
 const SOFT=[{i:'🧩',n:'Problem Solving'},{i:'💬',n:'Communication'},{i:'🤝',n:'Team Work'},{i:'📐',n:'Attention to Detail'},{i:'🚀',n:'Fast Learner'},{i:'🎯',n:'Goal Oriented'}];
-const CERTS = [
-{
-num:'01',
-n:'Full Stack Development 101',
-is:'Simplilearn',
-yr:'2026',
-lk:'https://www.linkedin.com/redir/redirect/?url=https%3A%2F%2Fsimpli-web.app.link%2Fe%2FIK29b9BRz1b&urlhash=e7Jd&isSdui=true',
-feat:true,
-ac:'#f59e0b'
-},
-{
-num:'02',
-n:'Deloitte Australia - Technology Job Simulation',
-is:'Forage',
-yr:'2025',
-lk:'https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/udmxiyHeqYQLkTPvf_9PBTqmSxAf6zZTseP_Hko5MYpM5Cxs8x9Pq_1762009730396_completion_certificate.pdf',
-feat:true,
-ac:'#0ea5e9'
-},
-{
-num:'03',
-n:'Web Design Course for Beginner to Advanced',
-is:'Udemy',
-yr:'2025',
-lk:'https://www.udemy.com/certificate/UC-636b3da6-813f-4428-a2d5-00c4181f73ca/',
-ac:'#a855f7'
-},
-{
-num:'04',
-n:'Introduction to Generative AI',
-is:'Google',
-yr:'2024',
-lk:'https://www.skills.google/public_profiles/7eb9c4ec-30a2-4a35-9107-a38c4b605c7f/badges/17472947',
-ac:'#4285F4'
-},
-{
-num:'05',
-n:'Python Foundation',
-is:'Infosys Springboard',
-yr:'2025',
-lk:'',
-ac:'#22c55e'
-},
-{
-num:'06',
-n:'Python',
-is:'HCL GUVI',
-yr:'2025',
-lk:'https://www.guvi.in/verify-certificate?id=99449FLJ7I787og1n9',
-ac:'#10b981'
-}
+const CERTS=[
+{num:'01',n:'Full Stack Development 101',is:'Simplilearn',yr:'2026',lk:'https://www.linkedin.com/redir/redirect/?url=https%3A%2F%2Fsimpli-web.app.link%2Fe%2FIK29b9BRz1b&urlhash=e7Jd&isSdui=true',feat:true,ac:'#f59e0b'},
+{num:'02',n:'Deloitte Australia - Technology Job Simulation',is:'Forage',yr:'2025',lk:'https://www.theforage.com/completion-certificates/9PBTqmSxAf6zZTseP/udmxiyHeqYQLkTPvf_9PBTqmSxAf6zZTseP_Hko5MYpM5Cxs8x9Pq_1762009730396_completion_certificate.pdf',feat:true,ac:'#0ea5e9'},
+{num:'03',n:'Web Design Course for Beginner to Advanced',is:'Udemy',yr:'2025',lk:'https://www.udemy.com/certificate/UC-636b3da6-813f-4428-a2d5-00c4181f73ca/',ac:'#a855f7'},
+{num:'04',n:'Introduction to Generative AI',is:'Google',yr:'2024',lk:'https://www.skills.google/public_profiles/7eb9c4ec-30a2-4a35-9107-a38c4b605c7f/badges/17472947',ac:'#4285F4'},
+{num:'05',n:'Python Foundation',is:'Infosys Springboard',yr:'2025',lk:'',ac:'#22c55e'},
+{num:'06',n:'Python',is:'HCL GUVI',yr:'2025',lk:'https://www.guvi.in/verify-certificate?id=99449FLJ7I787og1n9',ac:'#10b981'}
 ];
+
+/* ── THREE.JS HOME ── */
 const homeCvs=document.getElementById('bg3d');
 const homeR=new THREE.WebGLRenderer({canvas:homeCvs,antialias:true,alpha:false});
 homeR.setPixelRatio(Math.min(devicePixelRatio,1.2));homeR.setClearColor(0x080807,1);
@@ -538,6 +584,7 @@ const SEC_COLS=[0xc9903a,0x36b89a,0xe0a84a,0xc9903a,0x36b89a];
 function animHome(){requestAnimationFrame(animHome);const t=hClock.getElapsedTime();const cx=innerWidth/2,cy=innerHeight/2;hCam.position.x+=(((mxBg-cx)/cx)*1.4-hCam.position.x)*0.016;hCam.position.z+=(((myBg-cy)/cy)*1.4-hCam.position.z)*0.016;hCam.lookAt(hCam.position.x*0.08,0,hCam.position.z*0.08);gGrp.rotation.y=t*0.005;hRings.forEach((r,i)=>{r.m.rotation.z=t*r.spd;r.m.material.opacity=0.035+Math.abs(Math.sin(t*.28+i))*0.04});hNodes.forEach(n=>{n.m.material.opacity=0.08+Math.abs(Math.sin(t*.4+n.ph))*0.22});hCR.rotation.z=t*0.01;hAccent.rotation.z=-t*0.016;homeR.render(hScene,hCam)}
 animHome();
 
+/* ── SUB SCENE ── */
 const subCvs=document.getElementById('sub-canvas');
 const subR=new THREE.WebGLRenderer({canvas:subCvs,antialias:true,alpha:false});
 subR.setPixelRatio(Math.min(devicePixelRatio,1.2));subR.setClearColor(0x080807,1);
@@ -590,10 +637,10 @@ function buildSubScene(page){
   }
   return{s,cam,animFn};
 }
-
 function startSubScene(page){if(subAnimId){cancelAnimationFrame(subAnimId);subAnimId=null}const{s,cam,animFn}=buildSubScene(page);subScene2=s;subCam2=cam;subAnimFn2=animFn;subRunning=true;resizeSub();(function loop(){if(!subRunning)return;subAnimId=requestAnimationFrame(loop);if(subAnimFn2)subAnimFn2(subClock.getElapsedTime());subR.render(subScene2,subCam2)})()}
 function stopSubScene(){subRunning=false;if(subAnimId){cancelAnimationFrame(subAnimId);subAnimId=null}}
 
+/* ── SECTION NAV ── */
 const SECS=['sp-0','sp-1','sp-2','sp-3','sp-4'];
 let curSec=0,secCd=false;
 function goSection(idx){if(idx===curSec)return;document.getElementById(SECS[curSec]).classList.remove('act');curSec=idx;document.getElementById(SECS[idx]).classList.add('act');document.querySelectorAll('.sdot').forEach((d,i)=>d.classList.toggle('act',i===idx));document.getElementById('prog').style.width=(idx/4*100)+'%';document.getElementById('scroll-hint').style.opacity=idx===0?'1':'0';hAccent.material.color.setHex(SEC_COLS[idx])}
@@ -608,36 +655,381 @@ function closeSub(){subOpen=false;const sp=document.getElementById('subpage'),cl
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&subOpen)closeSub()});
 document.getElementById('subpage').addEventListener('scroll',function(){if(subOpen)document.getElementById('nav').classList.toggle('sc',this.scrollTop>30)},{passive:true});
 
+/* ── PAGE BUILDERS ── */
 function buildSubpage(p){if(p==='projects')return bProjects();if(p==='skills')return bSkills();if(p==='certs')return bCerts();if(p==='about')return bAbout();if(p==='contact')return bContact();return''}
-function bProjects(){return`<div class="sp-hero fu"><div class="sp-hero-tag">Selected Work</div><h1 class="sp-hero-title">Featured<br/><em>Projects.</em></h1></div><div class="proj-list fu" style="transition-delay:.08s">${PROJS.map((p,i)=>`<div class="prow" id="prow-${i}"><div class="prow-head"><div class="pr-num">${p.num}</div><div><div class="pr-cat">${p.cat}</div><div class="pr-title">${p.t}</div><div class="pr-imp">⚡ ${p.imp}</div><div class="pr-desc">${p.d}</div><div class="pr-tags">${p.tags.map(t=>`<span class="ptag">${t}</span>`).join('')}</div></div><div class="pr-links">${p.gh?`<a class="pr-lnk" href="${p.gh}" target="_blank">GitHub ↗</a>`:''}${p.dm?`<a class="pr-lnk" href="${p.dm}" target="_blank">Live ↗</a>`:''}<button class="pr-expand" onclick="toggleCase(${i})">Case Study <span class="earr">↓</span></button></div></div><div class="case-body" id="case-${i}"><div class="case-in"><div class="case-art" id="case-art-${i}"><canvas id="case-canvas-${i}"></canvas><div class="case-art-ov"></div></div><div class="case-txt"><div><div class="cbt">The Problem</div><div class="cbb">${p.study.problem}</div></div><div><div class="cbt">The Approach</div><div class="cbb">${p.study.approach}</div></div><div><div class="cbt">The Outcome</div><div class="cbb">${p.study.outcome}</div><div class="case-metrics">${p.study.metrics.map(m=>`<div class="cmb"><span class="cmn">${m.n}</span><span class="cml">${m.l}</span></div>`).join('')}</div></div>${p.gh?`<a class="case-cta" href="${p.gh}" target="_blank">View Repository ↗</a>`:''}${p.dm?`<a class="case-cta" href="${p.dm}" target="_blank" style="background:var(--teal);margin-top:.5rem">Live Demo ↗</a>`:''}</div></div></div></div>`).join('')}</div><div class="sp-footer"><span class="sp-copy">© 2025 Sathiya Shree</span><div style="display:flex;gap:1rem"><button class="btn-ghost" onclick="openSub('skills')">Skills →</button><button class="btn-ghost" onclick="openSub('certs')">Certifications →</button></div></div>`}
+
+/* PROJECTS — with image placeholder */
+function projImgPlaceholder(p){
+  return `<div class="proj-img-placeholder">
+    <div class="pip-icon">🖼</div>
+    <div class="pip-label">
+      <strong>Project Screenshot</strong>
+      ${p.imgHint}
+    </div>
+    <div class="pip-sub">Replace with: &lt;img src="your-screenshot.png"/&gt;</div>
+  </div>`;
+}
+
+function bProjects(){
+  return`<div class="sp-hero fu"><div class="sp-hero-tag">Selected Work</div><h1 class="sp-hero-title">Featured<br/><em>Projects.</em></h1></div>
+<div class="proj-list fu" style="transition-delay:.08s">
+${PROJS.map((p,i)=>`<div class="prow" id="prow-${i}">
+  <div class="prow-head">
+    <div class="pr-num">${p.num}</div>
+    <div>
+      <div class="pr-cat">${p.cat}</div>
+      <div class="pr-title">${p.t}</div>
+      <div class="pr-imp">⚡ ${p.imp}</div>
+      <div class="pr-desc">${p.d}</div>
+      <div class="pr-tags">${p.tags.map(t=>`<span class="ptag">${t}</span>`).join('')}</div>
+    </div>
+    <div class="pr-links">
+      ${p.gh?`<a class="pr-lnk" href="${p.gh}" target="_blank">GitHub ↗</a>`:''}
+      ${p.dm?`<a class="pr-lnk" href="${p.dm}" target="_blank">Live ↗</a>`:''}
+      <button class="pr-expand" onclick="toggleCase(${i})">Case Study <span class="earr">↓</span></button>
+    </div>
+  </div>
+  <div class="case-body" id="case-${i}">
+    <div class="case-in">
+      <div class="case-art" id="case-art-${i}">
+        ${projImgPlaceholder(p)}
+        <canvas id="case-canvas-${i}" class="hidden"></canvas>
+        <div class="case-art-ov"></div>
+      </div>
+      <div class="case-txt">
+        <div><div class="cbt">The Problem</div><div class="cbb">${p.study.problem}</div></div>
+        <div><div class="cbt">The Approach</div><div class="cbb">${p.study.approach}</div></div>
+        <div>
+          <div class="cbt">The Outcome</div>
+          <div class="cbb">${p.study.outcome}</div>
+          <div class="case-metrics">${p.study.metrics.map(m=>`<div class="cmb"><span class="cmn">${m.n}</span><span class="cml">${m.l}</span></div>`).join('')}</div>
+        </div>
+        ${p.gh?`<a class="case-cta" href="${p.gh}" target="_blank">View Repository ↗</a>`:''}
+        ${p.dm?`<a class="case-cta" href="${p.dm}" target="_blank" style="background:var(--teal);margin-top:.5rem">Live Demo ↗</a>`:''}
+      </div>
+    </div>
+  </div>
+</div>`).join('')}
+</div>
+<div class="sp-footer">
+  <span class="sp-copy">© 2025 Sathiya Shree</span>
+  <div style="display:flex;gap:1rem">
+    <button class="btn-ghost" onclick="openSub('skills')">Skills →</button>
+    <button class="btn-ghost" onclick="openSub('certs')">Certifications →</button>
+  </div>
+</div>`;
+}
+
 const openCases=new Set();
-window.toggleCase=function(idx){const prow=document.getElementById('prow-'+idx),panel=document.getElementById('case-'+idx);if(!prow||!panel)return;if(openCases.has(idx)){prow.classList.remove('open');openCases.delete(idx)}else{prow.classList.add('open');openCases.add(idx);setTimeout(()=>{const c=document.getElementById('case-canvas-'+idx);if(c&&!c.dataset.drawn){c.dataset.drawn='1';drawProjC(c,PROJS[idx].t,PROJS[idx].tags,['#c9903a','#36b89a','#e0a84a','#c9903a'][idx])}},80)}};
-function bSkills(){const grps=['Languages','Frameworks','Tools'];return`<div class="sp-hero fu"><div class="sp-hero-tag">Capabilities</div><h1 class="sp-hero-title">Skills &amp;<br/><em>Technologies.</em></h1></div><div class="fu" style="transition-delay:.08s"><div class="stabs"><button class="stab act" data-tab="prof">Proficiency</button><button class="stab" data-tab="lang">Languages</button><button class="stab" data-tab="fw">Frameworks</button><button class="stab" data-tab="tools">Tools</button><button class="stab" data-tab="soft">Soft Skills</button></div><div class="sk-pan act" id="panel-prof"><div class="sk-grids">${grps.map(g=>`<div class="sg"><div class="sg-head">${g}</div>${PROF.filter(s=>s.g===g).map(s=>`<div class="sk-row"><span class="sk-name">${s.n}</span><span class="sk-dot"></span></div>`).join('')}</div>`).join('')}</div></div><div class="sk-pan" id="panel-lang"><div class="pill-wrap">${LANGS.map(p=>`<div class="pill"><span class="p-ico">${p.i}</span><div><span class="p-name">${p.n}</span><span class="p-sub">${p.s}</span></div></div>`).join('')}</div></div><div class="sk-pan" id="panel-fw"><div class="pill-wrap">${FWS.map(p=>`<div class="pill"><span class="p-ico">${p.i}</span><div><span class="p-name">${p.n}</span><span class="p-sub">${p.s}</span></div></div>`).join('')}</div></div><div class="sk-pan" id="panel-tools"><div class="pill-wrap">${TOOLS.map(p=>`<div class="pill"><span class="p-ico">${p.i}</span><div><span class="p-name">${p.n}</span><span class="p-sub">${p.s}</span></div></div>`).join('')}</div></div><div class="sk-pan" id="panel-soft"><div class="soft-grid">${SOFT.map(s=>`<div class="scard"><span class="s-ico">${s.i}</span><div class="s-name">${s.n}</div></div>`).join('')}</div></div></div><div class="sp-footer"><span class="sp-copy">© 2025 Sathiya Shree</span><button class="btn-ghost" onclick="openSub('projects')">← Projects</button></div>`}
-function bCerts(){const feat=CERTS.filter(c=>c.feat),rest=CERTS.filter(c=>!c.feat);return`<div class="sp-hero fu"><div class="sp-hero-tag">Credentials</div><h1 class="sp-hero-title">Certifications<br/>&amp; <em>Badges.</em></h1></div><div class="cert-feat-grid fu" style="transition-delay:.08s">${feat.map((c,i)=>`<a class="cert-card" href="${c.lk}" target="_blank"><canvas class="cert-canvas" id="cf-${i}"></canvas><div class="cert-body"><div class="cert-badge">${c.num} · Featured</div><div class="cert-name">${c.n}</div><div class="cert-issuer">${c.is}</div><div class="cert-year">${c.yr}</div></div><div class="cert-arrow">↗</div></a>`).join('')}</div><div class="cert-sec-lbl fu" style="transition-delay:.14s">All Certifications</div><div class="cert-small-grid fu" style="transition-delay:.18s">${rest.map((c,i)=>`<a class="cert-card" href="${c.lk}" target="_blank"><canvas class="cert-canvas" id="cr-${i}"></canvas><div class="cert-body" style="padding:1.5rem 2rem 2.5rem"><div class="cert-badge">${c.num}</div><div class="cert-name" style="font-size:1.25rem">${c.n}</div><div class="cert-issuer">${c.is}</div><div class="cert-year">${c.yr}</div></div><div class="cert-arrow">↗</div></a>`).join('')}</div><div class="stats-strip fu" style="transition-delay:.22s;margin-top:4rem"><div class="stat-b"><span class="stat-n">5+</span><span class="stat-l">Total Certs</span></div><div class="stat-b"><span class="stat-n">3</span><span class="stat-l">In 2023–2024</span></div><div class="stat-b"><span class="stat-n">4</span><span class="stat-l">Global Platforms</span></div><div class="stat-b"><span class="stat-n">2024</span><span class="stat-l">Latest</span></div></div><div class="sp-footer"><span class="sp-copy">© 2025 Sathiya Shree</span><button class="btn-ghost" onclick="openSub('skills')">← Skills</button></div>`}
-function bAbout(){return`<div class="sp-hero fu"><div class="sp-hero-tag">Who I Am</div><h1 class="sp-hero-title">About<br/><em>Me.</em></h1></div><div class="ab-grid fu" style="transition-delay:.08s"><div><p class="ab-body">I specialise in <strong>bridging backend logic with intuitive frontend design</strong> — creating systems that are technically sound and a pleasure to use.</p><p class="ab-body">My approach is rooted in precision and craft. Every component is deliberate — from database schema to pixel-perfect interfaces.</p><p class="ab-body">Currently pursuing <strong>M.Sc Information Technology</strong> while building real-world projects across AI, full-stack platforms, and mobile apps.</p><div style="display:flex;gap:.8rem;flex-wrap:wrap;margin-top:2rem"><button class="btn" onclick="openSub('projects')"><span>See Projects</span></button><button class="btn" onclick="showToast('📄 Resume download starting…')" style="border:none"><span>Resume ↓</span></button></div><blockquote class="ab-q">"Code is craft. Every line should earn its place."</blockquote></div><div><div class="ab-facts"><div class="ab-row"><span class="abk">Name</span><span class="abv">Sathiya Shree S</span></div><div class="ab-row"><div class="ab-row"><span class="abk">Degree</span><span class="abv">M.Sc Information Technology</span></div><div class="ab-row"><span class="abk">Focus</span><span class="abv">Full-Stack Development</span></div><div class="ab-row"><span class="abk">Status</span><span class="abv live-v"><span class="ldot"></span>Open to Work</span></div><div class="ab-row"><span class="abk">Languages</span><span class="abv">English · Tamil</span></div><div class="ab-row"><span class="abk">Stack</span><span class="abv">Python · React · MySQL</span></div><div class="ab-row" style="border-bottom:none"><span class="abk">Email</span><span class="abv" style="cursor:none;color:var(--gold)" onclick="copyEmail(null)">sathiyashree03@gmail.com</span></div></div></div></div><div class="sub-ey fu" style="transition-delay:.14s">Research &amp; Academic Work</div><div class="res-card fu" style="transition-delay:.18s"><div class="res-n">01</div><div><div class="res-tag">Conference Paper · International</div><div class="res-title">Explainable AI in Healthcare</div><div class="res-venue">INTI International University, Malaysia · 2025</div><div class="res-desc">Presented research on Explainable AI (XAI) in Healthcare — improving transparency and interpretability in clinical AI decision systems using LIME and SHAP-based approaches, bridging the gap between complex ML models and clinical trust.</div><div class="res-badge">International Conference · Peer Reviewed · 2025</div></div></div><div class="sub-ey fu" style="transition-delay:.22s;margin-top:4rem">Experience &amp; Milestones</div><div class="exp-grid fu" style="transition-delay:.26s"><div class="exp-card"><div class="exp-dot"></div><span class="exp-badge">Internship</span><div class="exp-role">Web Development Intern</div><div class="exp-org">Internet Society Chennai Chapter</div><div class="exp-period">Nov 2023 – Mar 2024</div><div class="exp-desc">Developed and maintained web interfaces. Implemented responsive designs, contributed to agile sprint cycles, and collaborated cross-functionally.</div></div><div class="exp-card"><div class="exp-dot"></div><span class="exp-badge">Education</span><div class="exp-role">M.Sc Information Technology</div><div class="exp-org">Currently Pursuing</div><div class="exp-period">2024 – Present</div><div class="exp-desc">Deepening expertise in full-stack development, algorithms, software engineering, database design, and applied AI/ML.</div></div></div><div class="stats-strip fu" style="transition-delay:.3s"><div class="stat-b"><span class="stat-n">5+</span><span class="stat-l">Certifications</span></div><div class="stat-b"><span class="stat-n">4+</span><span class="stat-l">Projects Built</span></div><div class="stat-b"><span class="stat-n">1</span><span class="stat-l">Research Paper</span></div><div class="stat-b"><span class="stat-n">3+</span><span class="stat-l">Tech Stacks</span></div></div><div class="sp-footer"><span class="sp-copy">© 2025 Sathiya Shree</span><button class="btn-ghost" onclick="openSub('contact')">Contact →</button></div>`}
-function bContact(){return`<div class="sp-hero fu"><div class="sp-hero-tag">Let's Work Together</div><h1 class="sp-hero-title">Get in<br/><em>touch.</em></h1></div><div class="ct-grid fu" style="transition-delay:.08s"><div><p style="font-size:1rem;line-height:1.85;color:var(--cream2);font-weight:300;margin-bottom:2.5rem;max-width:380px">Open to full-time roles, freelance and collaboration. I respond within a day.</p><div class="ct-lnks"><div class="ct-lnk" onclick="copyEmail(null)" style="cursor:none"><div class="ct-fill"></div><span class="ci">✉</span><div class="ctx"><span class="ck">Email</span><span class="cv">sathiyashree03@gmail.com</span></div><span class="ca">↗</span></div><a class="ct-lnk" href="https://linkedin.com/in/sathiya-shree-s" target="_blank"><div class="ct-fill"></div><span class="ci">in</span><div class="ctx"><span class="ck">LinkedIn</span><span class="cv">linkedin.com/in/sathiya-shree-s</span></div><span class="ca">↗</span></a><a class="ct-lnk" href="https://github.com/sathiya-shree" target="_blank"><div class="ct-fill"></div><span class="ci">&lt;&gt;</span><div class="ctx"><span class="ck">GitHub</span><span class="cv">github.com/sathiya-shree</span></div><span class="ca">↗</span></a></div></div><div><div class="sub-ey" style="margin-bottom:1.5rem">Send a message</div><form class="ct-form" onsubmit="showToast('✓ Message sent — I\\'ll be in touch!');return false"><div class="ct-fr"><div class="ff"><label class="flbl">First Name</label><input class="finp" type="text" placeholder="Your first name"/></div><div class="ff"><label class="flbl">Last Name</label><input class="finp" type="text" placeholder="Your last name"/></div></div><div class="ff"><label class="flbl">Email</label><input class="finp" type="email" placeholder="your@email.com"/></div><div class="ff"><label class="flbl">Phone</label><input class="finp" type="tel" placeholder="+91 XXXXX XXXXX"/></div><div class="ff"><label class="flbl">Message</label><textarea class="finp" placeholder="Tell me about your project…"></textarea></div><button class="fsub" type="submit"><span>Send Message →</span></button></form></div></div><div class="sp-footer"><div><div style="font-family:var(--type);font-size:1.5rem;color:var(--cream);margin-bottom:.4rem">Sathiya Shree</div><div style="font-family:var(--mono);font-size:.46rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)">Full-Stack Developer</div></div><span class="sp-copy">© 2025 Sathiya Shree</span></div>`}
+window.toggleCase=function(idx){
+  const prow=document.getElementById('prow-'+idx),panel=document.getElementById('case-'+idx);
+  if(!prow||!panel)return;
+  if(openCases.has(idx)){prow.classList.remove('open');openCases.delete(idx)}
+  else{prow.classList.add('open');openCases.add(idx)}
+};
 
-document.addEventListener('click',e=>{const tab=e.target.closest('.stab');if(!tab)return;const inner=document.getElementById('subpage-inner');inner.querySelectorAll('.stab').forEach(b=>b.classList.remove('act'));inner.querySelectorAll('.sk-pan').forEach(p=>p.classList.remove('act'));tab.classList.add('act');const panel=inner.querySelector('#panel-'+tab.dataset.tab);if(panel)panel.classList.add('act')});
+/* SKILLS */
+function bSkills(){
+  const grps=['Languages','Frameworks','Tools'];
+  return`<div class="sp-hero fu"><div class="sp-hero-tag">Capabilities</div><h1 class="sp-hero-title">Skills &amp;<br/><em>Technologies.</em></h1></div>
+<div class="fu" style="transition-delay:.08s">
+  <div class="stabs">
+    <button class="stab act" data-tab="prof">Proficiency</button>
+    <button class="stab" data-tab="lang">Languages</button>
+    <button class="stab" data-tab="fw">Frameworks</button>
+    <button class="stab" data-tab="tools">Tools</button>
+    <button class="stab" data-tab="soft">Soft Skills</button>
+  </div>
+  <div class="sk-pan act" id="panel-prof"><div class="sk-grids">${grps.map(g=>`<div class="sg"><div class="sg-head">${g}</div>${PROF.filter(s=>s.g===g).map(s=>`<div class="sk-row"><span class="sk-name">${s.n}</span><span class="sk-dot"></span></div>`).join('')}</div>`).join('')}</div></div>
+  <div class="sk-pan" id="panel-lang"><div class="pill-wrap">${LANGS.map(p=>`<div class="pill"><span class="p-ico">${p.i}</span><div><span class="p-name">${p.n}</span><span class="p-sub">${p.s}</span></div></div>`).join('')}</div></div>
+  <div class="sk-pan" id="panel-fw"><div class="pill-wrap">${FWS.map(p=>`<div class="pill"><span class="p-ico">${p.i}</span><div><span class="p-name">${p.n}</span><span class="p-sub">${p.s}</span></div></div>`).join('')}</div></div>
+  <div class="sk-pan" id="panel-tools"><div class="pill-wrap">${TOOLS.map(p=>`<div class="pill"><span class="p-ico">${p.i}</span><div><span class="p-name">${p.n}</span><span class="p-sub">${p.s}</span></div></div>`).join('')}</div></div>
+  <div class="sk-pan" id="panel-soft"><div class="soft-grid">${SOFT.map(s=>`<div class="scard"><span class="s-ico">${s.i}</span><div class="s-name">${s.n}</div></div>`).join('')}</div></div>
+</div>
+<div class="sp-footer"><span class="sp-copy">© 2025 Sathiya Shree</span><button class="btn-ghost" onclick="openSub('projects')">← Projects</button></div>`;
+}
 
-function drawCertC(canvas,label,accent,h){const ctx=canvas.getContext('2d');const w=canvas.offsetWidth||canvas.parentElement?.offsetWidth||500;canvas.width=w;canvas.height=h;ctx.fillStyle='#0d0c0a';ctx.fillRect(0,0,w,h);ctx.strokeStyle='rgba(240,237,230,0.04)';ctx.lineWidth=1;for(let x=0;x<w;x+=22){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,h);ctx.stroke()}for(let y=0;y<h;y+=18){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(w,y);ctx.stroke()}const cx=h/2,cy=h/2;[h*.45,h*.32,h*.2].forEach((r,i)=>{ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.strokeStyle=accent+['80','50','30'][i];ctx.lineWidth=1;ctx.stroke()});ctx.beginPath();ctx.arc(cx,cy,h*.09,0,Math.PI*2);ctx.fillStyle=accent+'28';ctx.fill();const grd=ctx.createRadialGradient(cx,cy,0,cx,cy,h*.5);grd.addColorStop(0,accent+'15');grd.addColorStop(1,'transparent');ctx.fillStyle=grd;ctx.fillRect(0,0,w,h);ctx.font=`10px 'DM Mono',monospace`;ctx.fillStyle=accent+'cc';ctx.fillText(label.toUpperCase(),h+16,cy-4);ctx.font=`8px 'DM Mono',monospace`;ctx.fillStyle='rgba(240,237,230,0.28)';ctx.fillText('VERIFIED CREDENTIAL',h+16,cy+13);ctx.strokeStyle=accent+'40';ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(w-18,4);ctx.lineTo(w-4,4);ctx.lineTo(w-4,18);ctx.stroke()}
-function drawAllCerts(){CERTS.filter(c=>c.feat).forEach((c,i)=>{const el=document.getElementById('cf-'+i);if(el)drawCertC(el,c.is,c.ac,120)});CERTS.filter(c=>!c.feat).forEach((c,i)=>{const el=document.getElementById('cr-'+i);if(el)drawCertC(el,c.is,c.ac,100)})}
-function drawProjC(canvas,title,tags,accent){const dpr=devicePixelRatio||1,rect=canvas.parentElement.getBoundingClientRect(),rw=rect.width||400,rh=rect.height||240;canvas.width=rw*dpr;canvas.height=rh*dpr;canvas.style.width='100%';canvas.style.height='100%';const ctx=canvas.getContext('2d');ctx.scale(dpr,dpr);ctx.fillStyle='#0a0a0a';ctx.fillRect(0,0,rw,rh);ctx.strokeStyle='rgba(201,144,58,0.05)';ctx.lineWidth=1;for(let x=0;x<rw;x+=30){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,rh);ctx.stroke()}for(let y=0;y<rh;y+=30){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(rw,y);ctx.stroke()}const cx=rw*.62,cy=rh*.45;[55,95,140].forEach((r,i)=>{ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.strokeStyle=`rgba(201,144,58,${0.09-i*.02})`;ctx.lineWidth=1;ctx.stroke()});const grd=ctx.createRadialGradient(cx,cy,0,cx,cy,140);grd.addColorStop(0,accent+'18');grd.addColorStop(1,'transparent');ctx.fillStyle=grd;ctx.fillRect(0,0,rw,rh);for(let i=0;i<10;i++){ctx.beginPath();ctx.arc(Math.random()*rw,Math.random()*rh,1.5+Math.random()*2.5,0,Math.PI*2);ctx.fillStyle='rgba(201,144,58,0.18)';ctx.fill()}ctx.font=`400 ${Math.min(16,rw/16)}px 'Playfair Display',serif`;ctx.fillStyle='rgba(240,237,230,0.45)';ctx.textBaseline='top';ctx.fillText(title.substring(0,22),22,rh*.72);let tx=22;ctx.font=`8px 'DM Mono',monospace`;tags.slice(0,3).forEach(tag=>{const tw=ctx.measureText(tag).width+12;ctx.fillStyle='rgba(201,144,58,0.08)';ctx.strokeStyle='rgba(201,144,58,0.2)';ctx.lineWidth=1;ctx.fillRect(tx,rh*.85,tw,14);ctx.strokeRect(tx,rh*.85,tw,14);ctx.fillStyle='rgba(201,144,58,0.75)';ctx.fillText(tag,tx+6,rh*.85+3);tx+=tw+6})}
+/* CERTS */
+function bCerts(){
+  const feat=CERTS.filter(c=>c.feat),rest=CERTS.filter(c=>!c.feat);
+  return`<div class="sp-hero fu"><div class="sp-hero-tag">Credentials</div><h1 class="sp-hero-title">Certifications<br/>&amp; <em>Badges.</em></h1></div>
+<div class="cert-feat-grid fu" style="transition-delay:.08s">
+${feat.map((c,i)=>`<a class="cert-card" href="${c.lk}" target="_blank"><canvas class="cert-canvas" id="cf-${i}"></canvas><div class="cert-body"><div class="cert-badge">${c.num} · Featured</div><div class="cert-name">${c.n}</div><div class="cert-issuer">${c.is}</div><div class="cert-year">${c.yr}</div></div><div class="cert-arrow">↗</div></a>`).join('')}
+</div>
+<div class="cert-sec-lbl fu" style="transition-delay:.14s">All Certifications</div>
+<div class="cert-small-grid fu" style="transition-delay:.18s">
+${rest.map((c,i)=>`<a class="cert-card" href="${c.lk}" target="_blank"><canvas class="cert-canvas" id="cr-${i}"></canvas><div class="cert-body" style="padding:1.5rem 2rem 2.5rem"><div class="cert-badge">${c.num}</div><div class="cert-name" style="font-size:1.25rem">${c.n}</div><div class="cert-issuer">${c.is}</div><div class="cert-year">${c.yr}</div></div><div class="cert-arrow">↗</div></a>`).join('')}
+</div>
+<div class="stats-strip fu" style="transition-delay:.22s;margin-top:4rem">
+  <div class="stat-b"><span class="stat-n">5+</span><span class="stat-l">Total Certs</span></div>
+  <div class="stat-b"><span class="stat-n">3</span><span class="stat-l">In 2023–2024</span></div>
+  <div class="stat-b"><span class="stat-n">4</span><span class="stat-l">Global Platforms</span></div>
+  <div class="stat-b"><span class="stat-n">2026</span><span class="stat-l">Latest</span></div>
+</div>
+<div class="sp-footer"><span class="sp-copy">© 2025 Sathiya Shree</span><button class="btn-ghost" onclick="openSub('skills')">← Skills</button></div>`;
+}
 
+/* ── ABOUT — fully restructured ── */
+function bAbout(){
+  return`
+<!-- HERO -->
+<div class="sp-hero fu">
+  <div class="sp-hero-tag">Who I Am</div>
+  <h1 class="sp-hero-title">About<br/><em>Me.</em></h1>
+</div>
+
+<!-- TOP ROW: bio text left, photo placeholder right -->
+<div class="ab-hero-row fu" style="transition-delay:.08s">
+
+  <!-- LEFT: text -->
+  <div class="ab-text-side">
+    <p class="ab-body">
+      I'm a <strong>Full-Stack Developer</strong> who specialises in bridging backend logic with
+      intuitive frontend design — creating systems that are technically sound and
+      a pleasure to use.
+    </p>
+    <p class="ab-body">
+      My approach is rooted in precision and craft. Every component is deliberate —
+      from database schema to pixel-perfect interfaces. I care deeply about the
+      <strong>experience behind the code</strong>.
+    </p>
+    <p class="ab-body">
+      Currently pursuing <strong>M.Sc Information Technology</strong> while building
+      real-world projects across AI, full-stack platforms, and mobile apps. I
+      published a <strong>peer-reviewed research paper</strong> at an international
+      conference in 2025 on Explainable AI in Healthcare.
+    </p>
+
+    <!-- Quick facts table -->
+    <div class="ab-facts">
+      <div class="ab-facts-head">Quick Facts</div>
+      <div class="ab-row">
+        <span class="abk">Name</span>
+        <span class="abv">Sathiya Shree S</span>
+      </div>
+      <div class="ab-row">
+        <span class="abk">Degree</span>
+        <span class="abv">M.Sc Information Technology</span>
+      </div>
+      <div class="ab-row">
+        <span class="abk">Focus</span>
+        <span class="abv">Full-Stack Development</span>
+      </div>
+      <div class="ab-row">
+        <span class="abk">Status</span>
+        <span class="abv live-v"><span class="ldot"></span>Open to Work</span>
+      </div>
+      <div class="ab-row">
+        <span class="abk">Languages</span>
+        <span class="abv">English · Tamil</span>
+      </div>
+      <div class="ab-row">
+        <span class="abk">Stack</span>
+        <span class="abv">Python · React · MySQL · Flutter</span>
+      </div>
+      <div class="ab-row" style="border-bottom:none">
+        <span class="abk">Email</span>
+        <span class="abv" style="cursor:none;color:var(--gold)" onclick="copyEmail(null)">sathiyashree03@gmail.com</span>
+      </div>
+    </div>
+
+    <!-- CTA buttons -->
+    <div class="ab-actions">
+      <button class="btn" onclick="openSub('projects')"><span>View Projects</span></button>
+      <button class="btn" onclick="showToast('📄 Resume download starting…')" style="border:none"><span>Download Resume ↓</span></button>
+    </div>
+
+    <!-- Quote -->
+    <blockquote class="ab-q">"Code is craft. Every line should earn its place."</blockquote>
+  </div>
+
+  <!-- RIGHT: photo placeholder -->
+  <div class="ab-photo-wrap">
+    <div class="ab-photo-placeholder">
+      <div class="ab-photo-corner tl"></div>
+      <div class="ab-photo-corner tr"></div>
+      <div class="ab-photo-corner bl"></div>
+      <div class="ab-photo-corner br"></div>
+      <div class="app-icon">📸</div>
+      <div class="app-label">
+        <strong>Your Photo Here</strong>
+        Replace with:<br/>
+        &lt;img src="photo.jpg" alt="Sathiya Shree"/&gt;<br/>
+        Recommended: 3:4 portrait
+      </div>
+    </div>
+    <div class="ab-name-tag">Sathiya Shree S · Full-Stack Developer</div>
+  </div>
+
+</div><!-- /ab-hero-row -->
+
+<!-- STATS STRIP -->
+<div class="stats-strip fu" style="transition-delay:.14s">
+  <div class="stat-b"><span class="stat-n">5+</span><span class="stat-l">Certifications</span></div>
+  <div class="stat-b"><span class="stat-n">4+</span><span class="stat-l">Projects Built</span></div>
+  <div class="stat-b"><span class="stat-n">1</span><span class="stat-l">Research Paper</span></div>
+  <div class="stat-b"><span class="stat-n">3+</span><span class="stat-l">Tech Stacks</span></div>
+</div>
+
+<!-- RESEARCH -->
+<div class="ab-section-lbl fu" style="transition-delay:.18s">Research &amp; Academic Work</div>
+<div class="res-card fu" style="transition-delay:.2s">
+  <div class="res-n">01</div>
+  <div>
+    <div class="res-tag">Conference Paper · International</div>
+    <div class="res-title">Explainable AI in Healthcare</div>
+    <div class="res-venue">INTI International University, Malaysia · 2025</div>
+    <div class="res-desc">
+      Presented research on Explainable AI (XAI) in Healthcare — improving transparency and
+      interpretability in clinical AI decision systems using LIME and SHAP-based approaches,
+      bridging the gap between complex ML models and clinical trust.
+    </div>
+    <span class="res-badge">International Conference · Peer Reviewed · 2025</span>
+  </div>
+</div>
+
+<!-- EXPERIENCE -->
+<div class="ab-section-lbl fu" style="transition-delay:.22s">Experience &amp; Milestones</div>
+<div class="exp-grid fu" style="transition-delay:.24s">
+  <div class="exp-card">
+    <div class="exp-dot"></div>
+    <span class="exp-badge">Internship</span>
+    <div class="exp-role">Web Development Intern</div>
+    <div class="exp-org">Internet Society Chennai Chapter</div>
+    <div class="exp-period">Nov 2023 – Mar 2024</div>
+    <div class="exp-desc">
+      Developed and maintained web interfaces. Implemented responsive designs,
+      contributed to agile sprint cycles, and collaborated cross-functionally on
+      live client projects.
+    </div>
+  </div>
+  <div class="exp-card">
+    <div class="exp-dot"></div>
+    <span class="exp-badge">Education</span>
+    <div class="exp-role">M.Sc Information Technology</div>
+    <div class="exp-org">Currently Pursuing</div>
+    <div class="exp-period">2024 – Present</div>
+    <div class="exp-desc">
+      Deepening expertise in full-stack development, algorithms, software engineering,
+      database design, and applied AI/ML while building production-grade projects
+      alongside coursework.
+    </div>
+  </div>
+</div>
+
+<div class="sp-footer">
+  <span class="sp-copy">© 2025 Sathiya Shree</span>
+  <div style="display:flex;gap:1rem">
+    <button class="btn-ghost" onclick="openSub('projects')">Projects →</button>
+    <button class="btn-ghost" onclick="openSub('contact')">Contact →</button>
+  </div>
+</div>`;
+}
+
+/* CONTACT */
+function bContact(){
+  return`<div class="sp-hero fu"><div class="sp-hero-tag">Let's Work Together</div><h1 class="sp-hero-title">Get in<br/><em>touch.</em></h1></div>
+<div class="ct-grid fu" style="transition-delay:.08s">
+  <div>
+    <p style="font-size:1rem;line-height:1.85;color:var(--cream2);font-weight:300;margin-bottom:2.5rem;max-width:380px">Open to full-time roles, freelance and collaboration. I respond within a day.</p>
+    <div class="ct-lnks">
+      <div class="ct-lnk" onclick="copyEmail(null)" style="cursor:none"><div class="ct-fill"></div><span class="ci">✉</span><div class="ctx"><span class="ck">Email</span><span class="cv">sathiyashree03@gmail.com</span></div><span class="ca">↗</span></div>
+      <a class="ct-lnk" href="https://linkedin.com/in/sathiya-shree-s" target="_blank"><div class="ct-fill"></div><span class="ci">in</span><div class="ctx"><span class="ck">LinkedIn</span><span class="cv">linkedin.com/in/sathiya-shree-s</span></div><span class="ca">↗</span></a>
+      <a class="ct-lnk" href="https://github.com/sathiya-shree" target="_blank"><div class="ct-fill"></div><span class="ci">&lt;&gt;</span><div class="ctx"><span class="ck">GitHub</span><span class="cv">github.com/sathiya-shree</span></div><span class="ca">↗</span></a>
+    </div>
+  </div>
+  <div>
+    <div class="sub-ey" style="margin-bottom:1.5rem">Send a message</div>
+    <form class="ct-form" onsubmit="showToast('✓ Message sent — I\\'ll be in touch!');return false">
+      <div class="ct-fr">
+        <div class="ff"><label class="flbl">First Name</label><input class="finp" type="text" placeholder="Your first name"/></div>
+        <div class="ff"><label class="flbl">Last Name</label><input class="finp" type="text" placeholder="Your last name"/></div>
+      </div>
+      <div class="ff"><label class="flbl">Email</label><input class="finp" type="email" placeholder="your@email.com"/></div>
+      <div class="ff"><label class="flbl">Phone</label><input class="finp" type="tel" placeholder="+91 XXXXX XXXXX"/></div>
+      <div class="ff"><label class="flbl">Message</label><textarea class="finp" placeholder="Tell me about your project…"></textarea></div>
+      <button class="fsub" type="submit"><span>Send Message →</span></button>
+    </form>
+  </div>
+</div>
+<div class="sp-footer">
+  <div><div style="font-family:var(--type);font-size:1.5rem;color:var(--cream);margin-bottom:.4rem">Sathiya Shree</div><div style="font-family:var(--mono);font-size:.46rem;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)">Full-Stack Developer</div></div>
+  <span class="sp-copy">© 2025 Sathiya Shree</span>
+</div>`;
+}
+
+/* ── TAB CLICKS ── */
+document.addEventListener('click',e=>{
+  const tab=e.target.closest('.stab');if(!tab)return;
+  const inner=document.getElementById('subpage-inner');
+  inner.querySelectorAll('.stab').forEach(b=>b.classList.remove('act'));
+  inner.querySelectorAll('.sk-pan').forEach(p=>p.classList.remove('act'));
+  tab.classList.add('act');
+  const panel=inner.querySelector('#panel-'+tab.dataset.tab);
+  if(panel)panel.classList.add('act');
+});
+
+/* ── CERT CANVAS ART ── */
+function drawCertC(canvas,label,accent,h){
+  const ctx=canvas.getContext('2d');const w=canvas.offsetWidth||canvas.parentElement?.offsetWidth||500;
+  canvas.width=w;canvas.height=h;
+  ctx.fillStyle='#0d0c0a';ctx.fillRect(0,0,w,h);
+  ctx.strokeStyle='rgba(240,237,230,0.04)';ctx.lineWidth=1;
+  for(let x=0;x<w;x+=22){ctx.beginPath();ctx.moveTo(x,0);ctx.lineTo(x,h);ctx.stroke()}
+  for(let y=0;y<h;y+=18){ctx.beginPath();ctx.moveTo(0,y);ctx.lineTo(w,y);ctx.stroke()}
+  const cx=h/2,cy=h/2;
+  [h*.45,h*.32,h*.2].forEach((r,i)=>{ctx.beginPath();ctx.arc(cx,cy,r,0,Math.PI*2);ctx.strokeStyle=accent+['80','50','30'][i];ctx.lineWidth=1;ctx.stroke()});
+  ctx.beginPath();ctx.arc(cx,cy,h*.09,0,Math.PI*2);ctx.fillStyle=accent+'28';ctx.fill();
+  const grd=ctx.createRadialGradient(cx,cy,0,cx,cy,h*.5);grd.addColorStop(0,accent+'15');grd.addColorStop(1,'transparent');ctx.fillStyle=grd;ctx.fillRect(0,0,w,h);
+  ctx.font=`10px 'DM Mono',monospace`;ctx.fillStyle=accent+'cc';ctx.fillText(label.toUpperCase(),h+16,cy-4);
+  ctx.font=`8px 'DM Mono',monospace`;ctx.fillStyle='rgba(240,237,230,0.28)';ctx.fillText('VERIFIED CREDENTIAL',h+16,cy+13);
+  ctx.strokeStyle=accent+'40';ctx.lineWidth=1.5;ctx.beginPath();ctx.moveTo(w-18,4);ctx.lineTo(w-4,4);ctx.lineTo(w-4,18);ctx.stroke();
+}
+function drawAllCerts(){
+  CERTS.filter(c=>c.feat).forEach((c,i)=>{const el=document.getElementById('cf-'+i);if(el)drawCertC(el,c.is,c.ac,120)});
+  CERTS.filter(c=>!c.feat).forEach((c,i)=>{const el=document.getElementById('cr-'+i);if(el)drawCertC(el,c.is,c.ac,100)});
+}
+
+/* ── LOADER ── */
 'Sathiya Shree'.split('').forEach((c,i)=>{const s=document.createElement('span');s.innerHTML=c===' '?'&nbsp;':c;s.style.animationDelay=i*.05+'s';document.getElementById('ld-name').appendChild(s)});
 let lp=0;const ldBar=document.getElementById('ld-bar'),ldPct=document.getElementById('ld-pct');
 const lI=setInterval(()=>{lp+=Math.random()*14+5;if(lp>=100){lp=100;clearInterval(lI);ldBar.style.width='100%';ldPct.textContent='100%';setTimeout(()=>{document.getElementById('loader').classList.add('out');document.getElementById('nav').classList.add('vis');document.getElementById('scroll-hint').style.opacity='1'},450)}ldBar.style.width=lp+'%';ldPct.textContent=Math.floor(lp)+'%'},80);
 
+/* ── CURSOR ── */
 const dotEl=document.getElementById('cur-dot'),ringEl=document.getElementById('cur-ring');
 let mx=0,my=0,rx=0,ry=0;
 document.addEventListener('mousemove',e=>{mx=e.clientX;my=e.clientY;dotEl.style.left=mx+'px';dotEl.style.top=my+'px'});
 (function af(){rx+=(mx-rx)*.12;ry+=(my-ry)*.12;ringEl.style.left=rx+'px';ringEl.style.top=ry+'px';requestAnimationFrame(af)})();
 document.addEventListener('mouseover',e=>{document.body.classList.toggle('hov-link',!!e.target.closest('a,button'))});
-document.addEventListener('mousemove',e=>{document.querySelectorAll('.btn,.btn-ghost,.nav-cta,.fsub').forEach(b=>{const r=b.getBoundingClientRect(),dx=e.clientX-r.left-r.width/2,dy=e.clientY-r.top-r.height/2,d=Math.sqrt(dx*dx+dy*dy);if(d<80){b.style.transform=`translate(${dx*.18}px,${dy*.18}px)`;b.style.transition='transform .08s'}else{b.style.transform='';b.style.transition='transform .5s var(--ease2)'}})});
-document.addEventListener('mousemove',e=>{document.querySelectorAll('.prow-head,.cert-card,.exp-card').forEach(c=>{const r=c.getBoundingClientRect(),mx2=e.clientX-r.left,my2=e.clientY-r.top;if(mx2>0&&mx2<r.width&&my2>0&&my2<r.height){c.style.transform=`perspective(700px) rotateX(${((my2/r.height)-.5)*4}deg) rotateY(${-(((mx2/r.width)-.5)*4)}deg) translateZ(2px)`;c.style.transition='transform .05s'}else{c.style.transform='';c.style.transition='transform .7s var(--ease2)'}})});
+
+/* ── MAGNETIC BUTTONS ── */
+document.addEventListener('mousemove',e=>{
+  document.querySelectorAll('.btn,.btn-ghost,.nav-cta,.fsub').forEach(b=>{
+    const r=b.getBoundingClientRect(),dx=e.clientX-r.left-r.width/2,dy=e.clientY-r.top-r.height/2,d=Math.sqrt(dx*dx+dy*dy);
+    if(d<80){b.style.transform=`translate(${dx*.18}px,${dy*.18}px)`;b.style.transition='transform .08s'}
+    else{b.style.transform='';b.style.transition='transform .5s var(--ease2)'}
+  });
+});
+
+/* ── TILT CARDS ── */
+document.addEventListener('mousemove',e=>{
+  document.querySelectorAll('.prow-head,.cert-card,.exp-card').forEach(c=>{
+    const r=c.getBoundingClientRect(),mx2=e.clientX-r.left,my2=e.clientY-r.top;
+    if(mx2>0&&mx2<r.width&&my2>0&&my2<r.height){c.style.transform=`perspective(700px) rotateX(${((my2/r.height)-.5)*4}deg) rotateY(${-(((mx2/r.width)-.5)*4)}deg) translateZ(2px)`;c.style.transition='transform .05s'}
+    else{c.style.transform='';c.style.transition='transform .7s var(--ease2)'}
+  });
+});
+
+/* ── UTILS ── */
 function copyEmail(e){if(e)e.preventDefault();navigator.clipboard.writeText('sathiyashree03@gmail.com').then(()=>showToast('✓ Email copied to clipboard'))}
 function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');setTimeout(()=>t.classList.remove('show'),2600)}
+
+/* ── HAMBURGER ── */
 const hbg=document.getElementById('hamburger'),nll=document.getElementById('nav-links');
-hbg.addEventListener('click',()=>{const o=nll.style.display==='flex';nll.style.cssText=o?'display:none':'display:flex;flex-direction:column;position:fixed;top:62px;left:0;right:0;background:rgba(8,8,7,.97);padding:2rem 1.5rem;gap:1.5rem;backdrop-filter:blur(20px);z-index:890;border-bottom:1px solid var(--border)'});
+hbg.addEventListener('click',()=>{
+  const o=nll.style.display==='flex';
+  nll.style.cssText=o?'display:none':'display:flex;flex-direction:column;position:fixed;top:62px;left:0;right:0;background:rgba(8,8,7,.97);padding:2rem 1.5rem;gap:1.5rem;backdrop-filter:blur(20px);z-index:890;border-bottom:1px solid var(--border)';
+});
 window.addEventListener('resize',()=>{if(innerWidth>=900)nll.removeAttribute('style')});
 if(innerWidth<900)nll.style.display='none';
 </script>

@@ -16,99 +16,17 @@ Eager to contribute technical and creative skills to build impactful technology 
 
 ---
 
-## 🛠 Technical Skills
 
-**Programming Languages**
-- Python
-- Java
-- HTML
-- CSS
-- MySQL
+## 🌐 Socials:
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/in/sathiya-shree-s-) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:sathiyashree03@gmail.com) 
 
-**Web Development**
-- Django
-- JavaScript
-- Responsive Web Design
+# 💻 Tech Stack:
+![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase) ![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7) ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white) ![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white) ![Anaconda](https://img.shields.io/badge/Anaconda-%2344A833.svg?style=for-the-badge&logo=anaconda&logoColor=white) ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white) ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi) ![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) ![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white) ![Jenkins](https://img.shields.io/badge/jenkins-%232C5263.svg?style=for-the-badge&logo=jenkins&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) ![Firebase](https://img.shields.io/badge/firebase-a08021?style=for-the-badge&logo=firebase&logoColor=ffcd34) ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white) ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white) ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white) ![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white) ![Inkscape](https://img.shields.io/badge/Inkscape-e0e0e0?style=for-the-badge&logo=inkscape&logoColor=080A13) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+# 📊 GitHub Stats:
+![](https://github-readme-stats.vercel.app/api?username=sathiya-shree&theme=dark&hide_border=false&include_all_commits=false&count_private=false)<br/>
+![](https://nirzak-streak-stats.vercel.app/?user=sathiya-shree&theme=dark&hide_border=false)<br/>
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=sathiya-shree&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
 
-**Other Skills**
-- Natural Language Processing (NLP)
-- Database Management
-- API Integration
 
----
 
-## 📂 Projects
 
-### 🔹 Serenity – AI-Powered Mental Health Support System
-- Built a **cross-platform mental wellness app** using Flutter and Firebase.
-- Implemented **mood tracking, habit tracking, and psychological self-assessments**.
-- Developed **AI-assisted journaling and conversational support using Gemini API**.
-- Integrated **Firebase authentication and real-time database** for secure data management.
-
----
-
-### 🔹 NLP and spaCy-Based Resume Parser
-- Developed a **Python application** to automatically extract resume details.
-- Used **Natural Language Processing with spaCy** and regular expressions.
-- Converted **unstructured resume text into structured data** including skills and education.
-
----
-
-### 🔹 Auto Event Trigger Web Application
-- Built a **web system to automate event notifications and reminders**.
-- Used **HTML, CSS, JavaScript, and Django** to build responsive pages.
-- Implemented **automated email communication** for student outreach.
-- Improved **interface usability and event workflow management**.
-
----
-
-## 💼 Professional Experience
-**Web Development Intern**  
-Internet Society Chennai Chapter
-
-- Built responsive web pages and improved interface usability.
-- Automated email communication systems for student outreach.
-- Developed web solutions using **HTML, CSS, JavaScript, and Django**.
-
----
-
-## 📜 Certifications
-- HTML for Programmers – LinkedIn
-- Cyber Security Fundamentals – LinkedIn
-- Machine Learning with Python: Foundations – Infosys Springboard
-- Data Mining – NPTEL
-- Database Management Systems – NPTEL
-
----
-
-## 🎤 Conference Presentation
-**Explainable AI in Healthcare**  
-International Conference – INTI International University, Malaysia (2025)
-
-- Presented research on **Explainable Artificial Intelligence (XAI)** in healthcare.
-- Explained how XAI improves **trust, transparency, and decision-making in medical diagnosis**.
-- Demonstrated use cases where **AI models provide interpretable results for clinicians**.
-
----
-
-## 🌐 Languages
-- Tamil
-- English
-
----
-
-## 🤝 Soft Skills
-- Team Collaboration
-- Time Management
-- Analytical Thinking
-- Problem Solving
-
----
-
-## 📫 Contact Me
-📧 Email: sathiyashree03@gmail.com  
-💻 GitHub: https://github.com/sathiya-shree  
-
----
-
-⭐ *Always learning and building impactful technology solutions.*

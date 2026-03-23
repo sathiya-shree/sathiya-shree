@@ -1,12 +1,3 @@
-<div align="center">
-
-<!-- Animated Header Banner -->
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:667eea,100:764ba2&height=200&section=header&text=Sathiya%20Shree%20S&fontSize=52&fontColor=ffffff&fontAlignY=38&desc=Full%20Stack%20Developer%20%7C%20AI%20%26%20ML%20Enthusiast&descAlignY=60&descColor=e0d7ff&animation=fadeIn" />
-
-<!-- Open to Work Badge -->
-<a href="mailto:sathiyashree03@gmail.com">
-  <img src="https://img.shields.io/badge/🟢%20OPEN%20TO%20WORK-Actively%20Seeking%20Opportunities-brightgreen?style=for-the-badge&labelColor=0d1117" />
-</a>
 
 <br/><br/>
 

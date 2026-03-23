@@ -57,7 +57,7 @@ sathiya = {
 ### 🎯 Currently Seeking
 - 💼 **Role Types:** Full-time / Internship
 - 🏢 **Domains:** Web Dev, AI/ML, Software Engineering
-- 📍 **Preference:** Remote / Hybrid / Coimbatore / Chennai
+- 📍 **Preference:** Bangalore/Chennai
 - 🚀 **Available:** Immediately
 - 📧 **Contact:** sathiyashree03@gmail.com
 

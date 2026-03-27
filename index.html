@@ -437,11 +437,94 @@ textarea.finp{resize:none;height:100px}
 <button id="subpage-close" onclick="closeSub()">✕</button>
 
 <script>
-const PROJS=[
-{num:'01',cat:'AI Application',t:'Serenity – Mental Health Support',imp:'Flutter · Firebase · Gemini AI · 4 core features',d:'Cross-platform mental wellness app featuring mood tracking, habit tracking, psychological assessments, and AI-assisted journaling via the Gemini API.',tags:['Flutter','Dart','Firebase','Gemini API'],gh:'https://github.com/sathiya-shree/Serenity-mental-health-app',dm:'https://github.com/sathiya-shree/Serenity-mental-health-app/releases/tag/v1.0',imgHint:'App screenshot — mood tracker & journal UI',study:{problem:'Mental health apps lacked personalisation and felt clinical. Users needed a warm companion adapting to emotional patterns.',approach:'Flutter + Firebase Realtime Database for instant sync. Gemini API for contextual journaling prompts. Calm, low-contrast UI reduces cognitive load.',outcome:'4 modules: mood tracking with trend visualisation, daily habit streaks, GAD-7/PHQ-9 assessments, AI-powered journal entries.',metrics:[{n:'4',l:'Core Modules'},{n:'2',l:'Platforms'},{n:'100%',l:'Offline-first'}]}},
-{num:'02',cat:'AI & NLP Tool',t:'CareerLens AI – Resume Analyzer',imp:'Python · spaCy NLP · Gemini · Skill extraction',d:'AI-powered resume analysis using Python, Streamlit, spaCy & Gemini API to extract skills, evaluate quality, and generate actionable improvement recommendations.',tags:['Python','Streamlit','spaCy','Gemini API'],gh:'https://github.com/sathiya-shree/careerlens-ai',imgHint:'Dashboard screenshot — skill extraction & score view',study:{problem:'Job seekers spend hours reformatting resumes without knowing what recruiters actually look for.',approach:'spaCy for named-entity extraction. Gemini API for contextual role-specific suggestions. Streamlit front-end — no installation needed.',outcome:'Extracts 15+ skill categories, scores on 5 dimensions, generates a prioritised action list in under 3 seconds.',metrics:[{n:'15+',l:'Skill Categories'},{n:'<3s',l:'Analysis Time'},{n:'5',l:'Quality Dims'}]}},
-{num:'03',cat:'Full-Stack Platform',t:'PlaceIT – Campus Placement System',imp:'3 user roles · Live on Render · Admin analytics',d:'Full-stack placement platform for students, recruiters & coordinators with job postings, eligibility filters, real-time tracking and admin analytics.',tags:['Python','Flask','PostgreSQL','HTML/CSS/JS'],gh:'https://github.com/sathiya-shree/placement-cell',dm:'https://placement-cell-6b63.onrender.com/',imgHint:'Platform screenshot — student/recruiter dashboard',study:{problem:'College placement cells relied on Excel sheets and WhatsApp. Students missed deadlines; recruiters had no visibility.',approach:'Flask/PostgreSQL, 3 user roles, real-time status tracking, CGPA/branch eligibility filters, coordinator analytics dashboard.',outcome:'Live on Render. Entire placement lifecycle from posting to offer letter, with email notifications at each stage.',metrics:[{n:'3',l:'User Roles'},{n:'Live',l:'On Render'},{n:'∞',l:'Scalable'}]}},
-{num:'04',cat:'Web Development',t:'Portfolio Website',imp:'Three.js · Scroll sections · Top-view 3D',d:'Multi-section portfolio with top-view Three.js animation, distinct 3D scenes per subpage, section transitions, magnetic buttons, and procedural canvas art.',tags:['Three.js','CSS','JavaScript','HTML'],gh:'https://github.com/sathiya-shree/sathiya-shree',dm:'https://sathiya-shree.github.io/sathiya-shree/',imgHint:'Portfolio screenshot — home / 3D canvas view',study:{problem:"Most developer portfolios are template-based and don't show technical depth.",approach:'Built from scratch: top-view Three.js, 5 scroll sections, distinct 3D per subpage, procedural canvas art, custom cursor.',outcome:'5 scroll sections, 6 distinct 3D scenes, tilt cards, case study panels, subpage overlay system.',metrics:[{n:'5',l:'Scroll Sections'},{n:'6',l:'3D Scenes'},{n:'0',l:'Templates'}]}}
+const PROJS = [
+{
+  num:'01',
+  cat:'AI Application',
+  t:'Serenity – Mental Health Support',
+  imp:'Flutter · Firebase · Gemini AI · 4 core features',
+  d:'Cross-platform mental wellness app featuring mood tracking, habit tracking, psychological assessments, and AI-assisted journaling via the Gemini API.',
+  tags:['Flutter','Dart','Firebase','Gemini API'],
+  gh:'https://github.com/sathiya-shree/Serenity-mental-health-app',
+  dm:'https://github.com/sathiya-shree/Serenity-mental-health-app/releases/tag/v1.0',
+  imgHint:'App screenshot — mood tracker & journal UI',
+  study:{
+    problem:'Mental health apps lacked personalisation and felt clinical. Users needed a warm companion adapting to emotional patterns.',
+    approach:'Flutter + Firebase Realtime Database for instant sync. Gemini API for contextual journaling prompts. Calm, low-contrast UI reduces cognitive load.',
+    outcome:'4 modules: mood tracking with trend visualisation, daily habit streaks, GAD-7/PHQ-9 assessments, AI-powered journal entries.',
+    metrics:[
+      {n:'4',l:'Core Modules'},
+      {n:'2',l:'Platforms'},
+      {n:'100%',l:'Offline-first'}
+    ]
+  }
+},
+
+{
+  num:'02',
+  cat:'AI & NLP Tool',
+  t:'CareerLens AI – Resume Analyzer',
+  imp:'Python · spaCy NLP · Gemini · Skill extraction',
+  d:'AI-powered resume analysis using Python, Streamlit, spaCy & Gemini API to extract skills, evaluate quality, and generate actionable improvement recommendations.',
+  tags:['Python','Streamlit','spaCy','Gemini API'],
+  gh:'https://github.com/sathiya-shree/careerlens-ai',
+  imgHint:'Dashboard screenshot — skill extraction & score view',
+  study:{
+    problem:'Job seekers spend hours reformatting resumes without knowing what recruiters actually look for.',
+    approach:'spaCy for named-entity extraction. Gemini API for contextual role-specific suggestions. Streamlit front-end — no installation needed.',
+    outcome:'Extracts 15+ skill categories, scores on 5 dimensions, generates a prioritised action list in under 3 seconds.',
+    metrics:[
+      {n:'15+',l:'Skill Categories'},
+      {n:'<3s',l:'Analysis Time'},
+      {n:'5',l:'Quality Dims'}
+    ]
+  }
+},
+
+{
+  num:'03',
+  cat:'Full-Stack Platform',
+  t:'PlaceIT – Campus Placement System',
+  imp:'3 user roles · Live on Render · Admin analytics',
+  d:'Full-stack placement platform for students, recruiters & coordinators with job postings, eligibility filters, real-time tracking and admin analytics.',
+  tags:['Python','Flask','PostgreSQL','HTML/CSS/JS'],
+  gh:'https://github.com/sathiya-shree/placement-cell',
+  dm:'https://placement-cell-6b63.onrender.com/',
+  imgHint:'Platform screenshot — student/recruiter dashboard',
+  study:{
+    problem:'College placement cells relied on Excel sheets and WhatsApp. Students missed deadlines; recruiters had no visibility.',
+    approach:'Flask/PostgreSQL, 3 user roles, real-time status tracking, CGPA/branch eligibility filters, coordinator analytics dashboard.',
+    outcome:'Live on Render. Entire placement lifecycle from posting to offer letter, with email notifications at each stage.',
+    metrics:[
+      {n:'3',l:'User Roles'},
+      {n:'Live',l:'On Render'},
+      {n:'∞',l:'Scalable'}
+    ]
+  }
+},
+
+{
+  num:'04',
+  cat:'Mobile App',
+  t:'HabitCost – Habit Expense Tracker',
+  imp:'React Native · Expo · Analytics · APK Release',
+  d:'Mobile app that reveals the true financial and time cost of everyday habits like coffee, food delivery, subscriptions, and transport, with analytics and long-term investment insights.',
+  tags:['React Native','Expo','AsyncStorage','EAS Build'],
+  gh:'https://github.com/sathiya-shree/habit-cost',
+  dm:'https://github.com/sathiya-shree/habit-cost/releases/tag/v1.0.0',
+  imgHint:'App screenshot — dashboard, analytics charts, habit cards',
+  study:{
+    problem:'People underestimate small daily expenses and lack visibility into long-term financial impact of habits.',
+    approach:'Built with React Native + Expo using an offline-first architecture (AsyncStorage). Implemented real-time cost calculations, analytics dashboards, and SIP-based investment projections.',
+    outcome:'Tracks habits with multiple frequencies, visualises spending via charts, shows time lost, and projects 10-year investment growth at 12% p.a.',
+    metrics:[
+      {n:'12',l:'Preset Habits'},
+      {n:'4',l:'Frequencies'},
+      {n:'10yr',l:'Projection'}
+    ]
+  }
+}
+
 ];
 
 const PROF=[{n:'Python',g:'Languages'},{n:'JavaScript',g:'Languages'},{n:'HTML/CSS',g:'Languages'},{n:'Dart',g:'Languages'},{n:'SQL',g:'Languages'},{n:'React.js',g:'Frameworks'},{n:'Flutter',g:'Frameworks'},{n:'Flask',g:'Frameworks'},{n:'Streamlit',g:'Frameworks'},{n:'VS Code',g:'Tools'},{n:'GitHub',g:'Tools'},{n:'Git',g:'Tools'}];

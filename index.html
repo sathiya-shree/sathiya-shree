@@ -542,7 +542,7 @@ const CERTS=[
 /* ── THREE.JS HOME — Deep Navy & Gold ── */
 const homeCvs=document.getElementById('bg3d');
 const homeR=new THREE.WebGLRenderer({canvas:homeCvs,antialias:true,alpha:false});
-homeR.setPixelRatio(Math.min(devicePixelRatio,1.2));homeR.setClearColor(0x03080f,1);
+homeR.setPixelRatio(Math.min(devicePixelRatio,1.2));homeR.setClearColor(0xcfe1b9,1);
 const hScene=new THREE.Scene(),hCam=new THREE.PerspectiveCamera(60,innerWidth/innerHeight,0.1,100),hClock=new THREE.Clock();
 hCam.position.set(0,22,0);hCam.lookAt(0,0,0);
 
@@ -581,7 +581,7 @@ animHome();
 /* ── SUB SCENE — Navy & Gold ── */
 const subCvs=document.getElementById('sub-canvas');
 const subR=new THREE.WebGLRenderer({canvas:subCvs,antialias:true,alpha:false});
-subR.setPixelRatio(Math.min(devicePixelRatio,1.2));subR.setClearColor(0x03080f,1);
+subR.setPixelRatio(Math.min(devicePixelRatio,1.2));subR.setClearColor(0xcfe1b9,1);
 const subClock=new THREE.Clock();
 let subAnimId=null,subRunning=false,subScene2=null,subCam2=null,subAnimFn2=null;
 function resizeSub(){const w=innerWidth,h=innerHeight;if(subCam2){subCam2.aspect=w/h;subCam2.updateProjectionMatrix()}subR.setSize(w,h,false)}

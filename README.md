@@ -53,12 +53,6 @@ I'm a **full-stack developer and AI researcher** pursuing M.Sc. IT at SRCAS Coim
 
 ---
 
-### 📚 [NextRead](https://github.com/sathiya-shree/NextRead) — Book Recommendation Engine
-ML-powered recommendation system that suggests books based on reading preferences and patterns.
-
-**Tech Stack:** Python • Machine Learning • Content-Based Filtering
-
----
 
 ## 🛠️ Tech Stack I Work With
 

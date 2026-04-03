@@ -1,109 +1,12 @@
-<div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0:667eea,100:764ba2&height=140&section=header&text=Sathiya%20Shree%20S&fontSize=38&fontColor=ffffff&fontAlignY=35" />
+## 🌐 Socials:
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-%230077B5.svg?logo=linkedin&logoColor=white)](https://linkedin.com/in/in/sathiya-shree-s-) [![email](https://img.shields.io/badge/Email-D14836?logo=gmail&logoColor=white)](mailto:sathiyashree03@gmail.com) 
 
-### Full-Stack Developer | AI Researcher | Building Real-World Apps
+# 💻 Tech Stack:
+![Dart](https://img.shields.io/badge/dart-%230175C2.svg?style=for-the-badge&logo=dart&logoColor=white) ![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white) ![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white) ![Java](https://img.shields.io/badge/java-%23ED8B00.svg?style=for-the-badge&logo=openjdk&logoColor=white) ![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E) ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54) ![Firebase](https://img.shields.io/badge/firebase-%23039BE5.svg?style=for-the-badge&logo=firebase) ![Netlify](https://img.shields.io/badge/netlify-%23000000.svg?style=for-the-badge&logo=netlify&logoColor=#00C7B7) ![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white) ![Render](https://img.shields.io/badge/Render-%46E3B7.svg?style=for-the-badge&logo=render&logoColor=white) ![Anaconda](https://img.shields.io/badge/Anaconda-%2344A833.svg?style=for-the-badge&logo=anaconda&logoColor=white) ![Flutter](https://img.shields.io/badge/Flutter-%2302569B.svg?style=for-the-badge&logo=Flutter&logoColor=white) ![Flask](https://img.shields.io/badge/flask-%23000.svg?style=for-the-badge&logo=flask&logoColor=white) ![FastAPI](https://img.shields.io/badge/FastAPI-005571?style=for-the-badge&logo=fastapi) ![Django](https://img.shields.io/badge/django-%23092E20.svg?style=for-the-badge&logo=django&logoColor=white) ![React](https://img.shields.io/badge/react-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![React Native](https://img.shields.io/badge/react_native-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB) ![TailwindCSS](https://img.shields.io/badge/tailwindcss-%2338B2AC.svg?style=for-the-badge&logo=tailwind-css&logoColor=white) ![Vite](https://img.shields.io/badge/vite-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white) ![Nginx](https://img.shields.io/badge/nginx-%23009639.svg?style=for-the-badge&logo=nginx&logoColor=white) ![Jenkins](https://img.shields.io/badge/jenkins-%232C5263.svg?style=for-the-badge&logo=jenkins&logoColor=white) ![MongoDB](https://img.shields.io/badge/MongoDB-%234ea94b.svg?style=for-the-badge&logo=mongodb&logoColor=white) ![Firebase](https://img.shields.io/badge/firebase-a08021?style=for-the-badge&logo=firebase&logoColor=ffcd34) ![MySQL](https://img.shields.io/badge/mysql-4479A1.svg?style=for-the-badge&logo=mysql&logoColor=white) ![Postgres](https://img.shields.io/badge/postgres-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white) ![Supabase](https://img.shields.io/badge/Supabase-3ECF8E?style=for-the-badge&logo=supabase&logoColor=white) ![Canva](https://img.shields.io/badge/Canva-%2300C4CC.svg?style=for-the-badge&logo=Canva&logoColor=white) ![Inkscape](https://img.shields.io/badge/Inkscape-e0e0e0?style=for-the-badge&logo=inkscape&logoColor=080A13) ![GitHub](https://img.shields.io/badge/github-%23121011.svg?style=for-the-badge&logo=github&logoColor=white)
+# 📊 GitHub Stats:
+![](https://github-readme-stats.vercel.app/api?username=sathiya-shree&theme=dark&hide_border=false&include_all_commits=false&count_private=false)<br/>
+![](https://nirzak-streak-stats.vercel.app/?user=sathiya-shree&theme=dark&hide_border=false)<br/>
+![](https://github-readme-stats.vercel.app/api/top-langs/?username=sathiya-shree&theme=dark&hide_border=false&include_all_commits=false&count_private=false&layout=compact)
 
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/sathiya-shree-s-)
-[![Email](https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:sathiyashree03@gmail.com)
-[![Portfolio](https://img.shields.io/badge/Portfolio-764ba2?style=flat&logo=vercel&logoColor=white)](https://sathiya-shree.github.io/sathiya-shree/)
-
-</div>
-
----
-
-## 👋 Hi, I'm Sathiya shree
-
-I'm a **full-stack developer and AI researcher** pursuing M.Sc. IT at SRCAS Coimbatore. I build web and mobile applications that solve real problems — from AI-powered career tools to mental health apps.
-
-**Recent highlight:** Presented research on **Explainable AI in Healthcare** at an International Conference.
-
-🎯 **Currently seeking:** Full-stack developer, frontend engineer, or ML engineer roles  
-📍 **Preferred locations:** Bangalore, Chennai  
-🚀 **Available:** Immediately for full-time positions
-
----
-
-## 🚀 Featured Projects
-
-### 🔍 [CareerLens AI](https://github.com/sathiya-shree/careerlens-ai) — AI Resume Analyzer
-**The Problem:** Students don't know which skills recruiters actually look for.  
-**My Solution:** Built an NLP-powered tool that extracts skills from resumes, scores them against job descriptions, and provides actionable improvement suggestions using Google's Gemini API.
-
-**Tech Stack:** Python • Streamlit • spaCy • Gemini API  
-**Impact:** Helps users identify skill gaps in real-time with AI-generated feedback
-
----
-
-### 🧘 [Serenity](https://github.com/sathiya-shree/Serenity-mental-health-app) — Mental Wellness App
-**The Problem:** Mental health tracking apps are either too clinical or too basic.  
-**My Solution:** Cross-platform Flutter app combining mood tracking, habit building, psychological assessments, and AI-assisted journaling — all synced in real-time.
-
-**Tech Stack:** Flutter • Dart • Firebase  
-**Features:** AI journaling, habit streaks, mood analytics, cross-platform sync
-
----
-
-### 💸 [HabitCost](https://github.com/sathiya-shree/habit-cost) — Habit + Expense Tracker
-**The Problem:** Separate apps for habits and expenses = context switching fatigue.  
-**My Solution:** Combined habit tracking with expense monitoring in a clean, minimal interface. Track daily routines and monthly spending in one place.
-
-**Tech Stack:** JavaScript • HTML • CSS  
-**Highlights:** Streak system, monthly expense reports, localStorage persistence
-
----
-
-
-## 🛠️ Tech Stack I Work With
-
-**Frontend:** React • React Native • Flutter • HTML/CSS • TailwindCSS  
-**Backend:** Django • Flask • FastAPI • Node.js  
-**Databases:** PostgreSQL • MySQL • MongoDB • Firebase • Supabase  
-**AI/ML:** spaCy • scikit-learn • Gemini API • NLP pipelines  
-**DevOps:** Git • Jenkins • Nginx • Vercel • Render • Netlify
-
----
-
-## 🔬 Research & Recognition
-
-| Achievement | Details |
-|------------|---------|
-| 📄 **International Conference Speaker** | Presented research on **Explainable AI (XAI) in Healthcare** |
-| 🏆 **AI Product Builder** | Shipped CareerLens AI with LLM integration |
-| 📱 **Mobile App Developer** | Released Serenity on cross-platform |
-| 🎓 **M.Sc. IT Candidate** | Sri Ramakrishna College of Arts & Science (2024-2026) |
-
----
-
-## 📊 GitHub Activity
-
-<div align="center">
-
-<img height="170em" src="https://github-readme-stats.vercel.app/api?username=sathiya-shree&theme=tokyonight&hide_border=true&include_all_commits=false&count_private=false"/>
-<img height="170em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sathiya-shree&theme=tokyonight&hide_border=true&layout=compact"/>
-
-</div>
-
----
-
-## 💼 Open to Opportunities
-
-I'm looking for roles where I can:
-- Build user-facing products with clean, scalable code
-- Work with AI/ML in production environments
-- Collaborate with talented engineers on challenging problems
-
-**Interested in working together?**  
-📧 sathiyashree03@gmail.com  
-💼 [LinkedIn](https://linkedin.com/in/sathiya-shree-s-)  
-🌐 [Portfolio](https://sathiya-shree.github.io/sathiya-shree/)
-
----
-
-<div align="center">
-
-_"Building technology that solves real problems, one commit at a time."_
-
-<img width="100%" src="https://capsule-render.vercel.app/api?type=waving&color=0:764ba2,100:667eea&height=100&section=footer" />
-
-</div>
+<!-- Proudly created with GPRM ( https://gprm.itsvg.in ) -->

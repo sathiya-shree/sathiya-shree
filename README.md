@@ -12,7 +12,7 @@
 
 ---
 
-## 👋 Hi, I'm Sathiya
+## 👋 Hi, I'm Sathiya shree
 
 I'm a **full-stack developer and AI researcher** pursuing M.Sc. IT at SRCAS Coimbatore. I build web and mobile applications that solve real problems — from AI-powered career tools to mental health apps.
 
@@ -20,7 +20,7 @@ I'm a **full-stack developer and AI researcher** pursuing M.Sc. IT at SRCAS Coim
 
 🎯 **Currently seeking:** Full-stack developer, frontend engineer, or ML engineer roles  
 📍 **Preferred locations:** Bangalore, Chennai  
-🚀 **Available:** Immediately for internships or full-time positions  
+🚀 **Available:** Immediately for full-time positions  
 
 ---
 
@@ -53,13 +53,6 @@ I'm a **full-stack developer and AI researcher** pursuing M.Sc. IT at SRCAS Coim
 
 ---
 
-### 📚 [NextRead](https://github.com/sathiya-shree/NextRead) — Book Recommendation Engine
-ML-based recommendation system using user preferences.  
-
-**Tech Stack:** Python • ML  
-
----
-
 ## 🛠️ Tech Stack
 
 **Frontend:** React • React Native • Flutter • TailwindCSS  
@@ -82,14 +75,6 @@ ML-based recommendation system using user preferences.
 ---
 
 ## 📊 GitHub Activity
-
-<div align="center">
-
-<img height="170em" src="https://github-readme-stats.vercel.app/api?username=sathiya-shree&theme=tokyonight&hide_border=true&count_private=true&cache_seconds=86400&v=2"/>
-
-<img height="170em" src="https://github-readme-stats.vercel.app/api/top-langs/?username=sathiya-shree&theme=tokyonight&hide_border=true&layout=compact&cache_seconds=86400&v=2"/>
-
-</div>
 
 <div align="center">
 

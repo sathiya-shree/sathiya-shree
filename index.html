@@ -669,10 +669,10 @@ ${PROJS.map((p,i)=>`<div class="prow" id="prow-${i}">
       ${p.dm?`<a class="pr-lnk" href="${p.dm}" target="_blank">Live ↗</a>`:''}
       <button class="pr-expand" onclick="toggleCase(${i})">Case Study <span class="earr">↓</span></button>
     </div>
-  </div>
   <div class="case-body" id="case-${i}">
   <div class="case-in">
     
+    <!-- IMAGE / PLACEHOLDER -->
     <div class="case-art" id="case-art-${i}" 
          style="min-height:260px;background:var(--bg3);display:flex;align-items:center;justify-content:center;">
       
@@ -689,28 +689,41 @@ ${PROJS.map((p,i)=>`<div class="prow" id="prow-${i}">
       }
 
       <div class="case-art-ov"></div>
-
     </div>
 
-  </div>
-</div>
-      <div class="case-txt">
-        <div><div class="cbt">The Problem</div><div class="cbb">${p.study.problem}</div></div>
-        <div><div class="cbt">The Approach</div><div class="cbb">${p.study.approach}</div></div>
-        <div>
-          <div class="cbt">The Outcome</div>
-          <div class="cbb">${p.study.outcome}</div>
-          <div class="case-metrics">${p.study.metrics.map(m=>`<div class="cmb"><span class="cmn">${m.n}</span><span class="cml">${m.l}</span></div>`).join('')}</div>
-        </div>
-        ${p.gh?`<a class="case-cta" href="${p.gh}" target="_blank">View Repository ↗</a>`:''}
-        ${p.dm?`<a class="case-cta" href="${p.dm}" target="_blank" style="background:var(--teal);color:var(--cream);margin-top:.5rem">Live Demo ↗</a>`:''}
+    <!-- TEXT CONTENT -->
+    <div class="case-txt">
+      <div>
+        <div class="cbt">The Problem</div>
+        <div class="cbb">${p.study.problem}</div>
       </div>
+
+      <div>
+        <div class="cbt">The Approach</div>
+        <div class="cbb">${p.study.approach}</div>
+      </div>
+
+      <div>
+        <div class="cbt">The Outcome</div>
+        <div class="cbb">${p.study.outcome}</div>
+
+        <div class="case-metrics">
+          ${p.study.metrics.map(m => `
+            <div class="cmb">
+              <span class="cmn">${m.n}</span>
+              <span class="cml">${m.l}</span>
+            </div>
+          `).join('')}
+        </div>
+      </div>
+
+      ${p.gh ? `<a class="case-cta" href="${p.gh}" target="_blank">View Repository ↗</a>` : ''}
+      ${p.dm ? `<a class="case-cta" href="${p.dm}" target="_blank" style="background:var(--teal);color:var(--cream);margin-top:.5rem">Live Demo ↗</a>` : ''}
+
     </div>
+
   </div>
-</div>`).join('')}
 </div>
-<div class="sp-footer"><span class="sp-copy">© 2025 Sathiya Shree</span><div style="display:flex;gap:1rem"><button class="btn-ghost" onclick="openSub('skills')">Skills →</button><button class="btn-ghost" onclick="openSub('certs')">Certifications →</button></div></div>`;
-}
 
 const openCases=new Set();
 window.toggleCase=function(idx){const prow=document.getElementById('prow-'+idx),panel=document.getElementById('case-'+idx);if(!prow||!panel)return;if(openCases.has(idx)){prow.classList.remove('open');openCases.delete(idx)}else{prow.classList.add('open');openCases.add(idx)}};

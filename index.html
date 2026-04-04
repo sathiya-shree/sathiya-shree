@@ -464,6 +464,7 @@ const PROJS = [
 {
   num:'01',cat:'AI Application',
   t:'Serenity – Mental Health Support',
+  img:'dashboard.png'
   imp:'Flutter · Firebase · Gemini AI · 4 core features',
   d:'Cross-platform mental wellness app featuring mood tracking, habit tracking, psychological assessments, and AI-assisted journaling via the Gemini API.',
   tags:['Flutter','Dart','Firebase','Gemini API'],
@@ -670,14 +671,29 @@ ${PROJS.map((p,i)=>`<div class="prow" id="prow-${i}">
     </div>
   </div>
   <div class="case-body" id="case-${i}">
-    <div class="case-in">
-      <div class="case-art" id="case-art-${i}" style="min-height:260px;background:var(--bg3);display:flex;align-items:center;justify-content:center;">
-        <div style="text-align:center;padding:2rem">
-          <div style="font-size:2.5rem;margin-bottom:1rem;opacity:.3">🖼</div>
-          <div style="font-family:var(--mono);font-size:.46rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)">Add screenshot via<br/>&lt;img src="screenshot.png"/&gt;</div>
-        </div>
-        <div class="case-art-ov"></div>
-      </div>
+  <div class="case-in">
+    
+    <div class="case-art" id="case-art-${i}" 
+         style="min-height:260px;background:var(--bg3);display:flex;align-items:center;justify-content:center;">
+      
+      ${p.img 
+        ? `<img src="${p.img}" style="width:100%;height:100%;object-fit:cover"/>`
+        : `<div style="text-align:center;padding:2rem">
+             <div style="font-size:2.5rem;margin-bottom:1rem;opacity:.3">
+               ${p.placeholder || '🖼'}
+             </div>
+             <div style="font-family:var(--mono);font-size:.46rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)">
+               ${p.text || 'No Image'}
+             </div>
+           </div>`
+      }
+
+      <div class="case-art-ov"></div>
+
+    </div>
+
+  </div>
+</div>
       <div class="case-txt">
         <div><div class="cbt">The Problem</div><div class="cbb">${p.study.problem}</div></div>
         <div><div class="cbt">The Approach</div><div class="cbb">${p.study.approach}</div></div>

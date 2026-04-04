@@ -464,7 +464,6 @@ const PROJS = [
 {
   num:'01',cat:'AI Application',
   t:'Serenity – Mental Health Support',
-  img:'dashboard.png'
   imp:'Flutter · Firebase · Gemini AI · 4 core features',
   d:'Cross-platform mental wellness app featuring mood tracking, habit tracking, psychological assessments, and AI-assisted journaling via the Gemini API.',
   tags:['Flutter','Dart','Firebase','Gemini API'],
@@ -480,7 +479,6 @@ const PROJS = [
 {
   num:'02',cat:'AI & NLP Tool',
   t:'CareerLens AI – Resume Analyzer',
-  img:'analysis.png'
   imp:'Python · spaCy NLP · Gemini · Skill extraction',
   d:'AI-powered resume analysis using Python, Streamlit, spaCy & Gemini API to extract skills, evaluate quality, and generate actionable improvement recommendations.',
   tags:['Python','Streamlit','spaCy','Gemini API'],
@@ -495,7 +493,6 @@ const PROJS = [
 {
   num:'03',cat:'Full-Stack Platform',
   t:'PlaceIT – Campus Placement System',
-  img:'jobs.png'
   imp:'3 user roles · Live on Render · Admin analytics',
   d:'Full-stack placement platform for students, recruiters & coordinators with job postings, eligibility filters, real-time tracking and admin analytics.',
   tags:['Python','Flask','PostgreSQL','HTML/CSS/JS'],
@@ -511,7 +508,6 @@ const PROJS = [
 {
   num:'04',cat:'Mobile App',
   t:'HabitCost – Habit Expense Tracker',
-  img:'dashboard.png'
   imp:'React Native · Expo · Analytics · APK Release',
   d:'Mobile app that reveals the true financial and time cost of everyday habits like coffee, food delivery, subscriptions, and transport, with analytics and long-term investment insights.',
   tags:['React Native','Expo','AsyncStorage','EAS Build'],
@@ -672,61 +668,33 @@ ${PROJS.map((p,i)=>`<div class="prow" id="prow-${i}">
       ${p.dm?`<a class="pr-lnk" href="${p.dm}" target="_blank">Live ↗</a>`:''}
       <button class="pr-expand" onclick="toggleCase(${i})">Case Study <span class="earr">↓</span></button>
     </div>
-  <div class="case-body" id="case-${i}">
-  <div class="case-in">
-    
-    <!-- IMAGE / PLACEHOLDER -->
-    <div class="case-art" id="case-art-${i}" 
-         style="min-height:260px;background:var(--bg3);display:flex;align-items:center;justify-content:center;">
-      
-      ${p.img 
-        ? `<img src="${p.img}" style="width:100%;height:100%;object-fit:cover"/>`
-        : `<div style="text-align:center;padding:2rem">
-             <div style="font-size:2.5rem;margin-bottom:1rem;opacity:.3">
-               ${p.placeholder || '🖼'}
-             </div>
-             <div style="font-family:var(--mono);font-size:.46rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)">
-               ${p.text || 'No Image'}
-             </div>
-           </div>`
-      }
-
-      <div class="case-art-ov"></div>
-    </div>
-
-    <!-- TEXT CONTENT -->
-    <div class="case-txt">
-      <div>
-        <div class="cbt">The Problem</div>
-        <div class="cbb">${p.study.problem}</div>
-      </div>
-
-      <div>
-        <div class="cbt">The Approach</div>
-        <div class="cbb">${p.study.approach}</div>
-      </div>
-
-      <div>
-        <div class="cbt">The Outcome</div>
-        <div class="cbb">${p.study.outcome}</div>
-
-        <div class="case-metrics">
-          ${p.study.metrics.map(m => `
-            <div class="cmb">
-              <span class="cmn">${m.n}</span>
-              <span class="cml">${m.l}</span>
-            </div>
-          `).join('')}
-        </div>
-      </div>
-
-      ${p.gh ? `<a class="case-cta" href="${p.gh}" target="_blank">View Repository ↗</a>` : ''}
-      ${p.dm ? `<a class="case-cta" href="${p.dm}" target="_blank" style="background:var(--teal);color:var(--cream);margin-top:.5rem">Live Demo ↗</a>` : ''}
-
-    </div>
-
   </div>
+  <div class="case-body" id="case-${i}">
+    <div class="case-in">
+      <div class="case-art" id="case-art-${i}" style="min-height:260px;background:var(--bg3);display:flex;align-items:center;justify-content:center;">
+        <div style="text-align:center;padding:2rem">
+          <div style="font-size:2.5rem;margin-bottom:1rem;opacity:.3">🖼</div>
+          <div style="font-family:var(--mono);font-size:.46rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)">Add screenshot via<br/>&lt;img src="screenshot.png"/&gt;</div>
+        </div>
+        <div class="case-art-ov"></div>
+      </div>
+      <div class="case-txt">
+        <div><div class="cbt">The Problem</div><div class="cbb">${p.study.problem}</div></div>
+        <div><div class="cbt">The Approach</div><div class="cbb">${p.study.approach}</div></div>
+        <div>
+          <div class="cbt">The Outcome</div>
+          <div class="cbb">${p.study.outcome}</div>
+          <div class="case-metrics">${p.study.metrics.map(m=>`<div class="cmb"><span class="cmn">${m.n}</span><span class="cml">${m.l}</span></div>`).join('')}</div>
+        </div>
+        ${p.gh?`<a class="case-cta" href="${p.gh}" target="_blank">View Repository ↗</a>`:''}
+        ${p.dm?`<a class="case-cta" href="${p.dm}" target="_blank" style="background:var(--teal);color:var(--cream);margin-top:.5rem">Live Demo ↗</a>`:''}
+      </div>
+    </div>
+  </div>
+</div>`).join('')}
 </div>
+<div class="sp-footer"><span class="sp-copy">© 2025 Sathiya Shree</span><div style="display:flex;gap:1rem"><button class="btn-ghost" onclick="openSub('skills')">Skills →</button><button class="btn-ghost" onclick="openSub('certs')">Certifications →</button></div></div>`;
+}
 
 const openCases=new Set();
 window.toggleCase=function(idx){const prow=document.getElementById('prow-'+idx),panel=document.getElementById('case-'+idx);if(!prow||!panel)return;if(openCases.has(idx)){prow.classList.remove('open');openCases.delete(idx)}else{prow.classList.add('open');openCases.add(idx)}};

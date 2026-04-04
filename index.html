@@ -671,10 +671,12 @@ ${PROJS.map((p,i)=>`<div class="prow" id="prow-${i}">
   </div>
   <div class="case-body" id="case-${i}">
     <div class="case-in">
-      <div class="case-art" id="case-art-0" style="min-height:260px;background:var(--bg3);display:flex;align-items:center;justify-content:center;">
-  <img src="serenity.png" alt="Serenity App" style="width:100%;height:100%;object-fit:cover;">
-  <div class="case-art-ov"></div>
-</div>
+      <div class="case-art" id="case-art-${i}" style="min-height:260px;background:var(--bg3);display:flex;align-items:center;justify-content:center;">
+        <div style="text-align:center;padding:2rem">
+          <div style="font-size:2.5rem;margin-bottom:1rem;opacity:.3">🖼</div>
+          <div style="font-family:var(--mono);font-size:.46rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)">Add screenshot via<br/>&lt;img src="screenshot.png"/&gt;</div>
+        </div>
+        <div class="case-art-ov"></div>
       </div>
       <div class="case-txt">
         <div><div class="cbt">The Problem</div><div class="cbb">${p.study.problem}</div></div>

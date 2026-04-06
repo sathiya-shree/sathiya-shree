@@ -2,7 +2,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:667eea,100:764ba2&height=140&section=header&text=Sathiya%20Shree%20S&fontSize=38&fontColor=ffffff&fontAlignY=35" />
 
-### Full-Stack Developer | AI Researcher | Building Real-World Apps
+### Software Engineer | CI/CD | Python
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/sathiya-shree-s-)
 [![Email](https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:sathiyashree03@gmail.com)
@@ -12,17 +12,11 @@
 
 ---
 
-## 👋 Hi, I'm Sathiya shree
+## 👋 Hi, I'm Sathiya Shree
 
-I'm a **full-stack developer and AI researcher** pursuing M.Sc. IT at SRCAS Coimbatore. I build web and mobile applications that solve real problems — from AI-powered career tools to mental health apps.
+I'm a **software engineer** with experience in building, deploying, and managing applications across the development lifecycle. I focus on **version control, CI/CD pipelines, and application deployment**, along with full-stack development using Python and JavaScript.
 
-**Recent highlight:** Presented research on **Explainable AI in Healthcare** at an International Conference.
-
-🎯 **Currently seeking:** Full-stack developer, frontend engineer, or ML engineer roles  
-📍 **Preferred locations:** Bangalore, Chennai  
-🚀 **Available:** Immediately for full-time positions  
-
----
+**Recent highlight:** Built and deployed applications with automated workflows using GitHub Actions and modern deployment platforms.
 
 ## 🚀 Featured Projects
 

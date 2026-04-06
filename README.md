@@ -14,7 +14,7 @@
 
 ## 👋 Hi, I'm Sathiya Shree
 
-I'm a **software engineer** with experience in building, deploying, and managing applications across the development lifecycle. I focus on **version control, CI/CD pipelines, and application deployment**, along with full-stack development using Python and JavaScript.
+I'm a **software engineer** (Full-Stack) with experience in building, deploying, and managing applications across the development lifecycle. I focus on **version control, CI/CD pipelines, and application deployment**, along with full-stack development using Python and JavaScript.
 
 **Recent highlight:** Built and deployed applications with automated workflows using GitHub Actions and modern deployment platforms.
 

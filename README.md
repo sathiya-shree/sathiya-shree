@@ -69,26 +69,24 @@ I'm a **software engineer** (Full-Stack) with experience in building, deploying,
 ---
 
 ## 📊 GitHub Activity
-## 📊 GitHub Stats
 
 ![stats](https://github-readme-stats.vercel.app/api?username=sathiya-shree&show_icons=true&theme=tokyonight&hide_border=true)
 
-## 📊 Contribution Graph
+<br/>
 
 ![activity graph](https://github-readme-activity-graph.vercel.app/graph?username=sathiya-shree&theme=tokyo-night&hide_border=true)
 
-## 💻 Most Used Languages
+<br/>
 
 ![langs](https://github-readme-stats.vercel.app/api/top-langs/?username=sathiya-shree&layout=compact&theme=tokyonight&hide_border=true)
 
-## 🏆 Achievements
+<br/>
 
 ![trophy](https://github-profile-trophy.vercel.app/?username=sathiya-shree&theme=tokyonight&no-frame=true&row=1&column=6)
 
-## 🐍 Contribution Snake
+<br/>
 
 ![snake](https://github.com/sathiya-shree/sathiya-shree/blob/output/github-contribution-grid-snake.svg)
----
 
 ## 💼 Open to Opportunities
 

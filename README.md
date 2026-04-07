@@ -85,8 +85,7 @@ I'm a **software engineer** (Full-Stack) with experience in building, deploying,
 ![stats](https://github-readme-stats-sigma-five.vercel.app/api?username=sathiya-shree&show_icons=true&theme=tokyonight&hide_border=true)
 
 <br/>
-
-![trophy](https://github-profile-trophy.vercel.app/?username=sathiya-shree&theme=tokyonight&no-frame=true&row=1&column=6)
+![trophy](https://github-profile-trophy.vercel.app/?username=sathiya-shree&theme=tokyonight&no-frame=true&margin-w=10)
 
 
 

@@ -78,11 +78,11 @@ I'm a **software engineer** (Full-Stack) with experience in building, deploying,
 
 <br/>
 
-![langs](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=sathiya-shree&layout=compact&theme=tokyonight&hide_border=true)
+![langs](https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=sathiya-shree&layout=compact&theme=tokyonight&hide_border=true)
 
 <br/>
 
-![stats](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=sathiya-shree&show_icons=true&theme=tokyonight&hide_border=true)
+![stats](https://github-readme-stats-sigma-five.vercel.app/api?username=sathiya-shree&show_icons=true&theme=tokyonight&hide_border=true)
 
 <br/>
 

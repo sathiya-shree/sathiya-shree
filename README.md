@@ -70,8 +70,7 @@ I'm a **software engineer** (Full-Stack) with experience in building, deploying,
 
 ## 📊 GitHub Activity
 
-![stats](https://github-readme-stats.vercel.app/api?username=sathiya-shree&show_icons=true&theme=tokyonight&hide_border=true)
-
+![stats](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=sathiya-shree&show_icons=true&theme=tokyonight&hide_border=true)
 <br/>
 
 ![snake](https://raw.githubusercontent.com/sathiya-shree/sathiya-shree/output/github-contribution-grid-snake.svg)

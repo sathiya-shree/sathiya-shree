@@ -70,9 +70,6 @@ I'm a **software engineer** (Full-Stack) with experience in building, deploying,
 
 ## 📊 GitHub Activity
 
-![stats](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=sathiya-shree&show_icons=true&theme=tokyonight&hide_border=true)
-<br/>
-
 ![snake](https://raw.githubusercontent.com/sathiya-shree/sathiya-shree/output/github-contribution-grid-snake.svg)
 
 <br/>
@@ -81,7 +78,11 @@ I'm a **software engineer** (Full-Stack) with experience in building, deploying,
 
 <br/>
 
-![langs](https://github-readme-stats.vercel.app/api/top-langs/?username=sathiya-shree&layout=compact&theme=tokyonight&hide_border=true&cache_seconds=1800)
+![langs](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api/top-langs/?username=sathiya-shree&layout=compact&theme=tokyonight&hide_border=true)
+
+<br/>
+
+![stats](https://github-readme-stats-git-masterrstaa-rickstaa.vercel.app/api?username=sathiya-shree&show_icons=true&theme=tokyonight&hide_border=true)
 
 <br/>
 

@@ -74,6 +74,10 @@ I'm a **software engineer** (Full-Stack) with experience in building, deploying,
 
 <br/>
 
+![snake](https://raw.githubusercontent.com/sathiya-shree/sathiya-shree/output/github-contribution-grid-snake.svg)
+
+<br/>
+
 ![activity graph](https://github-readme-activity-graph.vercel.app/graph?username=sathiya-shree&theme=tokyo-night&hide_border=true)
 
 <br/>
@@ -83,6 +87,8 @@ I'm a **software engineer** (Full-Stack) with experience in building, deploying,
 <br/>
 
 ![trophy](https://github-profile-trophy.vercel.app/?username=sathiya-shree&theme=tokyonight&no-frame=true&row=1&column=6)
+
+
 
 ## 💼 Open to Opportunities
 

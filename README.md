@@ -70,12 +70,9 @@ I'm a **software engineer** (Full-Stack) with experience in building, deploying,
 
 ## 📊 GitHub Activity
 
-<div align="center">
+## 📊 Contribution Graph
 
-<img src="https://streak-stats.demolab.com/?user=sathiya-shree&theme=tokyonight&hide_border=true&v=2"/>
-
-</div>
-
+![activity graph](https://github-readme-activity-graph.vercel.app/graph?username=sathiya-shree&theme=tokyo-night&hide_border=true)
 ---
 
 ## 💼 Open to Opportunities

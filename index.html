@@ -677,8 +677,11 @@ function bProjects(){
   
   // PROJECT 04 - HABITCOST
   const p3=PROJS[3];
-  html+=`<div class="prow" id="prow-3"><div class="prow-head"><div class="pr-num">${p3.num}</div><div><div class="pr-cat">${p3.cat}</div><div class="pr-title">${p3.t}</div><div class="pr-imp">⚡ ${p3.imp}</div><div class="pr-desc">${p3.d}</div><div class="pr-tags">${p3.tags.map(t=>`<span class="ptag">${t}</span>`).join('')}</div></div><div class="pr-links">${p3.gh?`<a class="pr-lnk" href="${p3.gh}" target="_blank">GitHub ↗</a>`:''}${p3.dm?`<a class="pr-lnk" href="${p3.dm}" target="_blank">Live ↗</a>`:''}<button class="pr-expand" onclick="toggleCase(3)">Case Study <span class="earr">↓</span></button></div></div><div class="case-body" id="case-3"><div class="case-in"><div class="case-art" id="case-art-3" style="min-height:260px;background:var(--bg3);display:flex;align-items:center;justify-content:center;"><!-- PLACEHOLDER 04: HABITCOST --><div style="text-align:center;padding:2rem"><div style="font-size:2.5rem;margin-bottom:1rem;opacity:.3">🖼</div><div style="font-family:var(--mono);font-size:.46rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)">HabitCost App<br/>Screenshot - Add Image Here</div></div><div class="case-art-ov"></div></div><div class="case-txt"><div><div class="cbt">The Problem</div><div class="cbb">${p3.study.problem}</div></div><div><div class="cbt">The Approach</div><div class="cbb">${p3.study.approach}</div></div><div><div class="cbt">The Outcome</div><div class="cbb">${p3.study.outcome}</div><div class="case-metrics">${p3.study.metrics.map(m=>`<div class="cmb"><span class="cmn">${m.n}</span><span class="cml">${m.l}</span></div>`).join('')}</div></div>${p3.gh?`<a class="case-cta" href="${p3.gh}" target="_blank">View Repository ↗</a>`:''}${p3.dm?`<a class="case-cta" href="${p3.dm}" target="_blank" style="background:var(--teal);color:var(--cream);margin-top:.5rem">Live Demo ↗</a>`:''}</div></div></div></div>`;
-  
+<div class="case-art" id="case-art-3" style="min-height:260px;background:var(--bg3);display:flex;align-items:center;justify-content:center;">
+  <img src="analytics.jpeg" alt="HabitCost Analytics Screenshot" 
+       style="width:100%; height:100%; object-fit:cover; border-radius:12px;" />
+  <div class="case-art-ov"></div>
+</div>  
   html+=`</div><div class="sp-footer"><span class="sp-copy">© 2025 Sathiya Shree</span><div style="display:flex;gap:1rem"><button class="btn-ghost" onclick="openSub('skills')">Skills →</button><button class="btn-ghost" onclick="openSub('certs')">Certifications →</button></div></div>`;
   return html;
 }

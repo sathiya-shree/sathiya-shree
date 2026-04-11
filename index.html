@@ -476,18 +476,23 @@ const PROJS = [
   }
 },
 {
-  num:'02',cat:'AI & NLP Tool',
+  num:'02',
+  cat:'AI & NLP Tool',
   t:'CareerLens AI – Resume Analyzer',
-  imp:'Python · spaCy NLP · Gemini · Skill extraction',
-  d:'AI-powered resume analysis using Python, Streamlit, spaCy & Gemini API to extract skills, evaluate quality, and generate actionable improvement recommendations.',
-  tags:['Python','Streamlit','spaCy','Gemini API'],
+  imp:'Python · spaCy NLP · Gemini · HuggingFace Hosting',
+  d:'AI-powered resume analysis tool built with Python, Streamlit, spaCy & Gemini API, deployed on Hugging Face Spaces for instant web access and zero setup.',
+  tags:['Python','Streamlit','spaCy','Gemini API','HuggingFace'],
   gh:'https://github.com/sathiya-shree/careerlens-ai',
   dm:'https://huggingface.co/spaces/shree0302/careerlens-ai',
   study:{
     problem:'Job seekers spend hours reformatting resumes without knowing what recruiters actually look for.',
-    approach:'spaCy for named-entity extraction. Gemini API for contextual role-specific suggestions. Streamlit front-end — no installation needed.',
-    outcome:'Extracts 15+ skill categories, scores on 5 dimensions, generates a prioritised action list in under 3 seconds.',
-    metrics:[{n:'15+',l:'Skill Categories'},{n:'<3s',l:'Analysis Time'},{n:'5',l:'Quality Dims'}]
+    approach:'spaCy for named-entity extraction. Gemini API for contextual role-specific suggestions. Deployed via Hugging Face Spaces with Streamlit for instant, no-install access.',
+    outcome:'Extracts 15+ skill categories, scores on 5 dimensions, and generates a prioritised action list in under 3 seconds through a live web interface.',
+    metrics:[
+      {n:'15+',l:'Skill Categories'},
+      {n:'<3s',l:'Analysis Time'},
+      {n:'5',l:'Quality Dims'}
+    ]
   }
 },
 {

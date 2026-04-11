@@ -675,39 +675,64 @@ function bProjects(){
   const p2=PROJS[2];
   html+=`<div class="prow" id="prow-2"><div class="prow-head"><div class="pr-num">${p2.num}</div><div><div class="pr-cat">${p2.cat}</div><div class="pr-title">${p2.t}</div><div class="pr-imp">⚡ ${p2.imp}</div><div class="pr-desc">${p2.d}</div><div class="pr-tags">${p2.tags.map(t=>`<span class="ptag">${t}</span>`).join('')}</div></div><div class="pr-links">${p2.gh?`<a class="pr-lnk" href="${p2.gh}" target="_blank">GitHub ↗</a>`:''}${p2.dm?`<a class="pr-lnk" href="${p2.dm}" target="_blank">Live ↗</a>`:''}<button class="pr-expand" onclick="toggleCase(2)">Case Study <span class="earr">↓</span></button></div></div><div class="case-body" id="case-2"><div class="case-in"><div class="case-art" id="case-art-2" style="min-height:260px;background:var(--bg3);display:flex;align-items:center;justify-content:center;"><!-- PLACEHOLDER 03: PLACEIT --><img src="placeit.png" alt="PlaceIT Platform" style="width:100%;height:auto;"><div class="case-art-ov"></div></div><div class="case-txt"><div><div class="cbt">The Problem</div><div class="cbb">${p2.study.problem}</div></div><div><div class="cbt">The Approach</div><div class="cbb">${p2.study.approach}</div></div><div><div class="cbt">The Outcome</div><div class="cbb">${p2.study.outcome}</div><div class="case-metrics">${p2.study.metrics.map(m=>`<div class="cmb"><span class="cmn">${m.n}</span><span class="cml">${m.l}</span></div>`).join('')}</div></div>${p2.gh?`<a class="case-cta" href="${p2.gh}" target="_blank">View Repository ↗</a>`:''}${p2.dm?`<a class="case-cta" href="${p2.dm}" target="_blank" style="background:var(--teal);color:var(--cream);margin-top:.5rem">Live Demo ↗</a>`:''}</div></div></div></div>`;
   
-  // PROJECT 04 - HABITCOST
-  const p3=PROJS[3];
-<div class="case-art" id="case-art-3" style="min-height:260px;background:var(--bg3);display:flex;align-items:center;justify-content:center;">
-  <img src="analytics.jpeg" alt="HabitCost Analytics Screenshot" 
-       style="width:100%; height:100%; object-fit:cover; border-radius:12px;" />
-  <div class="case-art-ov"></div>
-</div>  
-  html+=`</div><div class="sp-footer"><span class="sp-copy">© 2025 Sathiya Shree</span><div style="display:flex;gap:1rem"><button class="btn-ghost" onclick="openSub('skills')">Skills →</button><button class="btn-ghost" onclick="openSub('certs')">Certifications →</button></div></div>`;
-  return html;
-}
-
-const openCases=new Set();
-window.toggleCase=function(idx){const prow=document.getElementById('prow-'+idx),panel=document.getElementById('case-'+idx);if(!prow||!panel)return;if(openCases.has(idx)){prow.classList.remove('open');openCases.delete(idx)}else{prow.classList.add('open');openCases.add(idx)}};
-
-function bSkills(){
-  const grps=['Languages','Frameworks','Tools'];
-  return`<div class="sp-hero fu"><div class="sp-hero-tag">Capabilities</div><h1 class="sp-hero-title">Skills &amp;<br/><em>Technologies.</em></h1></div>
-<div class="fu" style="transition-delay:.08s">
-  <div class="stabs">
-    <button class="stab act" data-tab="prof">Proficiency</button>
-    <button class="stab" data-tab="lang">Languages</button>
-    <button class="stab" data-tab="fw">Frameworks</button>
-    <button class="stab" data-tab="tools">Tools</button>
-    <button class="stab" data-tab="soft">Soft Skills</button>
+ // PROJECT 04 - HABITCOST
+const p3 = PROJS[3];
+html += `
+<div class="prow" id="prow-3">
+  <div class="prow-head">
+    <div class="pr-num">${p3.num}</div>
+    <div>
+      <div class="pr-cat">${p3.cat}</div>
+      <div class="pr-title">${p3.t}</div>
+      <div class="pr-imp">⚡ ${p3.imp}</div>
+      <div class="pr-desc">${p3.d}</div>
+      <div class="pr-tags">${p3.tags.map(t=>`<span class="ptag">${t}</span>`).join('')}</div>
+    </div>
+    <div class="pr-links">
+      ${p3.gh?`<a class="pr-lnk" href="${p3.gh}" target="_blank">GitHub ↗</a>`:''}
+      ${p3.dm?`<a class="pr-lnk" href="${p3.dm}" target="_blank">Live ↗</a>`:''}
+      <button class="pr-expand" onclick="toggleCase(3)">Case Study <span class="earr">↓</span></button>
+    </div>
   </div>
-  <div class="sk-pan act" id="panel-prof"><div class="sk-grids">${grps.map(g=>`<div class="sg"><div class="sg-head">${g}</div>${PROF.filter(s=>s.g===g).map(s=>`<div class="sk-row"><span class="sk-name">${s.n}</span><span class="sk-dot"></span></div>`).join('')}</div>`).join('')}</div></div>
-  <div class="sk-pan" id="panel-lang"><div class="pill-wrap">${LANGS.map(p=>`<div class="pill"><span class="p-ico">${p.i}</span><div><span class="p-name">${p.n}</span><span class="p-sub">${p.s}</span></div></div>`).join('')}</div></div>
-  <div class="sk-pan" id="panel-fw"><div class="pill-wrap">${FWS.map(p=>`<div class="pill"><span class="p-ico">${p.i}</span><div><span class="p-name">${p.n}</span><span class="p-sub">${p.s}</span></div></div>`).join('')}</div></div>
-  <div class="sk-pan" id="panel-tools"><div class="pill-wrap">${TOOLS.map(p=>`<div class="pill"><span class="p-ico">${p.i}</span><div><span class="p-name">${p.n}</span><span class="p-sub">${p.s}</span></div></div>`).join('')}</div></div>
-  <div class="sk-pan" id="panel-soft"><div class="soft-grid">${SOFT.map(s=>`<div class="scard"><span class="s-ico">${s.i}</span><div class="s-name">${s.n}</div></div>`).join('')}</div></div>
+
+  <div class="case-body" id="case-3">
+    <div class="case-in">
+      
+      <div class="case-art" id="case-art-3" style="min-height:260px;background:var(--bg3);display:flex;align-items:center;justify-content:center;">
+        <img src="analytics.jpeg" alt="HabitCost Analytics Screenshot"
+             style="width:100%; height:100%; object-fit:cover; border-radius:12px;" />
+        <div class="case-art-ov"></div>
+      </div>
+
+      <div class="case-txt">
+        <div>
+          <div class="cbt">The Problem</div>
+          <div class="cbb">${p3.study.problem}</div>
+        </div>
+        <div>
+          <div class="cbt">The Approach</div>
+          <div class="cbb">${p3.study.approach}</div>
+        </div>
+        <div>
+          <div class="cbt">The Outcome</div>
+          <div class="cbb">${p3.study.outcome}</div>
+          <div class="case-metrics">
+            ${p3.study.metrics.map(m=>`
+              <div class="cmb">
+                <span class="cmn">${m.n}</span>
+                <span class="cml">${m.l}</span>
+              </div>`).join('')}
+          </div>
+        </div>
+
+        ${p3.gh?`<a class="case-cta" href="${p3.gh}" target="_blank">View Repository ↗</a>`:''}
+        ${p3.dm?`<a class="case-cta" href="${p3.dm}" target="_blank" style="background:var(--teal);color:var(--cream);margin-top:.5rem">Live Demo ↗</a>`:''}
+      </div>
+
+    </div>
+  </div>
 </div>
-<div class="sp-footer"><span class="sp-copy">© 2025 Sathiya Shree</span><button class="btn-ghost" onclick="openSub('projects')">← Projects</button></div>`;
-}
+`;
 
 function bCerts(){
   const feat=CERTS.filter(c=>c.feat),rest=CERTS.filter(c=>!c.feat);

@@ -767,6 +767,7 @@ function bAbout(){
 <div class="exp-grid fu" style="transition-delay:.24s">
   <div class="exp-card"><div class="exp-dot"></div><span class="exp-badge">Internship</span><div class="exp-role">Web Development Intern</div><div class="exp-org">Internet Society Chennai Chapter</div><div class="exp-period">Nov 2023 – Mar 2024</div><div class="exp-desc">Developed and maintained web interfaces. Implemented responsive designs, contributed to agile sprint cycles, and collaborated cross-functionally on live client projects.</div></div>
   <div class="exp-card"><div class="exp-dot"></div><span class="exp-badge">Education</span><div class="exp-role">M.Sc Information Technology</div><div class="exp-org">Currently Pursuing</div><div class="exp-period">2024 – Present</div><div class="exp-desc">Deepening expertise in full-stack development, algorithms, software engineering, database design, and applied AI/ML while building production-grade projects alongside coursework.</div></div>
+  <div class="exp-card"><div class="exp-dot"></div><span class="exp-badge">Education</span><div class="exp-role">PG Diploma in Advanced Computing</div><div class="exp-org">Sri Ramakrishna College of Arts and Science</div><div class="exp-period">2025</div><div class="exp-desc">Advanced Computing diploma focusing on full-stack development, AI/ML technologies, and modern software engineering practices. Coimbatore, Tamil Nadu.</div></div>
 </div>
 <div class="sp-footer"><span class="sp-copy">© 2025 Sathiya Shree</span><div style="display:flex;gap:1rem"><button class="btn-ghost" onclick="openSub('projects')">Projects →</button><button class="btn-ghost" onclick="openSub('contact')">Contact →</button></div></div>`;
 }
@@ -922,6 +923,44 @@ hbg.addEventListener('click',()=>{
 });
 window.addEventListener('resize',()=>{if(innerWidth>=900)nll.removeAttribute('style')});
 if(innerWidth<900)nll.style.display='none';
+
+/* ── SKILLS SECTION CONTENT ── */
+const SKILLS_CONTENT = {
+  technical: {
+    title: 'Technical Skills',
+    categories: [
+      { name: 'Languages', items: ['Python', 'JavaScript', 'Dart', 'SQL', 'Java', 'C', 'HTML5', 'CSS3'] },
+      { name: 'AI/ML/NLP', items: ['spaCy', 'SHAP', 'LIME', 'Gemini API', 'Sentiment Analysis', 'Named Entity Recognition', 'OCR (Tesseract)', 'TF-IDF'] },
+      { name: 'Frameworks', items: ['React Native', 'Django', 'Flask', 'Flutter', 'Node.js', 'Streamlit', 'Expo', 'REST APIs'] },
+      { name: 'Databases & Cloud', items: ['PostgreSQL', 'Firebase', 'Supabase', 'Vercel', 'Render'] },
+      { name: 'Tools', items: ['Git', 'GitHub Actions', 'Visual Studio Code', 'CI/CD Pipelines'] }
+    ]
+  },
+  certifications: {
+    title: 'Certifications & Training',
+    items: [
+      'Python Django Full Stack Development - Udemy',
+      'Generative AI Fundamentals - Google Cloud',
+      'Technology Job Simulation - Deloitte Australia (Forage)',
+      'Data Mining - NPTEL',
+      'Manage and Configure Git Repositories - Microsoft Learn',
+      'Python Foundation - HCL GUVI & Infosys Springboard'
+    ]
+  },
+  languages: {
+    title: 'Languages',
+    items: [
+      { name: 'Tamil', proficiency: 'Native' },
+      { name: 'English', proficiency: 'Professional Working Proficiency' }
+    ]
+  },
+  education: {
+    title: 'Education',
+    items: [
+      { degree: 'PG Diploma in Advanced Computing', institution: 'Sri Ramakrishna College of Arts and Science', location: 'Coimbatore, Tamil Nadu', year: '2025' }
+    ]
+  }
+};
 </script>
 </body>
 </html>

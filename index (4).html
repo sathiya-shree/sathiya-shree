@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sathiya Shree - Portfolio</title>
+  
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Cinzel:wght@400;600;700&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@300;400&display=swap" rel="stylesheet">
+  
+  <!-- External Libraries -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- Loader -->
+  <div id="loader">
+    <div class="ld-name" id="ld-name"></div>
+    <div class="ld-bar-wrap">
+      <div class="ld-bar" id="ld-bar"></div>
+    </div>
+    <div class="ld-pct" id="ld-pct">0%</div>
+  </div>
+
+  <!-- Custom Cursor -->
+  <div id="cur-dot"></div>
+  <div id="cur-ring"></div>
+
+  <!-- Overlays -->
+  <div class="noise"></div>
+  <div class="vignette"></div>
+  <div id="bg3d"></div>
+  <div id="sub-canvas"></div>
+  <div id="sub-ov"></div>
+
+  <!-- Progress Bar -->
+  <div id="prog"></div>
+
+  <!-- Toast Notification -->
+  <div id="toast"></div>
+
+  <!-- Navigation -->
+  <nav id="nav">
+    <button class="nav-logo" onclick="scrollToTop()">Sathiya Shree</button>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button id="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+    <button class="nav-cta" onclick="copyEmail(event)"><span>Let's Talk ↓</span></button>
+  </nav>
+
+  <!-- Section Dots -->
+  <div id="sec-dots"></div>
+
+  <!-- Main Content Sections -->
+  <div id="sections-container"></div>
+
+  <!-- Scripts -->
+  <script src="data.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>

@@ -81,6 +81,108 @@ a{color:inherit;text-decoration:none}
 body.hov-link #cur-dot{background:var(--cream)}
 body.hov-link #cur-ring{width:46px;height:46px;border-color:var(--cream2)}
 
+:root {
+  --env-width: 90px;
+  --env-height: 60px;
+  --env-color: rgba(255, 255, 255, 0.1);
+  --env-accent: #64ffda; /* Teal accent */
+}
+
+.mail-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  perspective: 1000px;
+  cursor: pointer;
+}
+
+.envelope-wrapper {
+  position: relative;
+  width: var(--env-width);
+  height: var(--env-height);
+  transform-style: preserve-3d;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  margin-bottom: 2rem;
+}
+
+.envelope {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  background: var(--env-color);
+  backdrop-filter: blur(5px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transform-style: preserve-3d;
+  transform: rotateX(15deg) rotateY(-15deg);
+  transition: transform 0.5s ease;
+}
+
+/* The Bottom and Sides of the Envelope */
+.envelope-front {
+  position: absolute;
+  z-index: 3;
+  width: 0; height: 0;
+  border-left: calc(var(--env-width) / 2) solid transparent;
+  border-right: calc(var(--env-width) / 2) solid transparent;
+  border-bottom: calc(var(--env-height) / 1.5) solid rgba(100, 255, 218, 0.15);
+  bottom: 0;
+  pointer-events: none;
+}
+
+/* The Flap (The Top Part) */
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  z-index: 4;
+  width: 0; height: 0;
+  border-left: calc(var(--env-width) / 2) solid transparent;
+  border-right: calc(var(--env-width) / 2) solid transparent;
+  border-top: calc(var(--env-height) / 1.8) solid rgba(100, 255, 218, 0.4);
+  transform-origin: top;
+  transition: transform 0.4s ease-in-out;
+}
+
+/* The Paper/Message Inside */
+.envelope-paper {
+  position: absolute;
+  top: 5px;
+  left: 10%;
+  width: 80%;
+  height: 80%;
+  background: white;
+  z-index: 2;
+  transition: transform 0.4s ease;
+  box-shadow: 0 0 10px rgba(0,0,0,0.2);
+}
+
+/* Hover States */
+.mail-box:hover .envelope {
+  transform: rotateX(0deg) rotateY(0deg) scale(1.1);
+}
+
+.mail-box:hover .envelope-flap {
+  transform: rotateX(180deg); /* Flips the flap upward */
+  z-index: 1; /* Moves it behind the paper */
+}
+
+.mail-box:hover .envelope-paper {
+  transform: translateY(-25px); /* Slides the "message" out */
+}
+
+.mail-text {
+  font-family: var(--mono);
+  font-size: 0.9rem;
+  letter-spacing: 0.3em;
+  text-transform: uppercase;
+  color: var(--env-accent);
+  opacity: 0.7;
+  transition: all 0.3s;
+}
+
+.mail-box:hover .mail-text {
+  opacity: 1;
+  text-shadow: 0 0 10px var(--env-accent);
+}
 /* ── OVERLAYS ── */
 .noise{position:fixed;inset:0;pointer-events:none;z-index:700;opacity:.018;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:nz 8s steps(8) infinite}
 @keyframes nz{0%,100%{transform:translate(0)}50%{transform:translate(1%,-1%)}}
@@ -653,8 +755,42 @@ window.addEventListener('keydown',e=>{if(subOpen)return;if(e.key==='ArrowDown'||
 let subOpen=false;
 function setNavActive(id){document.querySelectorAll('.nav-links a').forEach(a=>a.classList.remove('act'));const el=document.getElementById('nl-'+id);if(el)el.classList.add('act')}
 function goHome(){const wasOpen=subOpen;if(wasOpen){closeSub();}setTimeout(()=>{document.querySelectorAll('.sec-panel').forEach(p=>p.classList.remove('act'));document.getElementById('sp-0').classList.add('act');curSec=0;document.querySelectorAll('.sdot').forEach((d,i)=>d.classList.toggle('act',i===0));document.getElementById('prog').style.width='0%';document.getElementById('scroll-hint').style.opacity='1';hAccent.material.color.setHex(SEC_COLS[0]);setNavActive('home')},wasOpen?650:0)}
-function openSub(page){subOpen=true;const sp=document.getElementById('subpage'),inner=document.getElementById('subpage-inner'),close=document.getElementById('subpage-close'),subCvsEl=document.getElementById('sub-canvas'),subOvEl=document.getElementById('sub-ov');inner.innerHTML=buildSubpage(page);inner.scrollTop=0;sp.classList.add('open');close.classList.add('show');subCvsEl.classList.add('show');subOvEl.classList.add('show');startSubScene(page);document.getElementById('nav').classList.add('sc');setTimeout(()=>{inner.querySelectorAll('.fu').forEach(e=>e.classList.add('in'))},150);if(page==='certs')setTimeout(drawAllCerts,200);setNavActive(page)}
-function closeSub(){subOpen=false;const sp=document.getElementById('subpage'),close=document.getElementById('subpage-close'),subCvsEl=document.getElementById('sub-canvas'),subOvEl=document.getElementById('sub-ov');sp.classList.remove('open');close.classList.remove('show');subCvsEl.classList.remove('show');subOvEl.classList.remove('show');setTimeout(()=>stopSubScene(),700);document.getElementById('nav').classList.remove('sc');setNavActive('home')}
+function openSub(page){
+  subOpen = true;
+
+  const sp = document.getElementById('subpage'),
+        inner = document.getElementById('subpage-inner'),
+        close = document.getElementById('subpage-close'),
+        subCvsEl = document.getElementById('sub-canvas'),
+        subOvEl = document.getElementById('sub-ov');
+
+  inner.innerHTML = buildSubpage(page);
+  inner.scrollTop = 0;
+
+  sp.classList.add('open');
+
+  if(close) close.classList.add('show');
+  if(subCvsEl) subCvsEl.classList.add('show');
+  if(subOvEl) subOvEl.classList.add('show');
+
+  if (typeof startSubScene === "function") {
+    startSubScene(page);
+  }
+
+  document.getElementById('nav')?.classList.add('sc');
+
+  setTimeout(()=>{
+    inner.querySelectorAll('.fu').forEach(e=>e.classList.add('in'))
+  },150);
+
+  if(page==='certs' && typeof drawAllCerts === "function"){
+    setTimeout(drawAllCerts,200);
+  }
+
+  if(typeof setNavActive === "function"){
+    setNavActive(page);
+  }
+}function closeSub(){subOpen=false;const sp=document.getElementById('subpage'),close=document.getElementById('subpage-close'),subCvsEl=document.getElementById('sub-canvas'),subOvEl=document.getElementById('sub-ov');sp.classList.remove('open');close.classList.remove('show');subCvsEl.classList.remove('show');subOvEl.classList.remove('show');setTimeout(()=>stopSubScene(),700);document.getElementById('nav').classList.remove('sc');setNavActive('home')}
 document.addEventListener('keydown',e=>{if(e.key==='Escape'&&subOpen)closeSub()});
 document.getElementById('subpage').addEventListener('scroll',function(){if(subOpen)document.getElementById('nav').classList.toggle('sc',this.scrollTop>30)},{passive:true});
 
@@ -790,10 +926,10 @@ function bContact(){
 
     <div class="ct-grid fu" style="transition-delay:.08s">
 
-      <!-- LEFT -->
+      <!-- LEFT (KEEP SAME) -->
       <div>
         <div style="font-size:1.05rem;line-height:1.9;color:var(--cream2);font-weight:300;margin-bottom:2.8rem;max-width:400px">
-          
+
           <div class="ct-lnks">
 
             <div class="ct-lnk" onclick="copyEmail()" style="cursor:pointer">
@@ -830,45 +966,45 @@ function bContact(){
         </div>
       </div>
 
-      <!-- RIGHT -->
-      <div>
-        <div class="sub-ey" style="margin-bottom:1.6rem">Send a message</div>
+   <div class="mail-box" onclick="openMail()">
+  <div class="envelope-wrapper">
+    <div class="envelope">
+      <div class="envelope-back"></div>
+      <div class="envelope-paper"></div> <div class="envelope-front"></div>
+      <div class="envelope-flap"></div>
+    </div>
+  </div>
+  <div class="mail-text">Send Me a Message</div>
+</div>
 
-        <div class="ct-form" id="contact-form">
-
-          <div class="ct-fr">
-            <div class="ff">
-              <label class="flbl">First Name</label>
-              <input class="finp" id="cf-fname" type="text"/>
-            </div>
-
-            <div class="ff">
-              <label class="flbl">Last Name</label>
-              <input class="finp" id="cf-lname" type="text"/>
-            </div>
-          </div>
-
-          <div class="ff">
-            <label class="flbl">Email</label>
-            <input class="finp" id="cf-email" type="email"/>
-          </div>
-
-          <div class="ff">
-            <label class="flbl">Message</label>
-            <textarea class="finp" id="cf-message"></textarea>
-          </div>
-
-          <button class="fsub" onclick="redirectToMail()">
-            Send Message →
-          </button>
-
-        </div>
       </div>
 
     </div>
 
   </div>
   `;
+}
+window.openMail = function () {
+  const email = "sathiyashree03@gmail.com";
+
+  const subject = encodeURIComponent("Portfolio Inquiry");
+
+  const body = encodeURIComponent(
+`Hi Sathiya,
+
+I visited your portfolio and would like to connect.
+
+Thanks!`
+  );
+
+ window.open(
+    `https://mail.google.com/mail/?view=cm&fs=1&to=${email}&su=${subject}&body=${body}`,
+    "_blank"
+);
+};
+function openContact() {
+  document.getElementById('subpage-inner').innerHTML = bContact();
+  document.getElementById('subpage').classList.add('open');
 }
 
 /* ── CERT CANVAS ART ── */

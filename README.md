@@ -2,7 +2,7 @@
 
 <img src="https://capsule-render.vercel.app/api?type=waving&color=0:667eea,100:764ba2&height=140&section=header&text=Sathiya%20Shree%20S&fontSize=38&fontColor=ffffff&fontAlignY=35" />
 
-### Software Engineer | CI/CD | Python
+### Software Engineer | Python
 
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-0077B5?style=flat&logo=linkedin&logoColor=white)](https://linkedin.com/in/sathiya-shree-s-)
 [![Email](https://img.shields.io/badge/Email-D14836?style=flat&logo=gmail&logoColor=white)](mailto:sathiyashree03@gmail.com)

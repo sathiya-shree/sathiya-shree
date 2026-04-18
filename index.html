@@ -201,66 +201,6 @@ body.hov-link #cur-ring{width:46px;height:46px;border-color:var(--cream2)}
   opacity: 1;
   text-shadow: 0 0 10px var(--env-accent);
 }
-<<<<<<< HEAD
-.preview-box {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0,0,0,0.8);
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  opacity: 0;
-  visibility: hidden;
-  transition: 0.4s ease;
-}
-
-.preview-box.show {
-  opacity: 1;
-  visibility: visible;
-}
-
-.preview-box img {
-  max-width: 80%;
-  max-height: 80%;
-  border-radius: 12px;
-  transform: scale(0.8);
-  transition: 0.4s ease;
-}
-
-.preview-box.show img {
-  transform: scale(1);
-}
-
-.close-btn {
-  position: absolute;
-  top: 20px;
-  right: 30px;
-  font-size: 30px;
-  color: white;
-  cursor: pointer;
-}
-
-.res-preview {
-  margin-top: 10px;
-  display: inline-block;
-  padding: 8px 14px;
-  background: #c9a84c;
-  color: #000;
-  border-radius: 6px;
-  cursor: pointer;
-  transition: 0.3s;
-}
-
-.res-preview:hover {
-  background: #e8c96a;
-}
-  
-=======
-/* Container to push button to the right */
 /* Container */
 .res-preview-container {
   display: flex;
@@ -386,7 +326,6 @@ body.hov-link #cur-ring{width:46px;height:46px;border-color:var(--cream2)}
   visibility: visible;
   transform: translateY(0) scale(1);
 }
->>>>>>> d290e50 (image)
 /* ── OVERLAYS ── */
 .noise{position:fixed;inset:0;pointer-events:none;z-index:700;opacity:.018;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:nz 8s steps(8) infinite}
 @keyframes nz{0%,100%{transform:translate(0)}50%{transform:translate(1%,-1%)}}
@@ -769,16 +708,6 @@ textarea.finp{resize:none;height:110px}
 <div id="subpage"><div id="subpage-inner"></div></div>
 <button id="subpage-close" onclick="closeSub()">✕</button>
 
-<script>
-
-
-<<<<<<< HEAD
-  <div id="previewBox" class="preview-box">
-  <span class="close-btn" onclick="closePreview()">×</span>
-  <img id="previewImg" src="" alt="Preview">
-</div>
-  
-=======
 // 1. Define the functions globally so the HTML button can find them
 function openPreview(imgSrc) {
     const box = document.getElementById("previewBox");
@@ -820,7 +749,11 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 });
 
->>>>>>> d290e50 (image)
+<script>
+
+
+
+  
 /* ── DATA ── */
 const PROJS = [
 {
@@ -1162,24 +1095,19 @@ function bAbout(){
       Presented research on Explainable AI (XAI) in Healthcare — improving transparency and interpretability in clinical AI decision systems using LIME and SHAP-based approaches, bridging the gap between complex ML models and clinical trust.
     </div>
 
-    <span class="res-badge">International Conference · 2025</span>
-<<<<<<< HEAD
-    <div class="res-preview" onclick="openPreview('images/research1.jpg')">
-      View Certificate / Paper
+   <div class="res-preview-container">
+  <button class="res-preview-btn">
+    <div class="hover-image-wrapper">
+      <img src="conference.jpeg" alt="preview">
     </div>
-=======
-   <div class="res-content">
-  <div class="res-preview-container">
-    <button class="res-preview-btn" onclick="openPreview('conference.jpeg')">
-      <span>View Image</span>
-      <div class="icon-circle">
-        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
-      </div>
-      <div class="hover-image-wrapper">
-        <img src="conference.jpeg" alt="Conference Preview">
-      </div>
-    </button>
->>>>>>> d290e50 (image)
+
+    <span>View Image</span>
+
+    <div class="icon-circle">
+      <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+    </div>
+  </button>
+</div>
   </div>
 </div>
   </div>

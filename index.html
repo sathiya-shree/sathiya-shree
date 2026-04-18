@@ -201,6 +201,7 @@ body.hov-link #cur-ring{width:46px;height:46px;border-color:var(--cream2)}
   opacity: 1;
   text-shadow: 0 0 10px var(--env-accent);
 }
+<<<<<<< HEAD
 .preview-box {
   position: fixed;
   top: 0;
@@ -258,6 +259,134 @@ body.hov-link #cur-ring{width:46px;height:46px;border-color:var(--cream2)}
   background: #e8c96a;
 }
   
+=======
+/* Container to push button to the right */
+/* Container */
+.res-preview-container {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 15px;
+}
+
+/* The Button */
+.res-preview-btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 20px;
+  background: #1a1a1a;
+  border: 1px solid #c9a84c;
+  border-radius: 50px;
+  color: #c9a84c;
+  font-weight: 600;
+  cursor: pointer;
+  /* Changed to visible so the image isn't cut off */
+  overflow: visible; 
+  z-index: 10;
+  transition: all 0.3s ease;
+}
+
+/* The Golden Circle (The "Liquid" Fill) */
+.res-preview-btn::before {
+  content: "";
+  position: absolute;
+  /* Centering the circle */
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: #c9a84c;
+  border-radius: 50%; /* Keeps it a circle */
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: width 0.5s ease, height 0.5s ease, opacity 0.3s;
+  z-index: -1;
+  pointer-events: none;
+}
+
+/* Button Hover State */
+.res-preview-btn:hover {
+  color: #111;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(201, 168, 76, 0.3);
+}
+
+/* Expanding the Golden Circle */
+.res-preview-btn:hover::before {
+  opacity: 1;
+  width: 100%;
+  height: 100%;
+  /* Matches button shape on expansion */
+  border-radius: 50px; 
+}
+
+/* Icon Container */
+.icon-circle {
+  position: relative;
+  z-index: 1;
+  width: 24px;
+  height: 24px;
+  background: rgba(201, 168, 76, 0.2);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.4s;
+}
+
+.res-preview-btn:hover .icon-circle {
+  background: #111;
+  color: #c9a84c;
+  transform: rotate(45deg);
+}
+
+/* --- FLOATING IMAGE PREVIEW --- */
+.hover-image-wrapper {
+  position: absolute;
+  bottom: 140%; /* Space above the button */
+  right: 0;
+  width: 280px;
+  padding: 6px;
+  background: #1a1a1a;
+  border: 1px solid #c9a84c;
+  border-radius: 12px;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.7);
+  
+  /* Hidden by default */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(15px) scale(0.9);
+  transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+  pointer-events: none;
+  z-index: 1000;
+}
+
+/* Triangle/Arrow */
+.hover-image-wrapper::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  right: 25px;
+  border-width: 10px;
+  border-style: solid;
+  border-color: #c9a84c transparent transparent transparent;
+}
+
+.hover-image-wrapper img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  display: block;
+}
+
+/* Show Image on Hover */
+.res-preview-btn:hover .hover-image-wrapper {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0) scale(1);
+}
+>>>>>>> d290e50 (image)
 /* ── OVERLAYS ── */
 .noise{position:fixed;inset:0;pointer-events:none;z-index:700;opacity:.018;background-image:url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");animation:nz 8s steps(8) infinite}
 @keyframes nz{0%,100%{transform:translate(0)}50%{transform:translate(1%,-1%)}}
@@ -643,11 +772,55 @@ textarea.finp{resize:none;height:110px}
 <script>
 
 
+<<<<<<< HEAD
   <div id="previewBox" class="preview-box">
   <span class="close-btn" onclick="closePreview()">×</span>
   <img id="previewImg" src="" alt="Preview">
 </div>
   
+=======
+// 1. Define the functions globally so the HTML button can find them
+function openPreview(imgSrc) {
+    const box = document.getElementById("previewBox");
+    const img = document.getElementById("previewImg");
+
+    if (box && img) {
+        img.src = imgSrc; // Set the image source
+        box.classList.add("show"); // Add the 'show' class to make it visible
+        document.body.style.overflow = "hidden"; // Prevent page scrolling
+    }
+}
+
+function closePreview() {
+    const box = document.getElementById("previewBox");
+    if (box) {
+        box.classList.remove("show"); // Remove the class to hide it
+        document.body.style.overflow = "auto"; // Re-enable scrolling
+    }
+}
+
+// 2. Setup listeners once the page is loaded
+document.addEventListener("DOMContentLoaded", function () {
+    const box = document.getElementById("previewBox");
+
+    // Close when clicking the dark background area
+    if (box) {
+        box.addEventListener("click", function (e) {
+            if (e.target === box) {
+                closePreview();
+            }
+        });
+    }
+
+    // Close with Escape key
+    document.addEventListener("keydown", function (e) {
+        if (e.key === "Escape") {
+            closePreview();
+        }
+    });
+});
+
+>>>>>>> d290e50 (image)
 /* ── DATA ── */
 const PROJS = [
 {
@@ -979,18 +1152,39 @@ function bAbout(){
 </div>
 <div class="ab-section-lbl fu" style="transition-delay:.18s">Research &amp; Academic Work</div>
 <div class="res-card fu" style="transition-delay:.2s">
+ 
   <div class="res-n">01</div>
   <div>
     <div class="res-tag">Conference Paper · International</div>
     <div class="res-title">Explainable AI in Healthcare</div>
     <div class="res-venue">INTI International University, Malaysia · 2025</div>
-    <div class="res-desc">Presented research on Explainable AI (XAI) in Healthcare — improving transparency and interpretability in clinical AI decision systems using LIME and SHAP-based approaches, bridging the gap between complex ML models and clinical trust.</div>
+    <div class="res-desc">
+      Presented research on Explainable AI (XAI) in Healthcare — improving transparency and interpretability in clinical AI decision systems using LIME and SHAP-based approaches, bridging the gap between complex ML models and clinical trust.
+    </div>
+
     <span class="res-badge">International Conference · 2025</span>
+<<<<<<< HEAD
     <div class="res-preview" onclick="openPreview('images/research1.jpg')">
       View Certificate / Paper
     </div>
+=======
+   <div class="res-content">
+  <div class="res-preview-container">
+    <button class="res-preview-btn" onclick="openPreview('conference.jpeg')">
+      <span>View Image</span>
+      <div class="icon-circle">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+      </div>
+      <div class="hover-image-wrapper">
+        <img src="conference.jpeg" alt="Conference Preview">
+      </div>
+    </button>
+>>>>>>> d290e50 (image)
   </div>
 </div>
+  </div>
+</div> 
+
 <div class="ab-section-lbl fu" style="transition-delay:.22s">Experience &amp; Milestones</div>
 <div class="exp-grid fu" style="transition-delay:.24s">
   <div class="exp-card"><div class="exp-dot"></div><span class="exp-badge">Internship</span><div class="exp-role">Web Development Intern</div><div class="exp-org">Internet Society Chennai Chapter</div><div class="exp-period">Nov 2023 – Mar 2024</div><div class="exp-desc">Developed and maintained web interfaces. Implemented responsive designs, contributed to agile sprint cycles, and collaborated cross-functionally on live client projects.</div></div>

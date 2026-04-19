@@ -80,10 +80,6 @@ I'm a **software engineer** (Full-Stack) with experience in building, deploying,
 
 ![langs](https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=sathiya-shree&layout=compact&theme=tokyonight&hide_border=true)
 
-<br/>
-
-![stats](https://github-readme-stats-sigma-five.vercel.app/api?username=sathiya-shree&show_icons=true&theme=tokyonight&hide_border=true)
-
 ---
 
 ## 💼 Open to Opportunities

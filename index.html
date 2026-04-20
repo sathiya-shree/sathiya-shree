@@ -394,6 +394,7 @@ nav.sc{background:rgba(3,8,15,.93);backdrop-filter:blur(24px);border-bottom:1px 
 .btn-ghost:hover{color:var(--cream);border-color:var(--gold)}
 
 /* ── 3D PORTRAIT PLACEHOLDER ── */
+/* ── 3D PORTRAIT PLACEHOLDER ── */
 .portrait-placeholder {
   margin-top: 2.4rem;
   perspective: 1200px;
@@ -408,13 +409,14 @@ nav.sc{background:rgba(3,8,15,.93);backdrop-filter:blur(24px);border-bottom:1px 
   transition: opacity 0.3s;
 }
 
-.portrait-frame {
+  .portrait-frame {
   position: relative;
   width: 200px;
   height: 200px;
   background: linear-gradient(135deg, var(--bg3), var(--bg2));
-  border-radius: 8px; /* Maintain rounded corners on the image container */
-  overflow: hidden; /* Important for rounding corners on the image */
+  border: 1.5px solid var(--border2);
+  border-radius: 8px;
+  overflow: hidden;
   box-shadow: 0 20px 60px rgba(201, 168, 76, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.08);
   display: flex;
   align-items: center;
@@ -424,6 +426,7 @@ nav.sc{background:rgba(3,8,15,.93);backdrop-filter:blur(24px);border-bottom:1px 
 }
 
 .portrait-frame:hover {
+  border-color: var(--border);
   box-shadow: 0 30px 80px rgba(201, 168, 76, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.1);
   transform: translateY(-4px) rotateX(5deg);
 }
@@ -435,14 +438,18 @@ nav.sc{background:rgba(3,8,15,.93);backdrop-filter:blur(24px);border-bottom:1px 
 .portrait-glow {
   position: absolute;
   inset: -1px;
-  border-radius: 8px; /* Maintain rounded corners on the glow */
+  border-radius: 8px;
   background: radial-gradient(circle at 30% 30%, rgba(201, 168, 76, 0.15), transparent 70%);
   pointer-events: none;
 }
 
-/* Remove the border and the extra pseudo-element used for framing */
 .portrait-frame::after {
-  display: none; 
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(201, 168, 76, 0.05), transparent);
+  pointer-events: none;
 }
 
 /* Mobile Responsive */
@@ -452,7 +459,6 @@ nav.sc{background:rgba(3,8,15,.93);backdrop-filter:blur(24px);border-bottom:1px 
     height: 160px;
   }
 }
-
 /* ── SCROLL HINT ── */
 #scroll-hint{position:fixed;bottom:2.2rem;left:50%;transform:translateX(-50%);z-index:400;display:flex;flex-direction:column;align-items:center;gap:.5rem;opacity:0;transition:opacity .5s}
 .scl-line{width:1px;height:42px;background:linear-gradient(to bottom,var(--gold),transparent);animation:sca 2s ease-in-out infinite}

@@ -395,48 +395,63 @@ nav.sc{background:rgba(3,8,15,.93);backdrop-filter:blur(24px);border-bottom:1px 
 
 /* ── 3D PORTRAIT PLACEHOLDER ── */
 .portrait-placeholder {
-  margin-top: 2.4rem;
-  perspective: 1200px;
+  margin-top: 2.4rem;
+  perspective: 1200px;
 }
 
 .portrait-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-  opacity: 0.85;
-  transition: opacity 0.3s;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  opacity: 0.85;
+  transition: opacity 0.3s;
+}
+
+.portrait-frame {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  background: linear-gradient(135deg, var(--bg3), var(--bg2));
+  border-radius: 8px; /* Maintain rounded corners on the image container */
+  overflow: hidden; /* Important for rounding corners on the image */
+  box-shadow: 0 20px 60px rgba(201, 168, 76, 0.1), inset 0 1px 0 rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+  transition: all 0.4s var(--ease2);
+}
+
+.portrait-frame:hover {
+  box-shadow: 0 30px 80px rgba(201, 168, 76, 0.18), inset 0 1px 0 rgba(255, 255, 255, 0.1);
+  transform: translateY(-4px) rotateX(5deg);
 }
 
 .portrait-frame:hover .portrait-img {
-  opacity: 1;
+  opacity: 1;
 }
 
 .portrait-glow {
-  position: absolute;
-  inset: -1px;
-  border-radius: 8px;
-  background: radial-gradient(circle at 30% 30%, rgba(201, 168, 76, 0.15), transparent 70%);
-  pointer-events: none;
+  position: absolute;
+  inset: -1px;
+  border-radius: 8px; /* Maintain rounded corners on the glow */
+  background: radial-gradient(circle at 30% 30%, rgba(201, 168, 76, 0.15), transparent 70%);
+  pointer-events: none;
 }
 
+/* Remove the border and the extra pseudo-element used for framing */
 .portrait-frame::after {
-  content: '';
-  position: absolute;
-  inset: 0;
-  border-radius: 8px;
-  background: linear-gradient(135deg, rgba(201, 168, 76, 0.05), transparent);
-  pointer-events: none;
+  display: none; 
 }
 
 /* Mobile Responsive */
 @media (max-width: 768px) {
-  .portrait-frame {
-    width: 160px;
-    height: 160px;
-  }
+  .portrait-frame {
+    width: 160px;
+    height: 160px;
+  }
 }
-
 
 /* ── SCROLL HINT ── */
 #scroll-hint{position:fixed;bottom:2.2rem;left:50%;transform:translateX(-50%);z-index:400;display:flex;flex-direction:column;align-items:center;gap:.5rem;opacity:0;transition:opacity .5s}

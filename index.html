@@ -1260,7 +1260,7 @@ ${feat.map((c,i)=>`<a class="cert-card" href="${c.lk}" target="_blank"><canvas c
 ${rest.map((c,i)=>`<a class="cert-card" href="${c.lk}" target="_blank"><canvas class="cert-canvas" id="cr-${i}"></canvas><div class="cert-body" style="padding:1.6rem 2.2rem 2.8rem"><div class="cert-badge">${c.num}</div><div class="cert-name" style="font-size:1.3rem">${c.n}</div><div class="cert-issuer">${c.is}</div><div class="cert-year">${c.yr}</div></div><div class="cert-arrow">↗</div></a>`).join('')}
 </div>
 <div class="stats-strip fu" style="transition-delay:.22s;margin-top:4rem">
-  <div class="stat-b"><span class="stat-n">10+</span><span class="stat-l">Total Certs</span></div>
+  <div class="stat-b"><span class="stat-n">12+</span><span class="stat-l">Total Certs</span></div>
   <div class="stat-b"><span class="stat-n">5</span><span class="stat-l">Global Platforms</span></div>
   <div class="stat-b"><span class="stat-n">2026</span><span class="stat-l">Latest</span></div>
 </div>
@@ -1341,7 +1341,7 @@ function bAbout(){
     <span class="exp-badge">Internship · Current</span>
     <div class="exp-role">Cloud &amp; DevOps Intern</div>
     <div class="exp-org">Maincrafts</div>
-    <div class="exp-period">Jan 2025 – Jun 2025</div>
+    <div class="exp-period">Jun 2025 – Jun 2025</div>
     <div class="exp-desc">
       Deployed portfolio on AWS S3 (static hosting, IAM, bucket policies).
       Provisioned EC2, S3, IAM on AWS &amp; GCP. Built CI/CD pipelines using
@@ -1758,8 +1758,21 @@ document.addEventListener('click', (e) => {
 });
 
 /* Initialize on load */
-document.addEventListener('DOMContentLoaded', () => {
-  setTimeout(() => setupCertificationsScroll(), 1000);
+document.addEventListener('click', (e) => {
+  const btn = e.target.closest('.stab');
+  if (!btn) return;
+
+  // remove active class from all tabs
+  document.querySelectorAll('.stab').forEach(b => b.classList.remove('act'));
+  btn.classList.add('act');
+
+  const tab = btn.dataset.tab;
+
+  // hide all panels
+  document.querySelectorAll('.sk-pan').forEach(p => p.classList.remove('act'));
+
+  // show selected panel
+  document.getElementById(`panel-${tab}`)?.classList.add('act');
 });
 </script>
 </body>

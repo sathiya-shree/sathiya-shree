@@ -896,8 +896,7 @@ const PROJS = [
   }
 }];
 
-const PROF=[{n:'Python',g:'Languages'},{n:'JavaScript',g:'Languages'},{n:'HTML/CSS',g:'Languages'},{n:'Dart',g:'Languages'},{n:'SQL',g:'Languages'},{n:'React.js',g:'Frameworks'},{n:'Flutter',g:'Frameworks'},{n:'Flask',g:'Frameworks'},{n:'Streamlit',g:'Frameworks'},{n:'VS Code',g:'Tools'},{n:'GitHub',g:'Tools'},{n:'Git',g:'Tools'}];const TOOLS=[{i:'💻',n:'VS Code',s:'Primary IDE'},{i:'🐙',n:'GitHub',s:'Version Control'},{i:'☁️',n:'Render',s:'Deployment'},{i:'📦',n:'Git',s:'Source Control'},{i:'🔍',n:'Tesseract OCR',s:'Image Text'},{i:'🗃️',n:'Supabase',s:'Database'}];
-const SOFT=[{i:'🧩',n:'Problem Solving'},{i:'💬',n:'Communication'},{i:'🤝',n:'Team Work'},{i:'📐',n:'Attention to Detail'},{i:'🚀',n:'Fast Learner'},{i:'🎯',n:'Goal Oriented'}];
+const PROF=[{n:'Python',g:'Languages'},{n:'JavaScript',g:'Languages'},{n:'HTML/CSS',g:'Languages'},{n:'Dart',g:'Languages'},{n:'SQL',g:'Languages'},{n:'React.js',g:'Frameworks'},{n:'Flutter',g:'Frameworks'},{n:'Flask',g:'Frameworks'},{n:'Django',g:'Frameworks'},{n:'Streamlit',g:'Frameworks'},{n:'AWS (EC2·S3·IAM)',g:'Cloud & DevOps'},{n:'Microsoft Azure',g:'Cloud & DevOps'},{n:'GCP',g:'Cloud & DevOps'},{n:'Docker',g:'Cloud & DevOps'},{n:'GitHub Actions / CI/CD',g:'Cloud & DevOps'},{n:'Linux (Ubuntu)',g:'Cloud & DevOps'},{n:'VS Code',g:'Tools'},{n:'GitHub',g:'Tools'},{n:'Git',g:'Tools'}];
 const CERTS=[
   {num:'01',n:'Python Django Full Stack Development: Build Modern Web App',is:'Udemy',yr:'2026',lk:'https://www.udemy.com/certificate/UC-3449d873-b2db-48f9-9826-f0d70278b9dd/',feat:true,ac:'#c9a84c'},
   {num:'02',n:'Python',is:'HCL GUVI',yr:'2025',lk:'https://www.guvi.in/verify-certificate?id=99449FLJ7I787og1n9',feat:true,ac:'#4a7fa5'},
@@ -1088,7 +1087,7 @@ const openCases=new Set();
 window.toggleCase=function(idx){const prow=document.getElementById('prow-'+idx),panel=document.getElementById('case-'+idx);if(!prow||!panel)return;if(openCases.has(idx)){prow.classList.remove('open');openCases.delete(idx)}else{prow.classList.add('open');openCases.add(idx)}};
 
 function bSkills(){
-  cconst grps=['Languages','Frameworks','Tools'];
+  const grps=['Languages','Frameworks','Cloud & DevOps','Tools'];
   return`<div class="sp-hero fu"><div class="sp-hero-tag">Capabilities</div><h1 class="sp-hero-title">Skills &amp;<br/><em>Technologies.</em></h1></div>
 <div class="fu" style="transition-delay:.08s">
   <div class="stabs">

@@ -1133,6 +1133,7 @@ function bProjects(){
   return html;
 }
 
+
 const openCases=new Set();
 window.toggleCase=function(idx){const prow=document.getElementById('prow-'+idx),panel=document.getElementById('case-'+idx);if(!prow||!panel)return;if(openCases.has(idx)){prow.classList.remove('open');openCases.delete(idx)}else{prow.classList.add('open');openCases.add(idx)}};
 
@@ -1153,9 +1154,6 @@ function bSkills(){
   <div class="sk-pan" id="panel-tools"><div class="pill-wrap">${TOOLS.map(p=>`<div class="pill"><span class="p-ico">${p.i}</span><div><span class="p-name">${p.n}</span><span class="p-sub">${p.s}</span></div></div>`).join('')}</div></div>
   <div class="sk-pan" id="panel-soft"><div class="soft-grid">${SOFT.map(s=>`<div class="scard"><span class="s-ico">${s.i}</span><div class="s-name">${s.n}</div></div>`).join('')}</div></div>
 </div>
-<div class="sp-footer"><span class="sp-copy">© 2025 Sathiya Shree</span><button class="btn-ghost" onclick="openSub('projects')">← Projects</button></div>`;
-}
-
 function bCerts(){
   const feat=CERTS.filter(c=>c.feat),rest=CERTS.filter(c=>!c.feat);
   return`<div class="sp-hero fu"><div class="sp-hero-tag">Credentials</div><h1 class="sp-hero-title">Certifications<br/>&amp; <em>Badges.</em></h1></div>

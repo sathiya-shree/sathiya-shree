@@ -1089,7 +1089,7 @@ const openCases=new Set();
 window.toggleCase=function(idx){const prow=document.getElementById('prow-'+idx),panel=document.getElementById('case-'+idx);if(!prow||!panel)return;if(openCases.has(idx)){prow.classList.remove('open');openCases.delete(idx)}else{prow.classList.add('open');openCases.add(idx)}};
 
 function bSkills(){
-  const grps=['Languages','Frameworks','Tools'];
+  const grps=['Languages','Frameworks','Cloud & DevOps','Tools'];
   return`<div class="sp-hero fu"><div class="sp-hero-tag">Capabilities</div><h1 class="sp-hero-title">Skills &amp;<br/><em>Technologies.</em></h1></div>
 <div class="fu" style="transition-delay:.08s">
   <div class="stabs">

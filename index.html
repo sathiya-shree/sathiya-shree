@@ -896,10 +896,57 @@ const PROJS = [
   }
 }];
 
-const PROF=[{n:'Python',g:'Languages'},{n:'JavaScript',g:'Languages'},{n:'HTML/CSS',g:'Languages'},{n:'Dart',g:'Languages'},{n:'SQL',g:'Languages'},{n:'React.js',g:'Frameworks'},{n:'Flutter',g:'Frameworks'},{n:'Flask',g:'Frameworks'},{n:'Streamlit',g:'Frameworks'},{n:'VS Code',g:'Tools'},{n:'GitHub',g:'Tools'},{n:'Git',g:'Tools'}];
-const LANGS=[{i:'🐍',n:'Python',s:'Primary Language'},{i:'📜',n:'JavaScript',s:'ES6+'},{i:'🎯',n:'Dart',s:'Flutter Apps'},{i:'🗄️',n:'SQL',s:'MySQL · PostgreSQL'},{i:'🌐',n:'HTML/CSS',s:'Web Standards'}];
-const FWS=[{i:'⚛️',n:'React.js',s:'Frontend Library'},{i:'📱',n:'Flutter',s:'Cross-Platform'},{i:'🌶️',n:'Flask',s:'Python Backend'},{i:'📈',n:'Streamlit',s:'Data Apps'},{i:'🔥',n:'Firebase',s:'BaaS'},{i:'🐘',n:'PostgreSQL',s:'Supabase'},{i:'🍃',n:'Jinja2',s:'Templating'},{i:'🤖',n:'Gemini API',s:'Google AI'},{i:'🔬',n:'spaCy',s:'NLP'}];
-const TOOLS=[{i:'☁️',n:'AWS',s:'EC2 · S3 · IAM'},{i:'🔷',n:'Azure',s:'AZ-900 · Governance'},{i:'🌐',n:'GCP',s:'Cloud Platform'},{i:'🐳',n:'Docker',s:'Containerization'},{i:'⚙️',n:'GitHub Actions',s:'CI/CD Pipelines'},{i:'🐧',n:'Linux',s:'Ubuntu Server'},{i:'💻',n:'VS Code',s:'Primary IDE'},{i:'🐙',n:'GitHub',s:'Version Control'},{i:'☁️',n:'Render',s:'Deployment'},{i:'📦',n:'Git',s:'Source Control'},{i:'🔍',n:'Tesseract OCR',s:'Image Text'},{i:'🗃️',n:'Supabase',s:'Database'}];const SOFT=[{i:'🧩',n:'Problem Solving'},{i:'💬',n:'Communication'},{i:'🤝',n:'Team Work'},{i:'📐',n:'Attention to Detail'},{i:'🚀',n:'Fast Learner'},{i:'🎯',n:'Goal Oriented'}];
+const PROF=[
+  {n:'Python',g:'Languages'},{n:'JavaScript',g:'Languages'},{n:'HTML/CSS',g:'Languages'},{n:'Dart',g:'Languages'},{n:'SQL',g:'Languages'},
+  {n:'React.js',g:'Frameworks'},{n:'Flutter',g:'Frameworks'},{n:'Flask',g:'Frameworks'},{n:'Django',g:'Frameworks'},{n:'Streamlit',g:'Frameworks'},
+  {n:'AWS (EC2·S3·IAM)',g:'Cloud & DevOps'},{n:'Microsoft Azure',g:'Cloud & DevOps'},{n:'GCP',g:'Cloud & DevOps'},{n:'Docker',g:'Cloud & DevOps'},{n:'GitHub Actions / CI/CD',g:'Cloud & DevOps'},{n:'Linux (Ubuntu)',g:'Cloud & DevOps'},
+  {n:'VS Code',g:'Tools'},{n:'GitHub',g:'Tools'},{n:'Git',g:'Tools'}
+];
+
+const LANGS=[
+  {i:'🐍',n:'Python',s:'Primary Language'},
+  {i:'📜',n:'JavaScript',s:'ES6+'},
+  {i:'🎯',n:'Dart',s:'Flutter Apps'},
+  {i:'🗄️',n:'SQL',s:'MySQL · PostgreSQL'},
+  {i:'🌐',n:'HTML/CSS',s:'Web Standards'}
+];
+
+const FWS=[
+  {i:'⚛️',n:'React.js',s:'Frontend Library'},
+  {i:'📱',n:'Flutter',s:'Cross-Platform'},
+  {i:'🌶️',n:'Flask',s:'Python Backend'},
+  {i:'🦄',n:'Django',s:'Full-Stack Framework'},
+  {i:'📈',n:'Streamlit',s:'Data Apps'},
+  {i:'🔥',n:'Firebase',s:'BaaS'},
+  {i:'🐘',n:'PostgreSQL',s:'Relational DB'},
+  {i:'🍃',n:'Jinja2',s:'Templating'},
+  {i:'🤖',n:'Gemini API',s:'Google AI'},
+  {i:'🔬',n:'spaCy',s:'NLP'}
+];
+
+const TOOLS=[
+  {i:'☁️',n:'AWS',s:'EC2 · S3 · IAM'},
+  {i:'🔷',n:'Azure',s:'AZ-900 · Governance'},
+  {i:'🌐',n:'GCP',s:'Cloud Platform'},
+  {i:'🐳',n:'Docker',s:'Containerization'},
+  {i:'⚙️',n:'GitHub Actions',s:'CI/CD Pipelines'},
+  {i:'🐧',n:'Linux',s:'Ubuntu Server'},
+  {i:'💻',n:'VS Code',s:'Primary IDE'},
+  {i:'🐙',n:'GitHub',s:'Version Control'},
+  {i:'☁️',n:'Render',s:'Deployment'},
+  {i:'📦',n:'Git',s:'Source Control'},
+  {i:'🔍',n:'Tesseract OCR',s:'Image Text'},
+  {i:'🗃️',n:'Supabase',s:'Database'}
+];
+
+const SOFT=[
+  {i:'🧩',n:'Problem Solving'},
+  {i:'💬',n:'Communication'},
+  {i:'🤝',n:'Team Work'},
+  {i:'📐',n:'Attention to Detail'},
+  {i:'🚀',n:'Fast Learner'},
+  {i:'🎯',n:'Goal Oriented'}
+];
 const CERTS=[
   {num:'01',n:'Python Django Full Stack Development: Build Modern Web App',is:'Udemy',yr:'2026',lk:'https://www.udemy.com/certificate/UC-3449d873-b2db-48f9-9826-f0d70278b9dd/',feat:true,ac:'#c9a84c'},
   {num:'02',n:'Python',is:'HCL GUVI',yr:'2025',lk:'https://www.guvi.in/verify-certificate?id=99449FLJ7I787og1n9',feat:true,ac:'#4a7fa5'},
@@ -1132,18 +1179,68 @@ function bAbout(){
 <div class="sp-hero fu"><div class="sp-hero-tag">Who I Am</div><h1 class="sp-hero-title">Building the Future,<br/><em>One Line at a Time.</em></h1></div>
 <div class="fu" style="transition-delay:.08s">
   <div class="ab-text-side" style="max-width:740px">
-    <p class="ab-body">I'm a <strong>Full-Stack Software Engineer</strong> who specialises in bridging backend logic with intuitive frontend design — creating systems that are technically sound and a pleasure to use.</p>
-    <p class="ab-body">My approach is rooted in precision and craft. Every component is deliberate — from database schema to pixel-perfect interfaces. I care deeply about the <strong>experience behind the code</strong>.</p>
-    <p class="ab-body">Currently pursuing <strong>M.Sc Information Technology</strong> while building real-world projects across AI, full-stack platforms, and mobile apps. I presented a <strong>research paper</strong> at an international conference in 2025 on Explainable AI in Healthcare.</p>
+    <p class="ab-body">I'm a <strong>Full-Stack &amp; Cloud/DevOps Engineer</strong> who specialises in building end-to-end systems — from pixel-perfect frontends and robust backends to cloud infrastructure on AWS, Azure, and GCP.</p>
+    <p class="ab-body">My approach is rooted in precision and craft. Every component is deliberate — from database schema to CI/CD pipeline. I care deeply about the <strong>experience behind the code</strong> and the reliability of what gets deployed.</p>
+    <p class="ab-body">Currently pursuing <strong>M.Sc Information Technology (CGPA 8.2 · Rank 3/40)</strong> while completing a Cloud &amp; DevOps internship at Maincrafts and building production-grade projects across AI, full-stack platforms, and mobile apps. Presented a <strong>research paper</strong> at ICCIIMR 2025 on Explainable AI in Healthcare.</p>
     <div class="ab-facts">
       <div class="ab-facts-head">Quick Facts</div>
       <div class="ab-row"><span class="abk">Name</span><span class="abv">Sathiya Shree S</span></div>
-      <div class="ab-row"><span class="abk">Degree</span><span class="abv">M.Sc Information Technology</span></div>
-      <div class="ab-row"><span class="abk">Focus</span><span class="abv">Full-Stack Engineering</span></div>
+      <div class="ab-row"><span class="abk">Degree</span><span class="abv">M.Sc Information Technology · CGPA 8.2</span></div>
+      <div class="ab-row"><span class="abk">Focus</span><span class="abv">Full-Stack · Cloud &amp; DevOps Engineering</span></div>
       <div class="ab-row"><span class="abk">Languages</span><span class="abv">English · Tamil</span></div>
-      <div class="ab-row"><span class="abk">Stack</span><span class="abv">Python · React · MySQL · Flutter</span></div>
+      <div class="ab-row"><span class="abk">Stack</span><span class="abv">Python · React · Flutter · AWS · Docker</span></div>
       <div class="ab-row" style="border-bottom:none"><span class="abk">Email</span><span class="abv" style="cursor:none;color:var(--gold)" onclick="copyEmail(null)">sathiyashree03@gmail.com</span></div>
     </div>
+    <div class="ab-actions">
+      <button class="btn" onclick="openSub('projects')"><span>View Projects</span></button>
+      <a href="files/Sathiya_shree_resume.pdf" download>
+        <button class="btn" onclick="showToast('📄 Resume download starting…')" style="border:none"><span>Download Resume ↓</span></button>
+      </a>
+    </div>
+    <blockquote class="ab-q">"Code is craft. Every line should earn its place."</blockquote>
+  </div>
+</div>
+<div class="stats-strip fu" style="transition-delay:.14s">
+  <div class="stat-b"><span class="stat-n">12+</span><span class="stat-l">Certifications</span></div>
+  <div class="stat-b"><span class="stat-n">4+</span><span class="stat-l">Projects Built</span></div>
+  <div class="stat-b"><span class="stat-n">2</span><span class="stat-l">Internships</span></div>
+  <div class="stat-b"><span class="stat-n">1</span><span class="stat-l">Research Paper</span></div>
+</div>
+<div class="ab-section-lbl fu" style="transition-delay:.18s">Research &amp; Academic Work</div>
+<div class="res-card fu" style="transition-delay:.2s">
+  <div class="res-n">01</div>
+  <div>
+    <div class="res-tag">Conference Paper · International</div>
+    <div class="res-title">Explainable AI in Healthcare</div>
+    <div class="res-venue">ICCIIMR 2025 · INTI International University, Malaysia</div>
+    <div class="res-desc">
+      Presented research on Explainable AI (XAI) in Healthcare — improving transparency and interpretability in clinical AI decision systems using LIME and SHAP-based approaches, bridging the gap between complex ML models and clinical trust.
+    </div>
+    <div class="res-preview-container">
+      <button class="res-preview-btn">
+        <div class="hover-image-wrapper">
+          <img src="conference.jpeg" alt="preview">
+        </div>
+        <span>View Image</span>
+        <div class="icon-circle">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6M9 21H3v-6M21 3l-7 7M3 21l7-7"/></svg>
+        </div>
+      </button>
+    </div>
+  </div>
+</div>
+
+<div class="ab-section-lbl fu" style="transition-delay:.22s">Experience &amp; Milestones</div>
+<div class="exp-grid fu" style="transition-delay:.24s">
+  <div class="exp-card"><div class="exp-dot"></div><span class="exp-badge">Internship · Current</span><div class="exp-role">Cloud &amp; DevOps Intern</div><div class="exp-org">Maincrafts</div><div class="exp-period">Jan 2025 – Jun 2025</div><div class="exp-desc">Deployed portfolio on AWS S3 with IAM and bucket policies. Provisioned EC2, S3, IAM on AWS &amp; GCP. Built CI/CD pipelines with GitHub Actions — cutting manual release effort by 60%. Containerised services with Docker and managed Ubuntu Linux servers.</div></div>
+  <div class="exp-card"><div class="exp-dot"></div><span class="exp-badge">Internship</span><div class="exp-role">Full-Stack Developer Intern</div><div class="exp-org">Internet Society India – Chennai Chapter</div><div class="exp-period">Dec 2023 – Apr 2024</div><div class="exp-desc">Delivered production-grade event automation system (AutoEvent Trigger) reducing manual processing time by 70%. Built RESTful APIs with Django, deployed with Git-based CI/CD, and built responsive web interfaces in HTML5/CSS3/JS. Worked in Agile/Scrum sprints.</div></div>
+  <div class="exp-card"><div class="exp-dot"></div><span class="exp-badge">Education</span><div class="exp-role">M.Sc Information Technology</div><div class="exp-org">Sri Ramakrishna College of Arts &amp; Science</div><div class="exp-period">Jul 2024 – Apr 2026</div><div class="exp-desc">CGPA 8.2 · Class Rank 3rd of 40. Deepening expertise in full-stack development, cloud architecture, algorithms, and applied AI/ML while building production-grade projects alongside coursework.</div></div>
+  <div class="exp-card"><div class="exp-dot"></div><span class="exp-badge">Education</span><div class="exp-role">PG Diploma in Advanced Computing</div><div class="exp-org">Sri Ramakrishna College of Arts &amp; Science</div><div class="exp-period">2025</div><div class="exp-desc">Advanced Computing diploma focusing on full-stack development, AI/ML technologies, and modern software engineering practices.</div></div>
+  <div class="exp-card"><div class="exp-dot"></div><span class="exp-badge">Education</span><div class="exp-role">B.Sc Computer Technology</div><div class="exp-org">Dr. G.R. Damodaran College of Science</div><div class="exp-period">2021 – 2024</div><div class="exp-desc">87.36% — Distinction. Bachelor's degree in Computer Technology with a focus on software development and computer science fundamentals.</div></div>
+</div>
+
+<div class="sp-footer"><span class="sp-copy">© 2025 Sathiya Shree</span><div style="display:flex;gap:1rem"><button class="btn-ghost" onclick="openSub('projects')">Projects →</button><button class="btn-ghost" onclick="openSub('contact')">Contact →</button></div></div>`;
+}
     <div class="ab-actions">
       <button class="btn" onclick="openSub('projects')"><span>View Projects</span></button>
       <a href="files/Sathiya_shree_resume.pdf" download>

@@ -91,8 +91,6 @@ I'm a **full-stack developer** (Python, Django, React) expanding into **Cloud & 
 ![snake](https://raw.githubusercontent.com/sathiya-shree/sathiya-shree/output/github-contribution-grid-snake.svg)
 <br/>
 
-![activity graph](https://github-readme-activity-graph.vercel.app/graph?username=sathiya-shree&theme=tokyo-night&hide_border=true)
-<br/>
 
 ![langs](https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=sathiya-shree&layout=compact&theme=tokyonight&hide_border=true)
 
